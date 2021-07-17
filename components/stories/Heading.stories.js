@@ -1,5 +1,5 @@
-import { Heading } from '@chakra-ui/react';
 import '@fontsource/sora/700.css';
+import { Heading } from '@chakra-ui/react';
 
 export default {
   title: 'Style Guide/Design Tokens/Typography/Heading',

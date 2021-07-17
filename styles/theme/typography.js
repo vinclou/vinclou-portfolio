@@ -1,5 +1,6 @@
+// TODO add more fonts
 export const fonts = {
-  heading: 'Sora',
+  heading: 'Antic Didone',
   body: 'Sora'
 };
 
