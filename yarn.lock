@@ -1824,6 +1824,16 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/antic-didone@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/antic-didone/-/antic-didone-4.5.0.tgz#fc500e2ae20625bff519fb365551b1947b45aa03"
+  integrity sha512-ytFtg57dhxFMkuWev0jX5joMwRL0XEOY7us1L5vpZqBUTI5A009enQ00+H7B+YB3avKpyPNepmE8ttKdZx3xkQ==
+
+"@fontsource/baloo-bhai-2@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/baloo-bhai-2/-/baloo-bhai-2-4.5.0.tgz#1dd58c662ce47e6a022623e5047f4c6dba459c5b"
+  integrity sha512-ZnGHt88GJv8J0Gsxomls0mC6B4xKHGwnb8AhPd7xvJRFwfjFTcq7TLB6vGmNaiaEytqz/HE2QmDA/7jmHm2jAA==
+
 "@fontsource/sora@^4.2.2":
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/@fontsource/sora/-/sora-4.2.2.tgz#a7f41431016fb8c35d09d084b7fce88ebb062373"
