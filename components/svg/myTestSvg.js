@@ -51,30 +51,31 @@ const MyTestSvgBase = createIcon({
           rx="20"
           fill="#161616"
         /> */}
-        <motion.path
+        {/* <motion.path
           variants={child}
           d="M1515.61 71.1733C869.716 313.705 -34.5376 830.464 1515.61 957.248V71.1733Z"
           fill="white"
-        />
+        /> */}
         <motion.path
           variants={child}
-          d="M1694.62 133.41C1048.73 375.942 144.473 769.511 1694.62 896.295V133.41Z"
+          d="M 1694.62 133.41 C 1048.73 375.942 144.473 769.511 1694.62 896.295"
           fill="#161616"
         />
         <motion.path
           variants={child}
-          d="M1865.29 180.89C1219.4 393.029 315.142 737.277 1865.29 848.173V180.89Z"
+          d="M 1765.29 180.89 C 1219.4 393.029 315.142 737.277 1865.29 848.173"
           fill="white"
         />
         <motion.path
           variants={child}
-          d="M1729.27 288.682C1315.78 442.891 736.895 693.133 1729.27 773.746V288.682Z"
+          d="M 1829.27 288.682 C 1315.78 442.891 736.895 693.133 1729.27 773.746"
           fill="#161616"
         />
         <motion.circle
           variants={child}
           r="2.56647"
           transform="matrix(-1 0 0 1 902.867 685.202)"
+          fill="white"
         />
         <motion.circle variants={child} cx="826.514" cy="733.324" r="1.92485" />
         <motion.circle variants={child} cx="1454.02" cy="116.087" r="1.92485" />
@@ -90,7 +91,7 @@ const MyTestSvgBase = createIcon({
         <motion.path
           variants={child}
           d="M968.617 456.813C951.459 451.138 933.117 459.94 927.275 477.605C924.337 486.488 924.428 492.959 928.143 501.545C929.553 497.281 979.385 463.077 979.385 463.077C979.385 463.077 977.754 459.835 968.617 456.813Z"
-          // fill="#161666" think about the fills later on
+          fill="#161616"
         />
         <motion.circle variants={child} cx="829.08" cy="811.601" r="4.49133" />
         <motion.circle variants={child} cx="1079.31" cy="621.682" r="3.20809" />

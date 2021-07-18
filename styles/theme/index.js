@@ -3,6 +3,7 @@ import { styles } from './styles';
 import { colors } from './colors';
 import { Heading, Text, fonts, textStyles } from './typography';
 import { Button } from './components/button';
+import { Link } from './components/link';
 
 const overrides = {
   styles,
@@ -12,7 +13,8 @@ const overrides = {
   components: {
     Button,
     Heading,
-    Text
+    Text,
+    Link
   }
 };
 
