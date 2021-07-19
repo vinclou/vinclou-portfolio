@@ -1,5 +1,3 @@
-import '@fontsource/sora/400.css';
-import '@fontsource/sora/700.css';
 import NextLink from 'next/link';
 import { Container } from '@/layouts/container';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
@@ -21,6 +19,7 @@ import {
 // import { HeroVisual } from '@/components/svg';
 import { MyTestSvg } from '@/components/svg/myTestSvg';
 import { Subscribe } from '@/components/subscribe/index';
+import { ProjectCard } from '@/components/project-card';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
 import { BsArrowDown } from 'react-icons/bs';
 // data imports
@@ -45,7 +44,7 @@ const Hero = () => {
   const { scrollPos } = useScrollPosition();
 
   return (
-    <Box w={{ base: '90%', '2xl': '100%' }}>
+    <Box w={{ base: '90%', '2xl': '95%' }}>
       <Flex mb="4rem" justify="space-between">
         <Box w={{ base: '100%', xl: '50%' }}>
           <Heading as="h1" mb="1.5rem" variant="h1">
@@ -99,7 +98,7 @@ const ScrollArrow = ({ scrollPos }) => {
         boxSize="1.5em"
         fill={colorDark}
         css={`
-          animation: arrowAnimation 1.5s infinite ease-in-out;
+          animation: arrowAnimation 2s infinite ease-in-out;
           @keyframes arrowAnimation {
             0% {
               opacity: 0;
@@ -171,83 +170,6 @@ const Projects = () => {
           />
         ))}
     </List>
-  );
-};
-//TODO: fix color styles
-const ProjectCard = ({
-  logo,
-  title,
-  description,
-  tools,
-  live,
-  proto,
-  repo,
-  ...props
-}) => {
-  const { colorDark, colorGrey, colorLight } = useColorModeSwitcher();
-  return (
-    <Box
-      as="li"
-      mb={{ base: '2rem', '2xl': 0 }}
-      mx="1rem"
-      listStyleType="none"
-      border="1px solid"
-      borderRadius="0.7rem"
-      borderColor={colorGrey}
-      w={{ base: '90%', md: '30rem' }}
-      {...props}
-    >
-      <Center
-        borderTopRadius="0.6rem"
-        fill={colorLight}
-        mb="3rem"
-        w="100%"
-        h="8rem"
-        bg={colorDark}
-      >
-        {logo ? (
-          logo
-        ) : (
-          <Heading color={colorLight} as="p" variant="h3">
-            {title}
-          </Heading>
-        )}
-      </Center>
-      <VStack px="2rem" align="start" spacing="2rem">
-        <Heading data-testid="project-title" as="h3" variant="h3">
-          {title}
-        </Heading>
-        <Text data-testid="project-description">{description}</Text>
-        <List display="flex" flexDirection="row">
-          {tools.map((tool) => (
-            <ListItem key={tool.id} p="0.5rem">
-              <Icon
-                aria-label={tool.name}
-                transitionDuration="300ms"
-                boxSize="1.5rem"
-                as={tool.icon}
-                _hover={{ fill: tool.color }}
-              />
-            </ListItem>
-          ))}
-        </List>
-        <HStack pb="2rem">
-          {live && (
-            <Button as="a" href={live} variant="primary">
-              Visit Site
-            </Button>
-          )}
-          {proto && (
-            <Button as="a" href={proto} variant="primary">
-              Prototype
-            </Button>
-          )}
-          <Button as="a" href={repo} variant="secondary">
-            View Code
-          </Button>
-        </HStack>
-      </VStack>
-    </Box>
   );
 };
 

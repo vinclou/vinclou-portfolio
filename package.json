@@ -40,6 +40,7 @@
     "@fontsource/antic-didone": "^4.5.0",
     "@fontsource/baloo-bhai-2": "^4.5.0",
     "@fontsource/sora": "^4.2.2",
+    "@react-three/fiber": "^7.0.5",
     "framer-motion": "^4",
     "next": "10.x",
     "next-pwa": "^5.2.23",
@@ -47,6 +48,7 @@
     "react": "17.x",
     "react-dom": "17.x",
     "react-icons": "^4.2.0",
+    "three": "^0.130.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
