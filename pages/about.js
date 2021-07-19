@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, HStack } from '@chakra-ui/layout';
 import { Icon } from '@chakra-ui/icon';
 // wrappers
-import { Container } from '@/layout/container';
+import { Container } from '@/layouts/container';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 // hooks
 import { useToggle } from '@/utils/hooks/useToggle';
