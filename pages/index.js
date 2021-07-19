@@ -32,8 +32,8 @@ export default function Home() {
     <Container>
       <ContentWrapper>
         <Hero />
-        <FeaturedProjects />
         <ArticleCard />
+        <FeaturedProjects />
         <Subscribe />
       </ContentWrapper>
     </Container>

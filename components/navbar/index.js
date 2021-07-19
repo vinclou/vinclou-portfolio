@@ -1,9 +1,9 @@
-import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
-import { useToggle } from '@/utils/hooks/useToggle';
-import { IconButton } from '@chakra-ui/button';
-import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Flex, HStack, VStack } from '@chakra-ui/layout';
 import { IoMoon, IoSunnyOutline } from 'react-icons/io5';
+import { IconButton } from '@chakra-ui/button';
+import { useToggle } from '@/utils/hooks/useToggle';
+import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { useColorMode } from '@chakra-ui/color-mode';
 import { StyledLink } from '../styled/link';
 import { Logo } from '@/components/svg';
 
@@ -23,6 +23,9 @@ export const Navbar = ({ isOpen, toggleIsOpen }) => {
         <Flex align="center" display={{ base: 'none', lg: 'flex' }} as="ul">
           <Item variant="noStyle" href="/">
             Home
+          </Item>
+          <Item variant="noStyle" href="/blog">
+            Blog
           </Item>
           <Item variant="noStyle" href="/about">
             About
