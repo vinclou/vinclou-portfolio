@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import useToggle from '@/utils/hooks/useToggle';
+import { useToggle } from '@/utils/hooks/useToggle';
 import { Button } from '@chakra-ui/button';
 import { Box, VStack } from '@chakra-ui/react';
 import { MobileNavMenu, Navbar } from '@/components/navbar';

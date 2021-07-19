@@ -12,7 +12,8 @@ import {
   SiFigma,
   SiStorybook,
   SiAdobe,
-  SiSocketDotIo,
+  SiGo,
+  SiVisualstudiocode,
   SiTypescript
 } from 'react-icons/si';
 import { v4 as uuidv4 } from 'uuid';
@@ -62,7 +63,7 @@ export const nodejs = {
 export const nextjs = {
   name: 'Next.js',
   icon: SiNextDotJs,
-  color: null,
+  color: '#e8d7e6',
   id: uuidv4()
 };
 
@@ -102,16 +103,30 @@ export const adobe = {
   id: uuidv4()
 };
 
-export const socketIO = {
-  name: 'Socket IO',
-  icon: SiSocketDotIo,
-  color: null,
-  id: uuidv4()
-};
-
 export const sass = {
   name: 'Sass',
   icon: SiSass,
   color: '#CC6699',
+  id: uuidv4()
+};
+
+export const Go = {
+  name: 'Go',
+  icon: SiGo,
+  color: '#7aeaf4',
+  id: uuidv4()
+};
+
+export const GraphQL = {
+  name: 'GraphQL',
+  icon: SiGraphql,
+  color: '#ef287e',
+  id: uuidv4()
+};
+
+export const VsCode = {
+  name: 'Visual Studio Code',
+  icon: SiVisualstudiocode,
+  color: '#286eef',
   id: uuidv4()
 };

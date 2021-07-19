@@ -1,6 +1,6 @@
 import { useColorModeValue } from '@chakra-ui/react';
 
-export const useColorModeSwitcher = () => {
+function useColorModeSwitcher() {
   const colorLight = useColorModeValue('default.light', 'default.dark');
 
   const colorDark = useColorModeValue('default.dark', 'default.light');
@@ -17,4 +17,6 @@ export const useColorModeSwitcher = () => {
   const errorColor = useColorModeValue('accent.errorDark', 'accent.errorLight');
 
   return { colorLight, colorDark, colorGrey, themed, successColor, errorColor };
-};
+}
+
+export { useColorModeSwitcher };

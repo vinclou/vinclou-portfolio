@@ -1,4 +1,5 @@
 // valid and false need to be removed/refactored after API implementation
+// TODO Make Server -> Client work
 import PropTypes from 'prop-types';
 import VisuallyHidden from '@chakra-ui/visually-hidden';
 import { Button } from '@chakra-ui/button';

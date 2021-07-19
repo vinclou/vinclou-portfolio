@@ -1,5 +1,5 @@
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
-import useToggle from '@/utils/hooks/useToggle';
+import { useToggle } from '@/utils/hooks/useToggle';
 import { IconButton } from '@chakra-ui/button';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Flex, HStack, VStack } from '@chakra-ui/layout';

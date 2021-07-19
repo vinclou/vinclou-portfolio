@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import useToggle from '@/utils/hooks/useToggle';
+import { useToggle } from '@/utils/hooks/useToggle';
 import { Icon } from '@chakra-ui/icons';
 import { Link, HStack, VStack, Center } from '@chakra-ui/layout';
 import { useMediaQuery } from '@chakra-ui/media-query';
