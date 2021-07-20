@@ -6,11 +6,11 @@ import { useMediaQuery } from '@chakra-ui/media-query';
 import VisuallyHidden from '@chakra-ui/visually-hidden';
 import { github, linkedin } from '@/data/socials';
 
-export const Footer = () => {
+const Footer = ({ customBgColor }) => {
   const [isLarge] = useMediaQuery('(min-width: 992px)');
   return (
     <VStack
-      // backgroundColor="inherit"
+      backgroundColor={customBgColor}
       // marginTop={0}
       borderTop="1px solid"
       borderColor="neutral.300"
@@ -145,3 +145,5 @@ const NavLink = ({ href, children }) => {
     </NextLink>
   );
 };
+
+export { Footer };

@@ -1,3 +1,4 @@
+// TOD: Tweak 3D Animation to work well on phones and tablets
 import {
   Box,
   Heading,
@@ -14,23 +15,24 @@ import ThreeDScene from '@/components/3d-scene';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { useMediaQuery } from '@chakra-ui/media-query';
-import { ScrollArrow } from '@/components/scroll';
+// import { ScrollArrow } from '@/components/scroll';
 
 import projects from '@/data/projects';
 
 const Projects = () => {
-  const [isXtraLarge] = useMediaQuery('(min-width: 1000px)');
-  // Pass this var as a prop to ThreeDScene instead of using it there
+  // show animation only if it's a laptop
+  const [isLarge] = useMediaQuery('(min-width: 1180px)');
   const { threeAnimColor } = useColorModeSwitcher();
-  const { scrollPos } = useScrollPosition();
+  // const { scrollPos } = useScrollPosition();
   return (
     <>
       <Container
         title="Projects | Vincent Arlou"
         customSpacing={{ base: '0rem', lg: '0rem' }}
+        footerColor={threeAnimColor}
       >
         {/* <ScrollArrow scrollPos={scrollPos} /> */}
-        <ThreeDScene />
+        {isLarge && <ThreeDScene animColor={threeAnimColor} />}
         <ContentWrapper
           backgroundColor={threeAnimColor}
           css={`

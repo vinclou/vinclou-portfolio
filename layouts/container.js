@@ -7,6 +7,7 @@ import { Footer } from '@/components/footer';
 
 const Container = ({
   customSpacing = { base: '8rem', lg: '10rem' },
+  footerColor,
   children,
   ...customMeta
 }) => {
@@ -38,7 +39,7 @@ const Container = ({
         <Navbar isOpen={isOpen} toggleIsOpen={toggleIsOpen} />
         <VStack id="skip" as="main" spacing={customSpacing}>
           {isOpen ? <MobileNavMenu /> : children}
-          <Footer />
+          <Footer customBgColor={footerColor} />
         </VStack>
       </Box>
     </Box>

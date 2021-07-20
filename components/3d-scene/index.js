@@ -9,13 +9,8 @@ import * as THREE from 'three';
 import React, { Suspense, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Reflector, Text, useTexture, useGLTF } from '@react-three/drei';
-import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
-import { useScrollPosition } from '@/hooks/useScrollPosition';
-// import { ScrollArrow } from '@/components/scroll';
 
-export default function ThreeDScene() {
-  // const { scrollPos } = useScrollPosition();
-  const { threeAnimColor } = useColorModeSwitcher();
+export default function ThreeDScene({ animColor }) {
   const [clicked, setClicked] = useState(true);
   const [ready, setReady] = useState(true);
   const store = { clicked, setClicked, ready, setReady };
@@ -28,8 +23,8 @@ export default function ThreeDScene() {
         pixelRatio={[1, 1.5]}
         camera={{ position: [0, 3, 100], fov: 15 }}
       >
-        <color attach="background" args={[threeAnimColor]} />
-        <fog attach="fog" args={[threeAnimColor, 15, 20]} />
+        <color attach="background" args={[animColor]} />
+        <fog attach="fog" args={[animColor, 15, 20]} />
         <Suspense fallback={null}>
           <group position={[0, -1, 0]}>
             {/* <Carla
