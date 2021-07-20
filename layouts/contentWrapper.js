@@ -1,5 +1,7 @@
 import { VStack } from '@chakra-ui/layout';
-
-export const ContentWrapper = ({ children }) => {
-  return <VStack spacing={{ base: '3rem', lg: '7rem' }}>{children}</VStack>;
+// TODO should I cahnge the width ? -->
+export const ContentWrapper = (props) => {
+  return (
+    <VStack width="100%" spacing={{ base: '3rem', lg: '6rem' }} {...props} />
+  );
 };

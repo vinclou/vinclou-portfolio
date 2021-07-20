@@ -5,7 +5,11 @@ import { Box, VStack } from '@chakra-ui/react';
 import { MobileNavMenu, Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 
-const Container = ({ children, ...customMeta }) => {
+const Container = ({
+  customSpacing = { base: '8rem', lg: '10rem' },
+  children,
+  ...customMeta
+}) => {
   const [isOpen, toggleIsOpen] = useToggle();
 
   return (
@@ -32,7 +36,7 @@ const Container = ({ children, ...customMeta }) => {
         m="auto"
       >
         <Navbar isOpen={isOpen} toggleIsOpen={toggleIsOpen} />
-        <VStack spacing={{ base: '8rem', lg: '10rem' }} id="skip" as="main">
+        <VStack id="skip" as="main" spacing={customSpacing}>
           {isOpen ? <MobileNavMenu /> : children}
           <Footer />
         </VStack>

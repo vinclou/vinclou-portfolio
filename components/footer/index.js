@@ -4,14 +4,16 @@ import { Icon } from '@chakra-ui/icons';
 import { Link, HStack, VStack, Center } from '@chakra-ui/layout';
 import { useMediaQuery } from '@chakra-ui/media-query';
 import VisuallyHidden from '@chakra-ui/visually-hidden';
-import { github, linkedin, twitch, twitter, youtube } from '@/data/socials';
+import { github, linkedin } from '@/data/socials';
 
 export const Footer = () => {
   const [isLarge] = useMediaQuery('(min-width: 992px)');
   return (
     <VStack
+      // backgroundColor="inherit"
+      // marginTop={0}
       borderTop="1px solid"
-      borderColor="neutral.200"
+      borderColor="neutral.300"
       py="32px"
       w="100%"
       spacing={{ base: '16px', lg: '64px' }}

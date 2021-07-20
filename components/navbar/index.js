@@ -12,7 +12,7 @@ export const Navbar = ({ isOpen, toggleIsOpen }) => {
   const { colorDark } = useColorModeSwitcher();
   return (
     <Flex
-      mb={isOpen ? { base: '1rem' } : { base: '4.5rem', lg: '6rem' }}
+      mb={isOpen ? { base: '1rem' } : { base: '4.5rem', lg: '3rem' }}
       as="nav"
       p="4"
       justify="space-between"

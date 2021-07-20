@@ -16,7 +16,7 @@ import {
   VStack,
   Text
 } from '@chakra-ui/react';
-// import { HeroVisual } from '@/components/svg';
+
 import { MyTestSvg } from '@/components/svg/myTestSvg';
 import { Subscribe } from '@/components/subscribe/index';
 import { ProjectCard } from '@/components/project-card';
@@ -74,7 +74,6 @@ const Hero = () => {
             </Button>
           </NextLink>
         </Box>
-        {/* {isXtraLarge && <HeroVisual />} */}
         {isXtraLarge && <MyTestSvg />}
       </Flex>
       {isXtraLarge && <ScrollArrow scrollPos={scrollPos} />}

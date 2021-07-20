@@ -1,19 +1,73 @@
+/*
+	Known Issue -> Since video is played automatically,
+	it means some nrowsers might want to block it,
+	think about the way to deal with it.
+	One way is to add click event, but I really don'w like
+	the final product with it
+*/
 import * as THREE from 'three';
 import React, { Suspense, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Reflector, Text, useTexture, useGLTF } from '@react-three/drei';
+import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { useScrollPosition } from '@/hooks/useScrollPosition';
+// import { ScrollArrow } from '@/components/scroll';
 
-function Carla(props) {
-  const { scene } = useGLTF('/carla-draco.glb');
-  return <primitive object={scene} dispose={null} {...props} />;
+export default function ThreeDScene() {
+  // const { scrollPos } = useScrollPosition();
+  const { threeAnimColor } = useColorModeSwitcher();
+  const [clicked, setClicked] = useState(true);
+  const [ready, setReady] = useState(true);
+  const store = { clicked, setClicked, ready, setReady };
+  return (
+    <div id="three-js-canvas">
+      <Overlay {...store} />
+      <Canvas
+        concurrent
+        gl={{ alpha: false }}
+        pixelRatio={[1, 1.5]}
+        camera={{ position: [0, 3, 100], fov: 15 }}
+      >
+        <color attach="background" args={[threeAnimColor]} />
+        <fog attach="fog" args={[threeAnimColor, 15, 20]} />
+        <Suspense fallback={null}>
+          <group position={[0, -1, 0]}>
+            {/* <Carla
+              rotation={[0, Math.PI - 0.4, 0]}
+              position={[-1.2, 0, 0.6]}
+              scale={[0.26, 0.26, 0.26]}
+            /> */}
+            <VideoText {...store} position={[0, 1.3, -2]} />
+            <Ground />
+          </group>
+          <ambientLight intensity={0.5} />
+          <spotLight position={[0, 10, 0]} intensity={0.3} />
+          <directionalLight position={[-20, 0, -10]} intensity={0.7} />
+          <Intro start={ready && clicked} set={setReady} />
+        </Suspense>
+      </Canvas>
+      {/* <ScrollArrow
+        scrollPos={scrollPos}
+        displayIcon={true}
+        bottom="100%"
+        position="fixed"
+      /> */}
+    </div>
+  );
 }
+
+// function Carla(props) {
+//   const { scene } = useGLTF('/carla-draco.glb');
+//   return <primitive object={scene} dispose={null} {...props} />;
+// }
 
 function VideoText({ clicked, ...props }) {
   const [video] = useState(() =>
     Object.assign(document.createElement('video'), {
       src: '/drei.mp4',
       crossOrigin: 'Anonymous',
-      loop: true
+      loop: true,
+      muted: true
     })
   );
   useEffect(() => void (clicked && video.play()), [video, clicked]);
@@ -86,41 +140,6 @@ function Overlay({ ready, clicked, setClicked }) {
           {!ready ? 'loading' : 'click to continue'}
         </div>
       </div>
-    </>
-  );
-}
-
-export default function ThreeDScene() {
-  const [clicked, setClicked] = useState(false);
-  const [ready, setReady] = useState(false);
-  const store = { clicked, setClicked, ready, setReady };
-  return (
-    <>
-      <Canvas
-        concurrent
-        gl={{ alpha: false }}
-        pixelRatio={[1, 1.5]}
-        camera={{ position: [0, 3, 100], fov: 15 }}
-      >
-        <color attach="background" args={['#171010']} />
-        <fog attach="fog" args={['#171010', 15, 20]} />
-        <Suspense fallback={null}>
-          <group position={[0, -1, 0]}>
-            {/* <Carla
-              rotation={[0, Math.PI - 0.4, 0]}
-              position={[-1.2, 0, 0.6]}
-              scale={[0.26, 0.26, 0.26]}
-            /> */}
-            <VideoText {...store} position={[0, 1.3, -2]} />
-            <Ground />
-          </group>
-          <ambientLight intensity={0.5} />
-          <spotLight position={[0, 10, 0]} intensity={0.3} />
-          <directionalLight position={[-20, 0, -10]} intensity={0.7} />
-          <Intro start={ready && clicked} set={setReady} />
-        </Suspense>
-      </Canvas>
-      <Overlay {...store} />
     </>
   );
 }

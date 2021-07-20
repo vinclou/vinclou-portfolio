@@ -3,34 +3,45 @@ import {
   Heading,
   List,
   Text,
-  Container as ChakraContainer
+  Spacer
+  // Container as ChakraContainer
 } from '@chakra-ui/layout';
 import { Container } from '@/layouts/container';
 import { ProjectCard } from '@/components/project-card';
 import { ContentWrapper } from '@/layouts/contentWrapper';
+import ThreeDScene from '@/components/3d-scene';
+// hooks
+import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { useScrollPosition } from '@/hooks/useScrollPosition';
+import { useMediaQuery } from '@chakra-ui/media-query';
+import { ScrollArrow } from '@/components/scroll';
+
 import projects from '@/data/projects';
 
-//threeJS imports
-import * as THREE from 'three';
-import React, { Suspense, useEffect, useState } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import {
-  Reflector,
-  Text as DreiText,
-  useTexture,
-  useGLTF
-} from '@react-three/drei';
-import ThreeDScene from '@/components/3d-scene';
-
 const Projects = () => {
+  const [isXtraLarge] = useMediaQuery('(min-width: 1000px)');
+  // Pass this var as a prop to ThreeDScene instead of using it there
+  const { threeAnimColor } = useColorModeSwitcher();
+  const { scrollPos } = useScrollPosition();
   return (
     <>
-      <Container title="Projects | Vincent Arlou">
-        <ContentWrapper>
-          <div id="three-js-canvas" width="100%">
-            <ThreeDScene />
-          </div>
+      <Container
+        title="Projects | Vincent Arlou"
+        customSpacing={{ base: '0rem', lg: '0rem' }}
+      >
+        {/* <ScrollArrow scrollPos={scrollPos} /> */}
+        <ThreeDScene />
+        <ContentWrapper
+          backgroundColor={threeAnimColor}
+          css={`
+            @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+              -webkit-backdrop-filter: blur(130px);
+              backdrop-filter: blur(130px);
+            }
+          `}
+        >
           <Intro />
+          {/* {isXtraLarge && <ScrollArrow scrollPos={scrollPos} />} */}
         </ContentWrapper>
       </Container>
     </>
@@ -39,7 +50,7 @@ const Projects = () => {
 
 const Intro = () => {
   return (
-    <Box w="90%" as="section" mb="2rem">
+    <Box w="100%" as="section" mb="2rem">
       <Heading pl="1rem" as="h1" variant="h1">
         Projects
       </Heading>
@@ -54,14 +65,15 @@ const Intro = () => {
 const ProjectList = () => {
   return (
     <List
-      mx="auto"
-      justifyContent="space-between"
-      display={{ base: 'block', '2xl': 'flex' }}
+      mx="3rem"
       flexWrap="wrap"
+      display={{ base: 'block', lg: 'flex' }}
+      justifySelf="center"
+      // justifyContent="space-between"
     >
       {projects.map((project) => (
         <ProjectCard
-          mb="8rem"
+          mb="6rem"
           logo={project.logo}
           title={project.title}
           description={project.description}
