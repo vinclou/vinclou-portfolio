@@ -4,8 +4,8 @@ export const styles = {
     body: {
       overflowX: 'hidden',
       initialColorMode: 'dark',
-      bg: props.colorMode === 'light' ? 'default.light' : '#171010',
-      color: props.colorMode === 'light' ? '#171010' : 'default.light'
+      bg: props.colorMode === 'light' ? 'default.light' : 'default.dark',
+      color: props.colorMode === 'light' ? 'default.dark' : 'default.light'
     }
   })
 };

@@ -1,7 +1,7 @@
 export const colors = {
   default: {
     light: '#fcfcfc',
-    dark: '#232323'
+    dark: '#171010'
   },
   primary: {
     100: '#D1C1F4',

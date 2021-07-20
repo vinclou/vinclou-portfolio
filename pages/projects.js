@@ -11,26 +11,29 @@ import { ContentWrapper } from '@/layouts/contentWrapper';
 import projects from '@/data/projects';
 
 //threeJS imports
-import { Canvas } from '@react-three/fiber';
+import * as THREE from 'three';
+import React, { Suspense, useEffect, useState } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import {
+  Reflector,
+  Text as DreiText,
+  useTexture,
+  useGLTF
+} from '@react-three/drei';
+import ThreeDScene from '@/components/3d-scene';
 
 const Projects = () => {
   return (
-    <Container title="Projects | Vincent Arlou">
-      <ContentWrapper>
-        {/* You should make sure 3D gets rendered only on the client side */}
-        <div id="three-js canvas">
-          <Canvas>
-            <mesh>
-              <boxGeometry />
-              <meshPhongMaterial />
-              <ambientLight intensity={0.1} />
-              <directionalLight color="red" position={[0, 0, 5]} />
-            </mesh>
-          </Canvas>
-        </div>
-        <Intro />
-      </ContentWrapper>
-    </Container>
+    <>
+      <Container title="Projects | Vincent Arlou">
+        <ContentWrapper>
+          <div id="three-js-canvas" width="100%">
+            <ThreeDScene />
+          </div>
+          <Intro />
+        </ContentWrapper>
+      </Container>
+    </>
   );
 };
 
