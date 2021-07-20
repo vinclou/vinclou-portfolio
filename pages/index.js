@@ -17,7 +17,7 @@ import {
   Text
 } from '@chakra-ui/react';
 
-import { MyTestSvg } from '@/components/svg/myTestSvg';
+import { HeroSvg } from '@/components/svg/HeroSvg';
 import { Subscribe } from '@/components/subscribe/index';
 import { ProjectCard } from '@/components/project-card';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
@@ -74,7 +74,7 @@ const Hero = () => {
             </Button>
           </NextLink>
         </Box>
-        {isXtraLarge && <MyTestSvg />}
+        {isXtraLarge && <HeroSvg />}
       </Flex>
       {isXtraLarge && <ScrollArrow scrollPos={scrollPos} />}
     </Box>

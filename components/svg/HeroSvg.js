@@ -29,7 +29,7 @@ const child = {
   }
 };
 
-const MyTestSvgBase = createIcon({
+const SvgBase = createIcon({
   defaultProps,
   displayName: 'HeroVisualBase',
   viewBox: '0 0 1515 1099',
@@ -230,9 +230,9 @@ const MyTestSvgBase = createIcon({
   )
 });
 
-export const MyTestSvg = ({ ...props }) => {
+const HeroSvg = ({ ...props }) => {
   const { colorDark } = useColorModeSwitcher();
-  return (
-    <Icon fill={colorDark} {...props} boxSize="32rem" as={MyTestSvgBase} />
-  );
+  return <Icon fill={colorDark} {...props} boxSize="32rem" as={SvgBase} />;
 };
+
+export { HeroSvg };
