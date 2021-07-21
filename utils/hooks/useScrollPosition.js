@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react';
 
 function useScrollPosition() {
-  const [scrollPos, setScrollPos] = useState();
+  const [scrollPos, setScrollPos] = useState(false);
 
   const listenScroll = () => {
     const windowScroll =

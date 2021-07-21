@@ -1,4 +1,6 @@
-// TOD: Tweak 3D Animation to work well on phones and tablets
+// TODO: Tweak 3D Animation to work well on phones and tablets
+// TODO: Make Sure NoSsr works as expected
+// TODO: Reafactor and make individual component files
 import {
   Box,
   Heading,
@@ -13,17 +15,17 @@ import { ContentWrapper } from '@/layouts/contentWrapper';
 import ThreeDScene from '@/components/3d-scene';
 // hooks
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
-import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { useMediaQuery } from '@chakra-ui/media-query';
-// import { ScrollArrow } from '@/components/scroll';
+
+import NoSsr from '@/utils/NoSsr';
 
 import projects from '@/data/projects';
 
 const Projects = () => {
   // show animation only if it's a laptop
   const [isLarge] = useMediaQuery('(min-width: 1180px)');
+
   const { threeAnimColor } = useColorModeSwitcher();
-  // const { scrollPos } = useScrollPosition();
   return (
     <>
       <Container
@@ -31,19 +33,22 @@ const Projects = () => {
         customSpacing={{ base: '0rem', lg: '0rem' }}
         footerColor={threeAnimColor}
       >
-        {/* <ScrollArrow scrollPos={scrollPos} /> */}
-        {isLarge && <ThreeDScene animColor={threeAnimColor} />}
+        {isLarge && (
+          <NoSsr>
+            <ThreeDScene animColor={threeAnimColor} />
+          </NoSsr>
+        )}
+        {/* <ThreeDScene animColor={threeAnimColor} /> */}
         <ContentWrapper
           backgroundColor={threeAnimColor}
-          css={`
-            @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-              -webkit-backdrop-filter: blur(130px);
-              backdrop-filter: blur(130px);
-            }
-          `}
+          // css={`
+          //   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+          //     -webkit-backdrop-filter: blur(130px);
+          //     backdrop-filter: blur(130px);
+          //   }
+          // `}
         >
           <Intro />
-          {/* {isXtraLarge && <ScrollArrow scrollPos={scrollPos} />} */}
         </ContentWrapper>
       </Container>
     </>

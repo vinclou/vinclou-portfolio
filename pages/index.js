@@ -4,24 +4,20 @@ import { useScrollPosition } from '@/hooks/useScrollPosition';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { useMediaQuery } from '@chakra-ui/media-query';
 import {
-  Heading,
   Box,
   Button,
-  Center,
+  Heading,
   Flex,
   List,
-  ListItem,
-  HStack,
-  Icon,
   VStack,
   Text
 } from '@chakra-ui/react';
 
-import { HeroSvg } from '@/components/svg/HeroSvg';
-import { Subscribe } from '@/components/subscribe/index';
+import { HeroSvg } from '@/components/svg';
+import { Subscribe } from '@/components/subscribe';
 import { ProjectCard } from '@/components/project-card';
-import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
-import { BsArrowDown } from 'react-icons/bs';
+import { ScrollArrow } from '@/components/scroll';
+import { ArticleCard } from '@/components/article-card';
 // data imports
 import projects from '@/data/projects';
 
@@ -40,7 +36,7 @@ export default function Home() {
 }
 
 const Hero = () => {
-  const [isXtraLarge] = useMediaQuery('(min-width: 1280px)');
+  const [isXLarge] = useMediaQuery('(min-width: 1180px)');
   const { scrollPos } = useScrollPosition();
 
   return (
@@ -51,22 +47,25 @@ const Hero = () => {
             👋 I'm Vincent Arlou
           </Heading>
           <Text mb={{ base: '4rem', lg: '6rem' }} as="h2" variant="subtitle">
-            Welcome, you will be able to find my works and my thouhgts on this
-            resource.
+            Welcome, you'll be able to find out a bit about me and the work I
+            do.
           </Text>
-          <Heading as="h3" variant="h3" mb="1.5rem">
-            Ok, but who are you?
+          <Heading as="h3" variant="h3" mb="2rem">
+            Ok, But Who Are You?
           </Heading>
-          <Text fontSize="xl" mb="2rem">
+          <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
             When I look back on my past and think how much time I wasted on
             nothing, how much time has been lost in futilities, errors,
             laziness, incapacity to live. I'm just someone who wants to know
-            life and I want to create high quality software that will make world
-            a better place.
+            life.
           </Text>
           <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
-            Feel free to have a look around, and learn more about myself and
-            what I like to work on.{' '}
+            As a software developer, all I wanna do is making high quality
+            software that will make world a better place. I'll just be happy if
+            people find value in my work.
+          </Text>
+          <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
+            Feel free to have a look around, and learn more about myself.
           </Text>
           <NextLink href="/about#contact" passHref>
             <Button as="a" variant="primaryThemed" size="lg">
@@ -74,49 +73,13 @@ const Hero = () => {
             </Button>
           </NextLink>
         </Box>
-        {isXtraLarge && <HeroSvg />}
+        {isXLarge && <HeroSvg />}
       </Flex>
-      {isXtraLarge && <ScrollArrow scrollPos={scrollPos} />}
+      {isXLarge && <ScrollArrow scrollPos={scrollPos} />}
     </Box>
   );
 };
 
-const ScrollArrow = ({ scrollPos }) => {
-  const { colorDark } = useColorModeSwitcher();
-  return (
-    <VStack
-      opacity={scrollPos ? 0 : 1}
-      transition="visibility 0s linear 300ms, opacity 600ms"
-      // might as well put display none
-      visibility={scrollPos ? 'hidden' : 'visible'}
-      // display={scrollPos ? 'none' : 'inline'}
-    >
-      <span>{`<Scroll>`}</span>
-      <Icon
-        as={BsArrowDown}
-        boxSize="1.5em"
-        fill={colorDark}
-        css={`
-          animation: arrowAnimation 2s infinite ease-in-out;
-          @keyframes arrowAnimation {
-            0% {
-              opacity: 0;
-            }
-            30% {
-              opacity: 1;
-            }
-            60% {
-              opacity: 1;
-            }
-            to {
-              opacity: 0;
-            }
-          }
-        `}
-      />
-    </VStack>
-  );
-};
 //TODO make it a standalone component/file, fix how many project's are rendered
 const FeaturedProjects = () => {
   return (
@@ -169,37 +132,6 @@ const Projects = () => {
           />
         ))}
     </List>
-  );
-};
-
-//TODO make it a standalone component/file
-export const ArticleCard = () => {
-  const { colorGrey } = useColorModeSwitcher();
-  return (
-    <VStack spacing="4rem" w="100%" mx="auto">
-      <SectionHeading>Featured Blog Post</SectionHeading>
-      <Box
-        mx="auto"
-        p="2rem"
-        border="2px solid"
-        borderColor={colorGrey}
-        w={{ base: '21em', lg: '57.5rem' }}
-      >
-        <Heading textTransform="capitalize" as="h4" variant="h4" mb="0.5rem">
-          Will do heading for my blog post
-        </Heading>
-        <Text variant="body" mb="2rem">
-          This is some arbitrary subtitle for my blog post that you should most
-          definitely read!
-        </Text>
-        <Flex>
-          <Text>Read more</Text>
-          <Text>
-            <span>→</span>
-          </Text>
-        </Flex>
-      </Box>
-    </VStack>
   );
 };
 

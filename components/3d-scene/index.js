@@ -41,12 +41,6 @@ export default function ThreeDScene({ animColor }) {
           <Intro start={ready && clicked} set={setReady} />
         </Suspense>
       </Canvas>
-      {/* <ScrollArrow
-        scrollPos={scrollPos}
-        displayIcon={true}
-        bottom="100%"
-        position="fixed"
-      /> */}
     </div>
   );
 }
