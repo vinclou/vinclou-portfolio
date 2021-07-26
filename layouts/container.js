@@ -15,25 +15,15 @@ const Container = ({
 
   return (
     <Box
-      // minW="100%"
+      // ml={30}
       // border="4px"
       // borderColor="red"
+      // minW="360px"
       // css={`
       //   min-width: 100% !important;
       // `}
     >
       <Seo {...customMeta} />
-      <Button
-        variant="secondary"
-        as="a"
-        href="#skip"
-        position="absolute"
-        transform="translateX(-100%)"
-        transition="transform 0.3s"
-        _focus={{ transform: 'translateX(0%)' }}
-      >
-        Skip to Content
-      </Button>
       <Box
         w={{ base: '100vw', '2xl': '80vw', '3xl': '72vw' }}
         minH="100vh"
@@ -67,5 +57,21 @@ const Seo = ({ ...customMeta }) => {
     </Head>
   );
 };
+
+const SkipButton = () => {
+  return(
+    <Button
+        variant="secondary"
+        as="a"
+        href="#skip"
+        position="absolute"
+        transform="translateX(-100%)"
+        transition="transform 0.3s"
+        _focus={{ transform: 'translateX(0%)' }}
+      >
+        Skip to Content
+    </Button>
+  )
+}
 
 export { Container };

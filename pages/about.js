@@ -27,13 +27,11 @@ import * as tool from '@/data/tools'; // feel like * need to refactor this file 
 export default function About() {
   return (
     <Container title="About | Vincent Arlou">
-      // <ContentWrapper>
-      <>
+      <ContentWrapper>
         <Intro />
         <Skills />
         <Contact />
-      </>
-      // </ContentWrapper>
+      </ContentWrapper>
     </Container>
   );
 }
@@ -43,7 +41,7 @@ export default function About() {
 const Intro = () => {
   const { themed } = useColorModeSwitcher();
   return (
-    <Box as="section">
+    <Box as="section" w={{ base: '90%', '2xl': '95%' }} m="auto">
       <SectionHeading mb="4.5rem">About</SectionHeading>
       <Heading mb="0.5rem" as="h3" variant="h3">
         Background
@@ -119,7 +117,7 @@ const Intro = () => {
 const Skills = () => {
   const tools = Object.values(tool);
   return (
-    <Box w="90%" alignSelf="center" as="section">
+    <Box as="section" alignSelf="center" w={{ base: '100%', '2xl': '95%' }}>
       <SectionHeading mb={{ base: '4rem', xl: '8rem' }}>
         Tools & Technologies
       </SectionHeading>
@@ -185,13 +183,12 @@ const Skill = ({ name, icon, color }) => {
 const Contact = () => {
   const { themed } = useColorModeSwitcher();
   return (
-    <Box id="contact" p={{ base: '1rem', md: 0 }} as="section">
+    <Box id="contact" maxW="inherit" as="section" p={{ base: '1rem', md: 0 }} >
       <SectionHeading mb="4rem">Get in touch</SectionHeading>
       <Flex
         borderRadius="md"
         direction={{ base: 'column', xl: 'row' }}
         m="auto"
-        p="4rem"
       >
         <Box
           m={{ base: '0 0 4rem 0', xl: '0 4rem 0 0' }}

@@ -66,8 +66,8 @@ const ProjectList = () => {
     <List
       // mx="3rem"
       // do the responsive minW !
-      // maxW={{ base: '20rem', sm: '30rem', md: '40rem' }}
-      minW="360px"
+      minW={{ base: '20rem', sm: '30rem', md: '40rem' }}
+      // minW="360px"
       flexWrap="wrap"
       display={{ base: 'block', lg: 'flex' }}
       justifySelf="center"
