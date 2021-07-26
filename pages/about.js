@@ -41,7 +41,7 @@ export default function About() {
 const Intro = () => {
   const { themed } = useColorModeSwitcher();
   return (
-    <Box as="section" w={{ base: '90%', '2xl': '95%' }} m="auto">
+    <Box as="section" m="auto">
       <SectionHeading mb="4.5rem">About</SectionHeading>
       <Heading mb="0.5rem" as="h3" variant="h3">
         Background
@@ -117,7 +117,7 @@ const Intro = () => {
 const Skills = () => {
   const tools = Object.values(tool);
   return (
-    <Box as="section" alignSelf="center" w={{ base: '100%', '2xl': '95%' }}>
+    <Box as="section" alignSelf="center">
       <SectionHeading mb={{ base: '4rem', xl: '8rem' }}>
         Tools & Technologies
       </SectionHeading>
