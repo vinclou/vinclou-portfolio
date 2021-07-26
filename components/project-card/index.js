@@ -8,9 +8,11 @@ import {
   HStack,
   Icon,
   VStack,
-  Text
+  Text,
+  Stack
 } from '@chakra-ui/react';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { useMediaQuery } from '@chakra-ui/media-query';
 
 //TODO: fix color styles, fix button positioning on very tiny phones
 const ProjectCard = ({
@@ -24,6 +26,7 @@ const ProjectCard = ({
   ...props
 }) => {
   const { colorDark, colorGrey, colorLight } = useColorModeSwitcher();
+  const [ isMobile ] = useMediaQuery('(max-width: 400px)');
   return (
     <Box
       as="li"
@@ -33,7 +36,8 @@ const ProjectCard = ({
       border="1px solid"
       borderRadius="0.7rem"
       borderColor={colorGrey}
-      w={{ base: '90%', md: '30rem' }}
+      // w={{ base: '90%', md: '30rem' }}
+      // maxW="360px"
       {...props}
     >
       <Center
@@ -70,7 +74,7 @@ const ProjectCard = ({
             </ListItem>
           ))}
         </List>
-        <HStack pb="2rem">
+        <Stack direction={["column", "row"]} pb="2rem">
           {live && (
             <Button as="a" href={live} variant="primary">
               Visit Site
@@ -84,7 +88,7 @@ const ProjectCard = ({
           <Button as="a" href={repo} variant="secondary">
             View Code
           </Button>
-        </HStack>
+        </Stack>
       </VStack>
     </Box>
   );

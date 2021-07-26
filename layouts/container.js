@@ -6,7 +6,7 @@ import { MobileNavMenu, Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 
 const Container = ({
-  customSpacing = { base: '8rem', lg: '10rem' },
+  // customSpacing = { base: '8rem', lg: '10rem' },
   footerColor,
   children,
   ...customMeta
@@ -15,9 +15,9 @@ const Container = ({
 
   return (
     <Box
-      css={`
-        border: 10px !important;
-      `}
+      // css={`
+      //   border: 30px !important;
+      // `}
     >
       <Seo {...customMeta} />
       <Button
@@ -37,7 +37,7 @@ const Container = ({
         m="auto"
       >
         <Navbar isOpen={isOpen} toggleIsOpen={toggleIsOpen} />
-        <VStack id="skip" as="main" spacing={customSpacing}>
+        <VStack id="skip" as="main" spacing={{ base: '2rem', lg: '6rem' }}>
           {isOpen ? <MobileNavMenu /> : children}
           <Footer customBgColor={footerColor} />
         </VStack>

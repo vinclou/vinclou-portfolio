@@ -29,7 +29,7 @@ const Projects = () => {
     <>
       <Container
         title="Projects | Vincent Arlou"
-        customSpacing={{ base: '0rem', lg: '0rem' }}
+        // customSpacing={{ base: '0rem', lg: '0rem' }}
         footerColor={threeAnimColor}
       >
         {isLarge && (
@@ -37,15 +37,8 @@ const Projects = () => {
             <ThreeDScene animColor={threeAnimColor} />
           </NoSsr>
         )}
-        {/* <ThreeDScene animColor={threeAnimColor} /> */}
         <ContentWrapper
           backgroundColor={threeAnimColor}
-          // css={`
-          //   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-          //     -webkit-backdrop-filter: blur(130px);
-          //     backdrop-filter: blur(130px);
-          //   }
-          // `}
         >
           <Intro />
         </ContentWrapper>
@@ -71,7 +64,10 @@ const Intro = () => {
 const ProjectList = () => {
   return (
     <List
-      mx="3rem"
+      // mx="3rem"
+      // do the responsive minW !
+      // maxW={{ base: '20rem', sm: '30rem', md: '40rem' }}
+      minW="360px"
       flexWrap="wrap"
       display={{ base: 'block', lg: 'flex' }}
       justifySelf="center"
@@ -79,7 +75,7 @@ const ProjectList = () => {
     >
       {projects.map((project) => (
         <ProjectCard
-          mb="6rem"
+          key={project.id}
           logo={project.logo}
           title={project.title}
           description={project.description}
@@ -87,7 +83,7 @@ const ProjectList = () => {
           live={project.live}
           proto={project.proto}
           repo={project.repo}
-          key={project.id}
+          mb="3rem"
         />
       ))}
     </List>

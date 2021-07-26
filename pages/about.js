@@ -156,15 +156,15 @@ const Skill = ({ name, icon, color }) => {
   const [hover, toggleHover] = useToggle();
   return (
     <GridItem
-      onMouseEnter={toggleHover}
-      onMouseLeave={toggleHover}
+      as="li"
       p={{ base: '0.5rem', '2xl': '1rem' }}
-      textAlign="center"
-      alignContent="center"
       display="flex"
+      alignContent="center"
       flexDirection="column"
       listStyleType="none"
-      as="li"
+      textAlign="center"
+      onMouseEnter={toggleHover}
+      onMouseLeave={toggleHover}
     >
       <Icon
         mx="auto"
