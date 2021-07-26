@@ -24,7 +24,7 @@ import projects from '@/data/projects';
 //TODO make all the needed components
 export default function Home() {
   return (
-    <Container>
+    <Container title="Home Page | Vincent Arlou">
       <ContentWrapper>
         <Hero />
         <ArticleCard />

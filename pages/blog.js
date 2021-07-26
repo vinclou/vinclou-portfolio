@@ -1,29 +1,46 @@
+import React from 'react';
 import { Container } from '@/layouts/container';
-import { Heading, Link, Text } from '@chakra-ui/layout';
-import { Box } from '@chakra-ui/react';
 import { ContentWrapper } from '@/layouts/contentWrapper';
+import { useMediaQuery } from '@chakra-ui/media-query';
+import {
+  Box,
+  Button,
+  Heading,
+  Flex,
+  List,
+  VStack,
+  Text
+} from '@chakra-ui/react';
 
-const Blog = () => {
+import { getAllFiles } from '@/utils/mdx';
+
+import { Subscribe } from '@/components/subscribe';
+import { BlogPost } from '@/components/blog-post';
+// data imports
+
+// //TODO make all the needed components
+export default function Blog({ posts }) {
+  // console.log(postFilePaths);
+  // console.log(POSTS_PATH);
+  // console.log(posts);
+  // console.log(posts[0].data);
   return (
     <Container title="Blog | Vincent Arlou">
       <ContentWrapper>
-        <Heading as="h1" variant="h2">
-          Blog 🖊
+        <Heading as="h2" textAlign="center" variant="h2">
+          Blog
         </Heading>
-        <Text>
-          This page will soon be my{' '}
-          <Link href="https://joelhooks.com/digital-garden">
-            digital garden
-          </Link>{' '}
-          <span>🌱</span>
-        </Text>
-        <Text>
-          It will be home to all of my thoughts and ideas around
-          <br /> web develoment and design.{' '}
-        </Text>
+        {posts.map((post) => (
+          <BlogPost key={post.data.title} {...post.data} />
+        ))}
+        <Subscribe />
       </ContentWrapper>
     </Container>
   );
-};
+}
 
-export default Blog;
+export async function getStaticProps() {
+  const posts = getAllFiles();
+
+  return { props: posts };
+}

@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
@@ -10,5 +12,6 @@
       "@/utils/*": ["utils/*"],
       "@/hooks/*": ["utils/hooks/*"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }

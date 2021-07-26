@@ -53,7 +53,7 @@ export default function ThreeDScene({ animColor }) {
 function VideoText({ clicked, ...props }) {
   const [video] = useState(() =>
     Object.assign(document.createElement('video'), {
-      src: '/drei.mp4',
+      src: '/AV2.mp4',
       crossOrigin: 'Anonymous',
       loop: true,
       muted: true

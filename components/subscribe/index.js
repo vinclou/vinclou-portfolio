@@ -55,10 +55,7 @@ const Subscribe = ({ valid, invalid, loading, ...props }) => {
       maxW="45rem"
     >
       <Heading variant="h3">Subscribe to my newsletter</Heading>
-      <Text mb="1rem">
-        Get emails from me about web development, design, accessibility and
-        early access to content.{' '}
-      </Text>
+      <Text mb="1rem">Let's chat about code, life and design!</Text>
       <form onSubmit={handleSubmit}>
         <FormControl id="email">
           <FormLabel>

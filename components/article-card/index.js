@@ -1,21 +1,10 @@
-import {
-  Box,
-  Button,
-  Heading,
-  Flex,
-  List,
-  VStack,
-  Text
-} from '@chakra-ui/react';
+import { Box, Link, Heading, Flex, VStack, Text } from '@chakra-ui/react';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
 
 const ArticleCard = () => {
   const { colorGrey } = useColorModeSwitcher();
   return (
     <VStack spacing="4rem" w="100%" mx="auto">
-      <Heading as="h2" textAlign="center" variant="h2">
-        Featured Blog Post
-      </Heading>
       <Box
         mx="auto"
         p="2rem"

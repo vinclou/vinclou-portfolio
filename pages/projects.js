@@ -5,8 +5,7 @@ import {
   Box,
   Heading,
   List,
-  Text,
-  Spacer
+  Text
   // Container as ChakraContainer
 } from '@chakra-ui/layout';
 import { Container } from '@/layouts/container';
