@@ -6,7 +6,7 @@ import {
   HStack,
   Heading,
   Text,
-  Container as ChakraContainer,
+  // Container as ChakraContainer,
   Grid,
   GridItem,
   Link,
@@ -27,11 +27,13 @@ import * as tool from '@/data/tools'; // feel like * need to refactor this file 
 export default function About() {
   return (
     <Container title="About | Vincent Arlou">
-      <ContentWrapper>
+      // <ContentWrapper>
+      <>
         <Intro />
         <Skills />
         <Contact />
-      </ContentWrapper>
+      </>
+      // </ContentWrapper>
     </Container>
   );
 }
@@ -46,7 +48,7 @@ const Intro = () => {
       <Heading mb="0.5rem" as="h3" variant="h3">
         Background
       </Heading>
-      <ChakraContainer
+      <Box
         maxW={{ base: '20rem', sm: '30rem', md: '40rem' }}
         p={0.5}
       >
@@ -109,7 +111,7 @@ const Intro = () => {
           to set aside time to spend with family, going for walks and drinks
           with fiends.
         </Text>
-      </ChakraContainer>
+      </Box>
     </Box>
   );
 };
@@ -121,7 +123,7 @@ const Skills = () => {
       <SectionHeading mb={{ base: '4rem', xl: '8rem' }}>
         Tools & Technologies
       </SectionHeading>
-      <ChakraContainer
+      <Box
         maxW={{ base: '20rem', sm: '30rem', md: '40rem' }}
         textAlign="center"
         p={0}
@@ -131,9 +133,9 @@ const Skills = () => {
           tools developers have created to make theirs and other developers'
           lives easier. Here are some of the tools I use most frequently.
         </Text>
-      </ChakraContainer>
+      </Box>
       <Grid
-        m="auto"
+        // m="auto"
         // w={{ md: '80%' }}
         templateColumns={{ base: 'repeat(3, 1fr)', md: 'repeat(4, 1fr)' }}
         gap={6}
@@ -191,7 +193,7 @@ const Contact = () => {
         m="auto"
         p="4rem"
       >
-        <ChakraContainer
+        <Box
           m={{ base: '0 0 4rem 0', xl: '0 4rem 0 0' }}
           maxW="20rem"
           p={0}
@@ -214,7 +216,7 @@ const Contact = () => {
             </Link>
             .
           </Text>
-        </ChakraContainer>
+        </Box>
         <ContactForm />
       </Flex>
     </Box>

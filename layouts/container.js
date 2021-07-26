@@ -15,8 +15,11 @@ const Container = ({
 
   return (
     <Box
+      // minW="100%"
+      // border="4px"
+      // borderColor="red"
       // css={`
-      //   border: 30px !important;
+      //   min-width: 100% !important;
       // `}
     >
       <Seo {...customMeta} />
