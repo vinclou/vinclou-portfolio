@@ -66,7 +66,7 @@ const MainRoutes = () => {
       <NavLink href="/">Home</NavLink>
       <NavLink href="/about">About</NavLink>
       <NavLink href="/projects">Projects</NavLink>
-      <NavLink href="/gregogun-cv-2021.pdf">CV</NavLink>
+      <NavLink href="/Vincent-Arlou-Res_L.pdf">CV</NavLink>
     </VStack>
   );
 };

@@ -50,7 +50,6 @@ const ContactForm = () => {
       });
       return;
     }
-
     setForm({
       state: 'success',
       message: 'Your message was sent successfully.'

@@ -51,11 +51,11 @@ const Intro = () => {
         p={0.5}
       >
         <Text mb="2rem">
-          Thank you for your interest, can't really boast much. I had graduated
-          and trying to figer out where to go and what to do professionally. In
-          Web Dev I equally enjoy doing both, frontend and backend. That's way
-          to easy to be overwhelmed, I still focus more on frontend., without
-          chasing the fullstack illusion.
+          Thank you for your interest, can't really boast much. I had recently graduated
+          and trying to figure out where do I go in life; and what do I do professionally.
+          In WebDev I equally enjoy doing frontend and backend.
+          Although, that's the way to be lightly overwhelmed, I still
+          try to focus more on the frontend.
         </Text>
         <Text mb="2rem">
           I live and work in NYC, but I originally came form{' '}
@@ -72,7 +72,9 @@ const Intro = () => {
           I studied Multimedia Computing at Brooklyn College from 2016-2020 and
           have since been working part-time jobs to pay for the college. I
           developed a passion for writing code back in college when I was
-          Engineering major taking a C++ course.
+          Engineering major taking a C++ course. And interest, when I was
+          solving math problems with Pascal in 6th grade, as I've never actually
+          enjoyed doing math on my own {`;)`}
         </Text>
         <Text mb="2rem">
           I don't have a formal information design background. For the most part
@@ -83,27 +85,28 @@ const Intro = () => {
         </Heading>
         <Text mb="2rem">
           I've been focused on building React applications, diving deeper into
-          React itself as well as libraries and tools surrounding it. At the
-          moment I'm learning how to get better at testing, optimizing
-          performance and typescript. I'm very passionate about WASM, GO, and
-          databases where I'm lacking proficiency.
+          React itself, libraries and tools surrounding it. At the
+          moment I'm trying to get better at testing, optimizing
+          performance and typescript. I'm passionate about WASM, GO & Rust,
+          because it makes so much more sense than working with C++ or Java,
+          I want to learn more about databases where I'm lacking proficiency.
         </Text>
         <Text mb="2rem">
           The rest of time I devote to helping out my mother with my little
-          brother, finding a place to settle with my fiancée, and my Interests.
+          brother, finding a place to settle with my fiancée, and my hobbies.
         </Text>
         {/* <Text mb="2rem">Experiences 2</Text>
         <Text mb="2rem">Experiences 3</Text> */}
         <Heading mb="0.5rem" as="h3" variant="h3">
           Interests
         </Heading>
-        <Text mb="2rem">Currently trying to finish my first music album.</Text>
         <Text mb="2rem">
           When I'm not coding you'll typically find me engaging wth another
           creative or engaging activity such as writing, music, 3D design,
           gaming, discovering playlists, or occasionally getting lost in NYC
           jazz bars. So many of them are still closed 😥
         </Text>
+        <Text mb="2rem">Currently trying to finish my first music album.</Text>
         <Text>
           Although I love to keep myself busy with activities, I also make sure
           to set aside time to spend with family, going for walks and drinks
@@ -117,27 +120,29 @@ const Intro = () => {
 const Skills = () => {
   const tools = Object.values(tool);
   return (
-    <Box as="section" alignSelf="center">
+    <Box as="section" m="auto">
       <SectionHeading mb={{ base: '4rem', xl: '8rem' }}>
         Tools & Technologies
       </SectionHeading>
-      <Box
-        maxW={{ base: '20rem', sm: '30rem', md: '40rem' }}
-        textAlign="center"
-        p={0}
-      >
-        <Text mb="8rem">
-          One of my favourite things has been discovering all of the amazing
-          tools developers have created to make theirs and other developers'
-          lives easier. Here are some of the tools I use most frequently.
-        </Text>
-      </Box>
+      <Flex direction="row" justifyContent="center">
+        <Box
+          maxW={{ base: '20rem', sm: '30rem', md: '40rem' }}
+          textAlign="center"
+          p={0.5}
+        >
+          <Text mb="8rem">
+            One of my favourite things has been discovering all the amazing
+            tools developers have created. <br />
+            Here are some of the tools I use most frequently.
+          </Text>
+        </Box>
+      </Flex>
       <Grid
+        as="ul"
         // m="auto"
         // w={{ md: '80%' }}
-        templateColumns={{ base: 'repeat(3, 1fr)', md: 'repeat(4, 1fr)' }}
         gap={6}
-        as="ul"
+        templateColumns={{ base: 'repeat(3, 1fr)', md: 'repeat(4, 1fr)' }}
       >
         {tools.map((skill) => (
           <Skill
@@ -157,7 +162,7 @@ const Skill = ({ name, icon, color }) => {
   return (
     <GridItem
       as="li"
-      p={{ base: '0.5rem', '2xl': '1rem' }}
+      p={{ base: '0.3rem', '2xl': '0.6rem' }}
       display="flex"
       alignContent="center"
       flexDirection="column"
@@ -202,7 +207,7 @@ const Contact = () => {
             If you have any questions, opportunities or would just like to say
             hey then feel free to fill out this form!
           </Text>
-          <Text>
+          <Text mb="2rem">
             Or if you would prefer to, you can also reach me on{' '}
             <Link color={themed} href={linkedin.href}>
               linkedin
@@ -212,6 +217,10 @@ const Contact = () => {
               github
             </Link>
             .
+          </Text>
+          <Text>
+            For now reach me out through linkedin, I'm still setting up
+            newsletter and mail service for the website
           </Text>
         </Box>
         <ContactForm />

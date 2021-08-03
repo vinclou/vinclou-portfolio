@@ -20,6 +20,7 @@ import { ScrollArrow } from '@/components/scroll';
 import { ArticleCard } from '@/components/article-card';
 // data imports
 import projects from '@/data/projects';
+import NoSsr from '@/utils/NoSsr';
 
 //TODO make all the needed components
 export default function Home() {
@@ -60,12 +61,17 @@ const Hero = () => {
             life.
           </Text>
           <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
-            As a software developer, all I wanna do is making high quality
-            software that will make world a better place. I'll just be happy if
-            people find value in my work.
+            As a software developer, all I wanna do is make high quality
+            software that will make the world a better place.
           </Text>
           <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
-            Feel free to have a look around, and learn more about myself.
+            All in all,
+            I value people and I hope you'll be able to find
+            something interesting in here. This corner of the web, isn't
+            solely for me
+          </Text>
+          <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
+            Feel free to have a look around, and learn more
           </Text>
           <NextLink href="/about#contact" passHref>
             <Button as="a" variant="primaryThemed" size="lg">
@@ -73,7 +79,7 @@ const Hero = () => {
             </Button>
           </NextLink>
         </Box>
-        {isXLarge && <HeroSvg />}
+        {isXLarge && <NoSsr><HeroSvg /></NoSsr>}
       </Flex>
       {isXLarge && <ScrollArrow scrollPos={scrollPos} />}
     </Box>

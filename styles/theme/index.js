@@ -5,7 +5,17 @@ import { Heading, Text, fonts, textStyles } from './typography';
 import { Button } from './components/button';
 import { Link } from './components/link';
 
+// 2. Add your color mode config
+// const config = {
+//   initialColorMode: "dark",
+//   useSystemColorMode: false,
+// }
+
 const overrides = {
+  config: {
+    initialColorMode: "dark",
+    useSystemColorMode: false,
+  },
   styles,
   colors,
   fonts,

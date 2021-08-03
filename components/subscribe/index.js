@@ -6,12 +6,14 @@ import { Button } from '@chakra-ui/button';
 import { Input, InputGroup, InputRightElement } from '@chakra-ui/input';
 import { Box, Heading, Text } from '@chakra-ui/layout';
 import { useColorModeSwitcher } from '../../utils/hooks/useColorModeSwitcher';
+import { useMediaQuery } from "@chakra-ui/react"
 import { FormControl, FormLabel } from '@chakra-ui/form-control';
 import { useRef, useState } from 'react';
 import { ErrorMessage, SuccessMessage } from '../styled';
 
 const Subscribe = ({ valid, invalid, loading, ...props }) => {
   const { themed, colorGrey, errorColor } = useColorModeSwitcher();
+  const isMobile = useMediaQuery("(min-width: 480px)")
   const [form, setForm] = useState(false);
   const inputRef = useRef(null);
 
@@ -49,12 +51,13 @@ const Subscribe = ({ valid, invalid, loading, ...props }) => {
   return (
     <Box
       border="2px solid"
-      borderColor={colorGrey}
+      borderColor={isMobile ? "transparent" : colorGrey}
       py="2rem"
-      px="3rem"
-      maxW="45rem"
+      px="1rem"
+      minW="360px"
+      maxW="100rem"
     >
-      <Heading variant="h3">Subscribe to my newsletter</Heading>
+      <Heading variant="h3" pb="0.2rem">Subscribe to my newsletter</Heading>
       <Text mb="1rem">Let's chat about code, life and design!</Text>
       <form onSubmit={handleSubmit}>
         <FormControl id="email">
@@ -70,9 +73,9 @@ const Subscribe = ({ valid, invalid, loading, ...props }) => {
               type="email"
               autoComplete="email"
               borderRadius="sm"
-              placeholder="jimmy@choo.com"
+              placeholder="jim@me.com"
             />
-            <InputRightElement minW="8rem">
+            <InputRightElement minW="7rem">
               {form.state === 'loading' || (loading && true) ? (
                 <Button
                   w="100%"
