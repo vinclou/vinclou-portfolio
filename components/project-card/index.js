@@ -31,13 +31,14 @@ const ProjectCard = ({
     <Box
       as="li"
       mb={{ base: '2rem', '2xl': 0 }}
-      mx="1rem"
+      // mx="0.5rem"
+      // mx="1rem"
       listStyleType="none"
-      border="1px solid"
+      border="0.1rem solid"
       borderRadius="0.7rem"
       borderColor={colorGrey}
-      w={{ base: '90%', md: '30rem' }}
-      // maxW="360px"
+      w={{ base: 'inherit', md: '30rem' }}
+      minW="360px"
       {...props}
     >
       <Center

@@ -18,6 +18,7 @@ import { Subscribe } from '@/components/subscribe';
 import { ProjectCard } from '@/components/project-card';
 import { ScrollArrow } from '@/components/scroll';
 import { ArticleCard } from '@/components/article-card';
+import { ProjectList } from "@/components/project-list";
 // data imports
 import projects from '@/data/projects';
 import NoSsr from '@/utils/NoSsr';
@@ -29,7 +30,8 @@ export default function Home() {
       <ContentWrapper>
         <Hero />
         <ArticleCard />
-        <FeaturedProjects />
+        {/* <FeaturedProjects /> */}
+        <ProjectList />
         <Subscribe />
       </ContentWrapper>
     </Container>

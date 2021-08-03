@@ -9,7 +9,7 @@ import {
   // Container as ChakraContainer
 } from '@chakra-ui/layout';
 import { Container } from '@/layouts/container';
-import { ProjectCard } from '@/components/project-card';
+import { ProjectList } from '@/components/project-list';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import ThreeDScene from '@/components/3d-scene';
 // hooks
@@ -18,7 +18,6 @@ import { useMediaQuery } from '@chakra-ui/media-query';
 
 import NoSsr from '@/utils/NoSsr';
 
-import projects from '@/data/projects';
 
 const Projects = () => {
   // show animation only if it's a laptop
@@ -58,35 +57,6 @@ const Intro = () => {
       </Text>
       <ProjectList />
     </Box>
-  );
-};
-
-const ProjectList = () => {
-  return (
-    <List
-      // mx="3rem"
-      // do the responsive minW !
-      minW={{ base: '20rem', sm: '30rem', md: '40rem' }}
-      // minW="360px"
-      flexWrap="wrap"
-      display={{ base: 'block', lg: 'flex' }}
-      justifySelf="center"
-      // justifyContent="space-between"
-    >
-      {projects.map((project) => (
-        <ProjectCard
-          key={project.id}
-          logo={project.logo}
-          title={project.title}
-          description={project.description}
-          tools={project.tools}
-          live={project.live}
-          proto={project.proto}
-          repo={project.repo}
-          mb="3rem"
-        />
-      ))}
-    </List>
   );
 };
 

@@ -53,7 +53,7 @@ const Subscribe = ({ valid, invalid, loading, ...props }) => {
       border="2px solid"
       borderColor={isMobile ? "transparent" : colorGrey}
       py="2rem"
-      px="1rem"
+      px="2rem"
       minW="360px"
       maxW="100rem"
     >
