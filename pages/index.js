@@ -30,8 +30,7 @@ export default function Home() {
       <ContentWrapper>
         <Hero />
         <ArticleCard />
-        {/* <FeaturedProjects /> */}
-        <ProjectList />
+        <FeaturedProjects />
         <Subscribe />
       </ContentWrapper>
     </Container>
@@ -99,7 +98,7 @@ const FeaturedProjects = () => {
         direction={{ base: 'column', xl: 'row' }}
         justify="end"
       >
-        <Projects />
+        <ProjectList />
       </Flex>
       <NextLink href="/projects" passHref>
         <Button
