@@ -30,22 +30,24 @@ const ProjectCard = ({
   return (
     <Box
       as="li"
-      mb={{ base: '2rem', '2xl': 0 }}
+      mb={{ base:'2rem', '2xl': 0 }}
+      ml={{ base:'2rem', '2xl': 0 }}
       // mx="0.5rem"
-      // mx="1rem"
+      // my="0.5rem"
       listStyleType="none"
       border="0.1rem solid"
       borderRadius="0.7rem"
       borderColor={colorGrey}
-      w={{ base: 'inherit', md: '30rem' }}
-      minW="360px"
+      // w={{ xs: '340px', base: '30rem' }}
+      minW="340px"
+      maxW="460px"
       {...props}
     >
       <Center
         borderTopRadius="0.6rem"
         fill={colorLight}
         mb="2.5rem"
-        w="100%"
+        // w="100%"
         h="8rem"
         bg={colorDark}
       >

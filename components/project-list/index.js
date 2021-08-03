@@ -4,18 +4,18 @@ import {
 } from '@chakra-ui/layout';
 import { ProjectCard } from '../project-card';
 import projects from '@/data/projects';
+import { useMediaQuery } from '@chakra-ui/react';
 
 const ProjectList = () => {
+	const isColumn = useMediaQuery(("(min-width: 720px)"))
   return (
-    <Stack
+    <List
       // do the responsive minW !
 			mx="auto"
-			direction={["column", "row" ]}
-      minW={{ base: '20rem', sm: '30rem', md: '40rem' }}
-      // flexWrap="wrap"
       display={{ base: 'block', lg: 'flex' }}
-			// spacing={8}
-      // justifyContent="space-between"
+			// spacing={30}
+      flexWrap="wrap"
+      justifyContent="space-evenly"
     >
       {projects.map((project) => (
         <ProjectCard
@@ -30,7 +30,7 @@ const ProjectList = () => {
           mb="3rem"
         />
       ))}
-    </Stack>
+    </List>
   );
 };
 
