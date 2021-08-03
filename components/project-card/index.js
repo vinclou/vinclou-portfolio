@@ -30,17 +30,17 @@ const ProjectCard = ({
   return (
     <Box
       as="li"
-      mb={{ base:'2rem', '2xl': 0 }}
-      ml={{ base:'2rem', '2xl': 0 }}
+      py={{ base:'0.5rem', '2xl': "0.2rem" }}
+      px={{ base:'0.5rem', '2xl': "0.2rem" }}
       // mx="0.5rem"
       // my="0.5rem"
       listStyleType="none"
-      border="0.1rem solid"
+      borderBottom="0.1rem solid"
       borderRadius="0.7rem"
       borderColor={colorGrey}
       // w={{ xs: '340px', base: '30rem' }}
       minW="340px"
-      maxW="460px"
+      // maxW="520px"
       {...props}
     >
       <Center
