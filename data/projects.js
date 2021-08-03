@@ -1,4 +1,7 @@
 import { Logo } from '@/components/svg/logo';
+import { SquareIcon } from '@/components/svg/square-icon';
+import { SearchIcon } from '@/components/svg/search-icon';
+
 import {
   chakra,
   electron,
@@ -18,7 +21,7 @@ import { v4 as uuidv4 } from 'uuid';
 //TODO add data about the projects, add more projects.
 export default [
   {
-    logo: null,
+    logo: <SquareIcon />,
     title: 'XmppClient',
     description: 'ReactJS XMPP client',
     tools: [react, nextjs, typescript, chakra, electron, nodejs],
@@ -29,7 +32,7 @@ export default [
     feature: true
   },
   {
-    logo: null,
+    logo: <Logo />,
     title: 'Portfolio',
     description: 'The website you are currently on',
     tools: [react, nextjs, chakra, storybook, figma, Go],
@@ -40,7 +43,7 @@ export default [
     feature: true
   },
   {
-    logo: null,
+    logo: <SearchIcon />,
     title: 'Pure Tab Manager',
     description: 'Manage your tabs',
     tools: [js, css3, html5],
