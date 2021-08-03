@@ -21,10 +21,10 @@ export default function ThreeDScene({ animColor }) {
         concurrent
         gl={{ alpha: false }}
         pixelRatio={[1, 1.5]}
-        camera={{ position: [0, 3, 100], fov: 15 }}
+        camera={{ position: [0, 3, 100], fov: 20 }} // 15 -> ? for fov
       >
         <color attach="background" args={[animColor]} />
-        <fog attach="fog" args={[animColor, 15, 20]} />
+        <fog attach="fog" args={[animColor, 15, 18]} />
         <Suspense fallback={null}>
           <group position={[0, -1, 0]}>
             {/* <Carla

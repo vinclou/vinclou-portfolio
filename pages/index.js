@@ -8,7 +8,7 @@ import {
   Button,
   Heading,
   Flex,
-  List,
+  Link,
   VStack,
   Text
 } from '@chakra-ui/react';
@@ -16,12 +16,14 @@ import {
 import { HeroSvg } from '@/components/svg';
 import { Subscribe } from '@/components/subscribe';
 import { ProjectCard } from '@/components/project-card';
+import { BlogPost } from "@/components/blog-post";
 import { ScrollArrow } from '@/components/scroll';
 import { ArticleCard } from '@/components/article-card';
 import { ProjectList } from "@/components/project-list";
 // data imports
 import projects from '@/data/projects';
 import NoSsr from '@/utils/NoSsr';
+import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
 
 //TODO make all the needed components
 export default function Home() {
@@ -39,6 +41,7 @@ export default function Home() {
 
 const Hero = () => {
   const [isXLarge] = useMediaQuery('(min-width: 1180px)');
+  const { themed } = useColorModeSwitcher();
   const { scrollPos } = useScrollPosition();
 
   return (
@@ -72,7 +75,15 @@ const Hero = () => {
             solely for me
           </Text>
           <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
-            Feel free to have a look around and learn more.
+            Feel free to have a look around and learn more. Check out{' '}
+            <NextLink href={'/projects'} passHref>
+              <Link
+                color={themed}
+              >
+               this page
+              </Link>
+            </NextLink>
+            {' '}to see a little movie I've made.
           </Text>
           <NextLink href="/about#contact" passHref>
             <Button as="a" variant="primaryThemed" size="lg">
@@ -113,32 +124,6 @@ const FeaturedProjects = () => {
         </Button>
       </NextLink>
     </VStack>
-  );
-};
-//TODO make it a standalone component/file
-const Projects = () => {
-  return (
-    <List
-      mx="auto"
-      justifyContent="space-between"
-      display={{ base: 'block', '2xl': 'flex' }}
-    >
-      {projects
-        .filter((project) => project.feature)
-        .map((project) => (
-          <ProjectCard
-            data-testid="project-card"
-            logo={project.logo}
-            title={project.title}
-            description={project.description}
-            tools={project.tools}
-            live={project.live}
-            proto={project.proto}
-            repo={project.repo}
-            key={project.id}
-          />
-        ))}
-    </List>
   );
 };
 

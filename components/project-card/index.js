@@ -38,7 +38,7 @@ const ProjectCard = ({
       borderBottom="0.1rem solid"
       borderRadius="0.7rem"
       borderColor={colorGrey}
-      // w={{ xs: '340px', base: '30rem' }}
+      w={{ base: '340px', lg: '30rem' }}
       minW="340px"
       // maxW="520px"
       {...props}

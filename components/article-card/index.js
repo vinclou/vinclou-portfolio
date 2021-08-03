@@ -1,5 +1,6 @@
 import { Box, Link, Heading, Flex, VStack, Text } from '@chakra-ui/react';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import NextLink from 'next/link';
 
 const ArticleCard = () => {
   const { colorGrey } = useColorModeSwitcher();
@@ -13,18 +14,22 @@ const ArticleCard = () => {
         w={{ base: '21em', lg: '57.5rem' }}
       >
         <Heading textTransform="capitalize" as="h4" variant="h4" mb="0.5rem">
-          Will do heading for my blog post
+          Setting Up Goals
         </Heading>
         <Text variant="body" mb="2rem">
           This is some arbitrary subtitle for my blog post that you should most
           definitely read!
         </Text>
-        <Flex>
-          <Text>Read more</Text>
-          <Text>
-            <span>→</span>
-          </Text>
-        </Flex>
+        <NextLink href={`blog/hello`} passHref>
+          <Link variant="blogPost">
+            <Flex>
+              <Text>Read more</Text>
+              <Text>
+                <span>→</span>
+              </Text>
+            </Flex>
+          </Link>
+        </NextLink>
       </Box>
     </VStack>
   );
