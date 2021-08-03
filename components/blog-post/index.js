@@ -34,7 +34,7 @@ const BlogPost = ({
           border="1px solid"
           borderColor={colorGrey}
           minW="340px"
-          w={{ base:"30rem", lg: '50rem', }}
+          w={{ base:"20rem", lg: '50rem', }}
         >
           <HStack justifyContent="start" mb="1.5rem">
             <Heading textTransform="capitalize" variant="h1" >

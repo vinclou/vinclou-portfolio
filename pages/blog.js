@@ -22,12 +22,8 @@ const getSlug = (filePath) => {
   const spt = filePath.split('.');
   return spt[0];
 }
-// //TODO make all the needed components
+
 export default function Blog({ posts }) {
-  // console.log(postFilePaths);
-  // console.log(POSTS_PATH);
-  // console.log(posts);
-  // console.log(posts[0].data);
 
   return (
     <Container title="Blog | Vincent Arlou">
@@ -40,7 +36,6 @@ export default function Blog({ posts }) {
               key={post.data.title.concat(post.data.date)}
               slug={getSlug(post.filePath)}
               {...post.data}
-
             />
         ))}
         <Subscribe />
