@@ -72,7 +72,7 @@ const Hero = () => {
             All in all,
             I value people and I hope you'll be able to find
             something interesting in here. This corner of the web, isn't
-            solely for me
+            solely for me.
           </Text>
           <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
             Feel free to have a look around and learn more. Check out{' '}

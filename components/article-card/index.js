@@ -1,5 +1,6 @@
 import { Box, Link, Heading, Flex, VStack, Text } from '@chakra-ui/react';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import NoSsr from '@/utils/NoSsr';
 import NextLink from 'next/link';
 
 const ArticleCard = () => {
@@ -20,6 +21,7 @@ const ArticleCard = () => {
           This is some arbitrary subtitle for my blog post that you should most
           definitely read!
         </Text>
+        <NoSsr>
         <NextLink href={`blog/hello`} passHref>
           <Link variant="blogPost">
             <Flex>
@@ -30,6 +32,7 @@ const ArticleCard = () => {
             </Flex>
           </Link>
         </NextLink>
+        </NoSsr>
       </Box>
     </VStack>
   );

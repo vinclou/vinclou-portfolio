@@ -6,9 +6,11 @@
 	the final product with it
 */
 import * as THREE from 'three';
+import { Heading } from '@chakra-ui/react';
 import React, { Suspense, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Reflector, Text, useTexture, useGLTF } from '@react-three/drei';
+import { Reflector, Text, useTexture, Preload, Html } from '@react-three/drei'; // useGLTF, useProgress,
+// import { LoadingScreen } from '@/components/loading-screen';
 
 export default function ThreeDScene({ animColor }) {
   const [clicked, setClicked] = useState(true);
@@ -25,7 +27,7 @@ export default function ThreeDScene({ animColor }) {
       >
         <color attach="background" args={[animColor]} />
         <fog attach="fog" args={[animColor, 15, 18]} />
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loader />}>
           <group position={[0, -1, 0]}>
             {/* <Carla
               rotation={[0, Math.PI - 0.4, 0]}
@@ -39,6 +41,7 @@ export default function ThreeDScene({ animColor }) {
           <spotLight position={[0, 10, 0]} intensity={0.3} />
           <directionalLight position={[-20, 0, -10]} intensity={0.7} />
           <Intro start={ready && clicked} set={setReady} />
+          <Preload all />
         </Suspense>
       </Canvas>
     </div>
@@ -131,4 +134,27 @@ function Overlay({ ready, clicked, setClicked }) {
       </div>
     </>
   );
+}
+
+
+function Loader() {
+  // const { active, progress, errors, item, loaded, total } = useProgress();
+  return (
+    <>
+      <Html center>
+        {/* <Heading variant="h1" fontSize="10rem"> {progress} % loaded </Heading> */}
+        {/* {active && <LoadingScreen />} */}
+        {/* <Heading variant="h1" fontSize="7rem"> Loading... </Heading> */}
+        {/* <Flex justifyContent="space-evenly"> */}
+          <Heading variant="h1" fontSize="3rem"> Loading </Heading>
+          <div className="loadingTwo">
+              <div className="loading-dot"></div>
+              <div className="loading-dot"></div>
+              <div className="loading-dot"></div>
+              <div className="loading-dot"></div>
+          </div>
+        {/* </Flex> */}
+      </Html>
+    </>
+  )
 }
