@@ -21,7 +21,11 @@ export const Heading = {
     },
     subtitle: {
       textStyle: 'subtitle'
-    }
+    },
+    blogTitle: (props) => ({
+      textStyle: "h1",
+      color: props.colorMode === 'light' ? 'primary.700' : 'secondary.400'
+    }),
   }
 };
 

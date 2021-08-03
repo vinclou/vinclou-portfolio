@@ -13,7 +13,8 @@ import { MDXRemote } from 'next-mdx-remote';
 import { MdxComponents } from '@/components/mdx-components';
 
 import { ContentWrapper } from '@/layouts/contentWrapper';
-import { BlogContainer } from '@/layouts/blogContainer';
+import { Container } from '@/layouts/container';
+import { Box, Heading, Divider } from '@chakra-ui/react'
 
 import { postFilePaths, POSTS_PATH } from '@/utils/mdx';
 
@@ -24,49 +25,34 @@ import { postFilePaths, POSTS_PATH } from '@/utils/mdx';
  */
 export default function BlogPage({ source, frontMatter }) {
   return (
-    <ContentWrapper>
-      {/* check if it is within main */}
-      <div className="post-header">
-        <h1>{frontMatter.title}</h1>
-        {frontMatter.description && (
-          <p className="description">{frontMatter.description}</p>
-        )}
-      </div>
-      <main>
-        <MDXRemote {...source} components={MdxComponents} />
-      </main>
-    </ContentWrapper>
+    <Container title={frontMatter.title.concat(" | Vincent Arlou")}>
+      <ContentWrapper>
+        {/* check if it is within main */}
+        <Box textAlign="center">
+          <Heading
+                  textTransform="capitalize"
+                  variant="blogTitle"
+                  mb="1.0rem"
+          >
+                  {frontMatter.title}
+          </Heading>
+          <Heading
+                    textTransform="capitalize"
+                    variant="subtitle"
+                    mb="1.3rem"
+          >
+          {frontMatter.description}
+          </Heading>
+          <Divider />
+        </Box>
+        <main>
+          <MDXRemote {...source} components={MdxComponents} />
+        </main>
+      </ContentWrapper>
+    </Container>
   );
 }
 
-// export const getStaticProps = async ({ params }) => {
-//   const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
-//   const source = fs.readFileSync(postFilePath);
-
-//   const { content, data } = matter(source);
-
-//   const mdxSource = await serialize(content, {
-//     // Optionally pass remark/rehype plugins
-//     // Research what them
-//     mdxOptions: {
-//       remarkPlugins: [],
-//       rehypePlugins: []
-//     },
-//     scope: data
-//   });
-
-// return {
-//   props: {
-//     source: mdxSource,
-//     frontMatter: {
-//       wordCount: content.split(/\s+/gu).length,
-//       readingTime: readingTime(content),
-//       slug: slug || null,
-//       ...data
-//     }
-//   }
-// };
-// };
 export const getStaticProps = async ({ params }) => {
   const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
   const source = fs.readFileSync(postFilePath);

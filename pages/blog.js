@@ -16,22 +16,32 @@ import { getAllFiles } from '@/utils/mdx';
 
 import { Subscribe } from '@/components/subscribe';
 import { BlogPost } from '@/components/blog-post';
-// data imports
 
+// move this function to utils
+const getSlug = (filePath) => {
+  const spt = filePath.split('.');
+  return spt[0];
+}
 // //TODO make all the needed components
 export default function Blog({ posts }) {
   // console.log(postFilePaths);
   // console.log(POSTS_PATH);
   // console.log(posts);
   // console.log(posts[0].data);
+
   return (
     <Container title="Blog | Vincent Arlou">
       <ContentWrapper>
-        <Heading as="h2" textAlign="center" variant="h2">
+        <Heading variant="h1" textAlign="center">
           Blog
         </Heading>
         {posts.map((post) => (
-          <BlogPost key={post.data.title} {...post.data} />
+            <BlogPost
+              key={post.data.title.concat(post.data.date)}
+              slug={getSlug(post.filePath)}
+              {...post.data}
+
+            />
         ))}
         <Subscribe />
       </ContentWrapper>

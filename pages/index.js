@@ -72,7 +72,7 @@ const Hero = () => {
             solely for me
           </Text>
           <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
-            Feel free to have a look around, and learn more
+            Feel free to have a look around and learn more.
           </Text>
           <NextLink href="/about#contact" passHref>
             <Button as="a" variant="primaryThemed" size="lg">
