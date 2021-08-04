@@ -21,7 +21,6 @@ const SquareBase = createIcon({
   )
 })
 
-
 function SquareIcon({ boxSize="3rem", ...props}) {
   return (
     <Icon
