@@ -7,6 +7,7 @@
 */
 import * as THREE from 'three';
 import { Heading } from '@chakra-ui/react';
+import { css } from '@emotion/react';
 import React, { Suspense, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Reflector, Text, useTexture, Preload, Html } from '@react-three/drei'; // useGLTF, useProgress,
@@ -146,7 +147,10 @@ function Loader() {
         {/* {active && <LoadingScreen />} */}
         {/* <Heading variant="h1" fontSize="7rem"> Loading... </Heading> */}
         {/* <Flex justifyContent="space-evenly"> */}
-          <Heading variant="h1" fontSize="3rem"> Loading </Heading>
+          {/* <Heading variant="h1" fontSize="5rem" sx={{ "font-family": "Iosevka" }}>LOADING</Heading> */}
+                  {/* LOADING */}
+                  {/* FIX THE ISSUE WITH PHONES LEAVE ANIMATION ONLY */}
+                  {/* Reproduce the issue on a dev server and submit an issue on chakra ui github */}
           <div className="loadingTwo">
               <div className="loading-dot"></div>
               <div className="loading-dot"></div>

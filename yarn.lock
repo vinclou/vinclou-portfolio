@@ -1872,6 +1872,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/baloo-bhai-2/-/baloo-bhai-2-4.5.0.tgz#1dd58c662ce47e6a022623e5047f4c6dba459c5b"
   integrity sha512-ZnGHt88GJv8J0Gsxomls0mC6B4xKHGwnb8AhPd7xvJRFwfjFTcq7TLB6vGmNaiaEytqz/HE2QmDA/7jmHm2jAA==
 
+"@fontsource/iosevka@^4.5.1":
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/iosevka/-/iosevka-4.5.1.tgz#4878b37a65d8c366a313034b34cdd96c334d53da"
+  integrity sha512-kZgzGW45ex5YU4Og8MbUCVUUylDJCRQp487Aw3DJlBHnrlaJMdvMdQir1f32s3UFl/XmtxAZWm2ZOXiMGrqfng==
+
 "@fontsource/sora@^4.2.2":
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/@fontsource/sora/-/sora-4.5.0.tgz#bfd505c063fbfd77b42b1a8a05025aac52d4ea5f"

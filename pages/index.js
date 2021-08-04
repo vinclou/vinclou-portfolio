@@ -15,13 +15,12 @@ import {
 
 import { HeroSvg } from '@/components/svg';
 import { Subscribe } from '@/components/subscribe';
-import { ProjectCard } from '@/components/project-card';
-import { BlogPost } from "@/components/blog-post";
+// import { ProjectCard } from '@/components/project-card';
+// import { BlogPost } from "@/components/blog-post";
 import { ScrollArrow } from '@/components/scroll';
 import { ArticleCard } from '@/components/article-card';
 import { ProjectList } from "@/components/project-list";
 // data imports
-import projects from '@/data/projects';
 import NoSsr from '@/utils/NoSsr';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
 

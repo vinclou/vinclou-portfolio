@@ -39,6 +39,7 @@
     "@emotion/styled": "^11",
     "@fontsource/antic-didone": "^4.5.0",
     "@fontsource/baloo-bhai-2": "^4.5.0",
+    "@fontsource/iosevka": "^4.5.1",
     "@fontsource/sora": "^4.2.2",
     "@react-three/drei": "^7.2.1",
     "@react-three/fiber": "^7.0.5",

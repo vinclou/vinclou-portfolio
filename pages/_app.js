@@ -1,8 +1,10 @@
 import '../styles/globals.css';
 /* Fonts */
 import '@fontsource/sora';
+import "@fontsource/iosevka"
 import '@fontsource/antic-didone';
 import '@fontsource/baloo-bhai-2';
+
 // import { ColorModeScript } from "@chakra-ui/react"
 /* Fonts */
 import customTheme from '../styles/theme';

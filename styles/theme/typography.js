@@ -1,6 +1,8 @@
 // TODO add more fonts
 export const fonts = {
-  heading: 'Antic Didone',
+  // heading: 'Iosevka',
+  // body: 'Iosevka',
+  heading: `'Antic Didone', 'Iosevka'`,
   body: 'Sora'
 };
 
@@ -23,7 +25,7 @@ export const Heading = {
       textStyle: 'subtitle'
     },
     blogTitle: (props) => ({
-      textStyle: "h1",
+      textStyle: "iosevkaH",
       color: props.colorMode === 'light' ? 'primary.700' : 'secondary.400'
     }),
   }
@@ -103,5 +105,11 @@ export const textStyles = {
     fontSize: '14px',
     fontWeight: 400,
     lineHeight: '160%'
-  }
+  },
+  iosevkaH: {
+    fontFamily: 'Iosevka',
+    fontSize: { base: '32px', lg: '56px' },
+    fontWeight: 600,
+    lineHeight: { base: '140%', lg: '125%' },
+  },
 };
