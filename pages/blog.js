@@ -21,10 +21,9 @@ import { BlogPost } from '@/components/blog-post';
 const getSlug = (filePath) => {
   const spt = filePath.split('.');
   return spt[0];
-}
+};
 
 export default function Blog({ posts }) {
-
   return (
     <Container title="Blog | Vincent Arlou">
       <ContentWrapper>
@@ -32,11 +31,9 @@ export default function Blog({ posts }) {
           Blog
         </Heading>
         {posts.map((post) => (
-            <BlogPost
-              key={post.data.title.concat(post.data.date)}
-              slug={getSlug(post.filePath)}
-              {...post.data}
-            />
+          <article key={post.data.title}>
+            <BlogPost slug={getSlug(post.filePath)} {...post.data} />
+          </article>
         ))}
         <Subscribe />
       </ContentWrapper>

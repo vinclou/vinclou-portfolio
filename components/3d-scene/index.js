@@ -137,7 +137,6 @@ function Overlay({ ready, clicked, setClicked }) {
   );
 }
 
-
 function Loader() {
   // const { active, progress, errors, item, loaded, total } = useProgress();
   return (
@@ -147,18 +146,18 @@ function Loader() {
         {/* {active && <LoadingScreen />} */}
         {/* <Heading variant="h1" fontSize="7rem"> Loading... </Heading> */}
         {/* <Flex justifyContent="space-evenly"> */}
-          {/* <Heading variant="h1" fontSize="5rem" sx={{ "font-family": "Iosevka" }}>LOADING</Heading> */}
-                  {/* LOADING */}
-                  {/* FIX THE ISSUE WITH PHONES LEAVE ANIMATION ONLY */}
-                  {/* Reproduce the issue on a dev server and submit an issue on chakra ui github */}
-          <div className="loadingTwo">
-              <div className="loading-dot"></div>
-              <div className="loading-dot"></div>
-              <div className="loading-dot"></div>
-              <div className="loading-dot"></div>
-          </div>
+        {/* <Heading variant="h1" fontSize="5rem" sx={{ "font-family": "Iosevka" }}>LOADING</Heading> */}
+        {/* LOADING */}
+        {/* FIX THE ISSUE WITH PHONES LEAVE ANIMATION ONLY */}
+        {/* Reproduce the issue on a dev server and submit an issue on chakra ui github */}
+        <div className="loadingTwo">
+          <div className="loading-dot"></div>
+          <div className="loading-dot"></div>
+          <div className="loading-dot"></div>
+          <div className="loading-dot"></div>
+        </div>
         {/* </Flex> */}
       </Html>
     </>
-  )
+  );
 }

@@ -23,8 +23,7 @@ preTitle.args = {
 
 export const body = Template.bind({});
 body.args = {
-  label:
-    'Hello, my name is Vincent Arlou thank you for visiting my site!',
+  label: 'Hello, my name is Vincent Arlou thank you for visiting my site!',
   variant: 'body'
 };
 

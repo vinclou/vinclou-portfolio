@@ -1,6 +1,5 @@
-import * as React from 'react'
+import * as React from 'react';
 import { createIcon, defaultProps, Icon } from '@chakra-ui/react';
-
 
 const SquareBase = createIcon({
   defaultProps,
@@ -19,16 +18,10 @@ const SquareBase = createIcon({
       y="5.75px"
     />
   )
-})
+});
 
-function SquareIcon({ boxSize="3rem", ...props}) {
-  return (
-    <Icon
-      {...props}
-      boxSize={boxSize}
-      as={SquareBase}
-    />
-  )
+function SquareIcon({ boxSize = '3rem', ...props }) {
+  return <Icon {...props} boxSize={boxSize} as={SquareBase} />;
 }
 
-export {SquareIcon}
+export { SquareIcon };

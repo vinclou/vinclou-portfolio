@@ -15,13 +15,13 @@ const Container = ({
 
   return (
     <Box
-      // ml={30}
-      // border="4px"
-      // borderColor="red"
-      // minW="360px"
-      // css={`
-      //   min-width: 100% !important;
-      // `}
+    // ml={30}
+    // border="4px"
+    // borderColor="red"
+    // minW="360px"
+    // css={`
+    //   min-width: 100% !important;
+    // `}
     >
       <Seo {...customMeta} />
       <Box
@@ -53,28 +53,30 @@ const Seo = ({ ...customMeta }) => {
     <Head>
       <title>{meta.title}</title>
       <meta content={meta.description} name="description" />
-      <script dangerouslySetInnerHTML={{
-        __html:`if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"vinclou",utcoffset:"-5"}))};sessionStorage.setItem("_swa","1");`
-      }}></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"vinclou",utcoffset:"-5"}))};sessionStorage.setItem("_swa","1");`
+        }}
+      ></script>
       <link rel="icon" href="/favicon.ico" />
     </Head>
   );
 };
 
 const SkipButton = () => {
-  return(
+  return (
     <Button
-        variant="secondary"
-        as="a"
-        href="#skip"
-        position="absolute"
-        transform="translateX(-100%)"
-        transition="transform 0.3s"
-        _focus={{ transform: 'translateX(0%)' }}
-      >
-        Skip to Content
+      variant="secondary"
+      as="a"
+      href="#skip"
+      position="absolute"
+      transform="translateX(-100%)"
+      transition="transform 0.3s"
+      _focus={{ transform: 'translateX(0%)' }}
+    >
+      Skip to Content
     </Button>
-  )
-}
+  );
+};
 
 export { Container };

@@ -13,8 +13,8 @@ import { Link } from './components/link';
 
 const overrides = {
   config: {
-    initialColorMode: "dark",
-    useSystemColorMode: false,
+    initialColorMode: 'dark',
+    useSystemColorMode: false
   },
   styles,
   colors,

@@ -22,16 +22,16 @@ const ArticleCard = () => {
           definitely read!
         </Text>
         <NoSsr>
-        <NextLink href={`blog/hello`} passHref>
-          <Link variant="blogPost">
-            <Flex>
-              <Text>Read more</Text>
-              <Text>
-                <span>→</span>
-              </Text>
-            </Flex>
-          </Link>
-        </NextLink>
+          <NextLink href={`blog/hello`} passHref>
+            <Link variant="blogPost">
+              <Flex>
+                <Text>Read more</Text>
+                <Text>
+                  <span>→</span>
+                </Text>
+              </Flex>
+            </Link>
+          </NextLink>
         </NoSsr>
       </Box>
     </VStack>

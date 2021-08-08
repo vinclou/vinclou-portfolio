@@ -5,49 +5,93 @@
  *  that's so annoying.
  */
 import fs from 'fs';
-import matter from 'gray-matter';
 import path from 'path';
+import matter from 'gray-matter';
+import mdxPrism from 'mdx-prism';
 import readingTime from 'reading-time';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
-import { MdxComponents } from '@/components/mdx-components';
-
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { Container } from '@/layouts/container';
-import { Box, Heading, Divider } from '@chakra-ui/react'
+import {
+  Flex,
+  Box,
+  Heading,
+  Text,
+  Divider,
+  Spacer,
+  VStack
+} from '@chakra-ui/react';
 
 import { postFilePaths, POSTS_PATH } from '@/utils/mdx';
+import MDXComponents from '@/components/mdx-components';
 
 /**
  * This is individual blog page
  * Accepts: { source } ---> MDXRemote object
- *          { fronMatter } ---> file data and extras
+ *          { frontMatter } ---> file data and extras
  */
-export default function BlogPage({ source, frontMatter }) {
-  return (
-    <Container title={frontMatter.title.concat(" | Vincent Arlou")}>
-      <ContentWrapper>
-        {/* check if it is within main */}
-        <Box textAlign="center">
-          <Heading
-                  textTransform="capitalize"
-                  variant="blogTitle"
-                  mb="1.0rem"
-          >
-                  {frontMatter.title}
-          </Heading>
-          <Heading
-                    textTransform="capitalize"
-                    variant="subtitle"
-                    mb="1.3rem"
-          >
-          {frontMatter.description}
-          </Heading>
-          <Divider />
+export default function BlogPage({ source, frontMatter, otherData }) {
+  /* A Neat Way To Extend Components withing this file, useful if any props data  is needed */
+  const extendMdxComponents = {
+    ...MDXComponents,
+    SectionWrapper: (props) => {
+      return (
+        <Box
+          as="section"
+          m="auto"
+          maxW={{
+            sm: '30rem',
+            md: '40rem',
+            lg: '50rem',
+            xl: '60rem',
+            '2xl': '60rem'
+          }}
+          {...props}
+        >
+          {props.children}
         </Box>
-        <main>
-          <MDXRemote {...source} components={MdxComponents} />
-        </main>
+      );
+    },
+    GlobalWrapper: (props) => {
+      return <Box w={{ base: '80%', '2xl': '90%' }} {...props} />;
+    },
+    ExtensionComponentExp: () => {
+      return <div>{JSON.stringify(otherData)}</div>;
+    }
+  };
+
+  return (
+    <Container title={frontMatter.title.concat(' | Vincent Arlou')}>
+      <ContentWrapper as="article">
+        {/* ARTICLE HEADER */}
+        <VStack as="section" w={{ base: '90%', '2xl': '95%' }}>
+          <Box textAlign="center">
+            <Heading textTransform="capitalize" variant="blogTitle" mb="1.0rem">
+              {frontMatter.title}
+            </Heading>
+            <Heading textTransform="capitalize" variant="subtitle" mb="1.3rem">
+              {frontMatter.description}
+            </Heading>
+            <Divider mb="0.2rem" />
+
+            <Flex w="inherit" justifyContent="space-between">
+              <Spacer />
+              <Text
+                variant="bodyLight"
+                borderBottom="1px"
+                borderBottomColor="neutral.700"
+                borderBottomRadius="4px"
+              >
+                {frontMatter.readingTime.text}
+                {'   '}
+                {frontMatter.date}
+              </Text>
+            </Flex>
+          </Box>
+        </VStack>
+        {/* MDX CONTEXT */}
+        <MDXRemote {...source} components={extendMdxComponents} />
       </ContentWrapper>
     </Container>
   );
@@ -62,8 +106,19 @@ export const getStaticProps = async ({ params }) => {
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [],
-      rehypePlugins: []
+      remarkPlugins: [
+        require('remark-slug'),
+        [
+          require('remark-autolink-headings'),
+          {
+            linkProperties: {
+              className: ['anchor']
+            }
+          }
+        ],
+        require('remark-code-titles')
+      ],
+      rehypePlugins: [mdxPrism]
     },
     scope: data
   });
@@ -76,7 +131,12 @@ export const getStaticProps = async ({ params }) => {
         readingTime: readingTime(content),
         slug: params.slug || null,
         ...data
-      }
+      },
+      otherData: [
+        { x: 1, y: 1 },
+        { x: 3, y: 5 },
+        { x: 32, y: 32 }
+      ]
     }
   };
 };

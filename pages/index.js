@@ -19,7 +19,7 @@ import { Subscribe } from '@/components/subscribe';
 // import { BlogPost } from "@/components/blog-post";
 import { ScrollArrow } from '@/components/scroll';
 import { ArticleCard } from '@/components/article-card';
-import { ProjectList } from "@/components/project-list";
+import { ProjectList } from '@/components/project-list';
 // data imports
 import NoSsr from '@/utils/NoSsr';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
@@ -68,21 +68,16 @@ const Hero = () => {
             software that will make the world a better place.
           </Text>
           <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
-            All in all,
-            I value people and I hope you'll be able to find
-            something interesting in here. This corner of the web, isn't
-            solely for me.
+            All in all, I value people and I hope you'll be able to find
+            something interesting in here. This corner of the web, isn't solely
+            for me.
           </Text>
           <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
             Feel free to have a look around and learn more. Check out{' '}
             <NextLink href={'/projects'} passHref>
-              <Link
-                color={themed}
-              >
-               this page
-              </Link>
-            </NextLink>
-            {' '}to see a little movie I've made.
+              <Link color={themed}>this page</Link>
+            </NextLink>{' '}
+            to see a little movie I've made.
           </Text>
           <NextLink href="/about#contact" passHref>
             <Button as="a" variant="primaryThemed" size="lg">
@@ -90,7 +85,11 @@ const Hero = () => {
             </Button>
           </NextLink>
         </Box>
-        {isXLarge && <NoSsr><HeroSvg /></NoSsr>}
+        {isXLarge && (
+          <NoSsr>
+            <HeroSvg />
+          </NoSsr>
+        )}
       </Flex>
       {isXLarge && <ScrollArrow scrollPos={scrollPos} />}
     </Box>

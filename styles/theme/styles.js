@@ -1,4 +1,3 @@
-//TODO: define dark/light mode colors
 export const styles = {
   global: (props) => ({
     body: {

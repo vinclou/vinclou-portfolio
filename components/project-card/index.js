@@ -26,12 +26,12 @@ const ProjectCard = ({
   ...props
 }) => {
   const { colorDark, colorGrey, colorLight } = useColorModeSwitcher();
-  const [ isMobile ] = useMediaQuery('(max-width: 400px)');
+  const [isMobile] = useMediaQuery('(max-width: 400px)');
   return (
     <Box
       as="li"
-      py={{ base:'0.5rem', '2xl': "0.2rem" }}
-      px={{ base:'0.5rem', '2xl': "0.2rem" }}
+      py={{ base: '0.5rem', '2xl': '0.2rem' }}
+      px={{ base: '0.5rem', '2xl': '0.2rem' }}
       // mx="0.5rem"
       // my="0.5rem"
       listStyleType="none"
@@ -77,7 +77,7 @@ const ProjectCard = ({
             </ListItem>
           ))}
         </List>
-        <Stack direction={["column", "row"]} pb="2rem">
+        <Stack direction={['column', 'row']} pb="2rem">
           {live && (
             <Button as="a" href={live} variant="primary">
               Visit Site

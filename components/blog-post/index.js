@@ -1,15 +1,15 @@
 import {
-        Box,
-        Link,
-        Heading,
-        Flex,
-        VStack,
-        HStack,
-        Divider,
-        Text,
-        Img,
-        AspectRatio,
-      } from '@chakra-ui/react';
+  Box,
+  Link,
+  Heading,
+  Flex,
+  VStack,
+  HStack,
+  Divider,
+  Text,
+  Img,
+  AspectRatio
+} from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
 
@@ -29,44 +29,61 @@ const BlogPost = ({
     <NextLink href={`blog/${slug}`} passHref>
       <Link variant="blogPost">
         <Box
+          as="section"
           mx="auto"
           p="1rem"
           border="1px solid"
           borderColor={colorGrey}
-          minW="340px"
-          w={{ base:"20rem", lg: '50rem', }}
+          w={{
+            base: '18rem',
+            sm: '20rem',
+            md: '30rem',
+            lg: '40rem',
+            xl: '50rem',
+            '2xl': '50rem'
+          }}
         >
-          <HStack justifyContent="start" mb="1.5rem">
-            <Heading textTransform="capitalize" variant="h1" >
+          <HStack as="section" justifyContent="start" mb="1.5rem">
+            <Heading textTransform="capitalize" variant="h1">
               {title}
             </Heading>
             <Divider />
-            <Text alignSelf="end" variant="subtitle">{date}</Text>
-          </HStack>
-          <BannerImg bannerSrc={bannerUrl}/>
-          <Text variant="body" mb="2rem">
-            {description}
-          </Text>
-          <Flex>
-            <Text> Read More </Text>
-            <Text>
-              {' '}
-              <span>→</span>
+            <Text alignSelf="end" variant="subtitle">
+              {date}
             </Text>
-          </Flex>
+          </HStack>
+
+          <BannerImg bannerSrc={bannerUrl} />
+
+          <Box as="section" p={3}>
+            <Text variant="body" mb="2rem">
+              {description}
+            </Text>
+            <Flex>
+              <Text> Read More </Text>
+              <Text>
+                {' '}
+                <span>→</span>
+              </Text>
+            </Flex>
+          </Box>
         </Box>
       </Link>
     </NextLink>
   );
 };
 
-
 const BannerImg = ({ bannerSrc }) => {
-  return(
-    <AspectRatio maxW="40rem" maxH="15rem" ratio={4/3}>
+  return (
+    <AspectRatio
+      maxW={{ base: '20rem', lg: '30rem' }}
+      maxH="15rem"
+      mb="1.5rem"
+      ratio={4 / 3}
+    >
       <Img src={bannerSrc} />
     </AspectRatio>
-  )
-}
+  );
+};
 
 export { BlogPost };

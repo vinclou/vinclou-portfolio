@@ -18,7 +18,6 @@ import { useMediaQuery } from '@chakra-ui/media-query';
 
 import NoSsr from '@/utils/NoSsr';
 
-
 const Projects = () => {
   // show animation only if it's a laptop
   const [isLarge] = useMediaQuery('(min-width: 900px)');
@@ -36,9 +35,7 @@ const Projects = () => {
             <ThreeDScene animColor={threeAnimColor} />
           </NoSsr>
         )}
-        <ContentWrapper
-          backgroundColor={threeAnimColor}
-        >
+        <ContentWrapper backgroundColor={threeAnimColor}>
           <Intro />
         </ContentWrapper>
       </Container>

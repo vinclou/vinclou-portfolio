@@ -46,15 +46,12 @@ const Intro = () => {
       <Heading mb="0.5rem" as="h3" variant="h3">
         Background
       </Heading>
-      <Box
-        maxW={{ base: '20rem', sm: '30rem', md: '40rem' }}
-        p={0.5}
-      >
+      <Box maxW={{ base: '20rem', sm: '30rem', md: '40rem' }} p={0.5}>
         <Text mb="2rem">
-          Thank you for your interest, can't really boast much. I had recently graduated
-          and trying to figure out where do I go in life; and what do I do professionally.
-          In WebDev I equally enjoy doing frontend and backend.
-          Although, that's the way to be lightly overwhelmed, I still
+          Thank you for your interest, can't really boast much. I had recently
+          graduated and trying to figure out where do I go in life; and what do
+          I do professionally. In WebDev I equally enjoy doing frontend and
+          backend. Although, that's the way to be lightly overwhelmed, I still
           try to focus more on the frontend.
         </Text>
         <Text mb="2rem">
@@ -85,11 +82,11 @@ const Intro = () => {
         </Heading>
         <Text mb="2rem">
           I've been focused on building React applications, diving deeper into
-          React itself, libraries and tools surrounding it. At the
-          moment I'm trying to get better at testing, optimizing
-          performance and typescript. I'm passionate about WASM, GO & Rust,
-          because it makes so much more sense than working with C++ or Java,
-          I want to learn more about databases where I'm lacking proficiency.
+          React itself, libraries and tools surrounding it. At the moment I'm
+          trying to get better at testing, optimizing performance and
+          typescript. I'm passionate about WASM, GO & Rust, because it makes so
+          much more sense than working with C++ or Java, I want to learn more
+          about databases where I'm lacking proficiency.
         </Text>
         <Text mb="2rem">
           The rest of time I devote to helping out my mother with my little
@@ -188,18 +185,14 @@ const Skill = ({ name, icon, color }) => {
 const Contact = () => {
   const { themed } = useColorModeSwitcher();
   return (
-    <Box id="contact" maxW="inherit" as="section" p={{ base: '1rem', md: 0 }} >
+    <Box id="contact" maxW="inherit" as="section" p={{ base: '1rem', md: 0 }}>
       <SectionHeading mb="4rem">Get in touch</SectionHeading>
       <Flex
         borderRadius="md"
         direction={{ base: 'column', xl: 'row' }}
         m="auto"
       >
-        <Box
-          m={{ base: '0 0 4rem 0', xl: '0 4rem 0 0' }}
-          maxW="20rem"
-          p={0}
-        >
+        <Box m={{ base: '0 0 4rem 0', xl: '0 4rem 0 0' }} maxW="20rem" p={0}>
           <Text mb="1rem" variant="preTitle">
             Let's chat!
           </Text>

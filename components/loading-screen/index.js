@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import { Box } from '@chakra-ui/react';
-import { css, keyframes } from '@emotion/react'
+import { css, keyframes } from '@emotion/react';
 import NoSsr from '@/utils/NoSsr';
 // const bounce = keyframes`
 //   from, 20%, 53%, 80%, to {
@@ -27,7 +27,7 @@ const waveAnimation = keyframes`
   100% {
     background-position: 200px bottom;
   }
-`
+`;
 const loadingAnimation = keyframes`
   0% {
     background-size: 200px 0px;
@@ -35,13 +35,13 @@ const loadingAnimation = keyframes`
   100% {
     background-size: 200px 200px;
   }
-`
+`;
 
 const LoadingScreen = () => {
-	return(
-		// this is loading wave
-		<NoSsr>
-			{/* <Box css={`
+  return (
+    // this is loading wave
+    <NoSsr>
+      {/* <Box css={`
 				text-transform:uppercase;
 				font-weight:bold;
 				font-size:100pt;
@@ -67,9 +67,9 @@ const LoadingScreen = () => {
 			`}>
 				Loading
 			</Box> */}
-			<div className="loading wave">Loading</div>
-		</NoSsr>
-	)
-}
+      <div className="loading wave">Loading</div>
+    </NoSsr>
+  );
+};
 // make one for firefox
 export { LoadingScreen };

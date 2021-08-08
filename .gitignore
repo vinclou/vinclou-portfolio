@@ -33,6 +33,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# my blog template files
+/data/posts/test-styles.mdx
+/data/posts/sample-post.mdx
+/data/posts/minimal-template.mdx
+
 **/public/workbox-*.js
 **/public/sw.js
 **/public/service-worker.js
