@@ -3,7 +3,6 @@ import { Container } from '@/layouts/container';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 import {
-  // Box,
   Text,
   Input,
   InputGroup,

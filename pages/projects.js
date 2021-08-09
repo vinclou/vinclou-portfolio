@@ -1,10 +1,11 @@
 // TODO: Tweak 3D Animation to work well on phones and tablets
 // TODO: Make Sure NoSsr works as expected
-// TODO: Reafactor and make individual component files
+// TODO: Refactor and make individual component files
 import {
   Box,
   Heading,
   List,
+  Flex,
   Text
   // Container as ChakraContainer
 } from '@chakra-ui/layout';
@@ -52,7 +53,14 @@ const Intro = () => {
       <Text pl="1rem" variant="subtitle" mb="4rem" w="80%">
         Here are some projects that I've recently worked on.
       </Text>
-      <ProjectList />
+      <Flex
+        w="100%"
+        mb="2.5rem"
+        direction={{ base: 'column', xl: 'row' }}
+        justify="end"
+      >
+        <ProjectList />
+      </Flex>
     </Box>
   );
 };

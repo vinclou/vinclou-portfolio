@@ -1,5 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+// TODO: complete the designs for all MDX components
 import React from 'react';
 import NextLink from 'next/link';
 import { jsx } from '@emotion/react';
