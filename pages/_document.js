@@ -5,6 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          {/* This font is not loaded */}
           <link
             rel="preload"
             href="/Inter-Bold.woff2"

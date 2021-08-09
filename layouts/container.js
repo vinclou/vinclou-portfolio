@@ -42,7 +42,7 @@ const Container = ({
 
 const Seo = ({ ...customMeta }) => {
   const meta = {
-    title: 'Vincent Arlou',
+    title: 'Vincent Arlou - Developer, writer, and a stranger',
     description:
       'Fullstack developer with a focus on designing and building scalable, maintainable and accessible solutions on the web.',
     // image: 'https://vinclou.com/static/images/banner.png', TODO ADD BANNER
