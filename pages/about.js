@@ -26,7 +26,7 @@ import * as tool from '@/data/tools'; // feel like * need to refactor this file 
 
 export default function About() {
   return (
-    <Container title="About | Vincent Arlou">
+    <Container title="Vincent Arlou | About">
       <ContentWrapper>
         <Intro />
         <Skills />

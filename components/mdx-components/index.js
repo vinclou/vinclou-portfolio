@@ -67,6 +67,19 @@ const Hr = () => {
 
   return <Divider borderColor={borderColor[colorMode]} my={4} w="100%" />;
 };
+
+// ----------------8<-------------[ cut here ]------------------
+/*
+  This is a custom divider I would like to make
+  https://stackoverflow.com/questions/28161374/how-to-make-a-dynamic-ascii-horizontal-divider
+  Check this link for possible solutions, it would also be a cool lib to make.
+ */
+const DivHr = () => {
+  return (
+    <pre>{'----------------8<-------------[ cut here ]------------------'}</pre>
+  );
+};
+
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope

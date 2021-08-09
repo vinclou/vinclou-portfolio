@@ -32,7 +32,11 @@ import MDXComponents from '@/components/mdx-components';
  *          { frontMatter } ---> file data and extras
  */
 export default function BlogPage({ source, frontMatter, otherData }) {
-  /* A Neat Way To Extend Components withing this file, useful if any props data  is needed */
+  /*
+    A Neat Way To Extend Components withing this file,
+    useful if any props data is needed,
+    and useful for passing wrappers and layout elements.
+  */
   const extendMdxComponents = {
     ...MDXComponents,
     SectionWrapper: (props) => {
@@ -40,6 +44,7 @@ export default function BlogPage({ source, frontMatter, otherData }) {
         <Box
           as="section"
           m="auto"
+          mb="2rem"
           maxW={{
             sm: '30rem',
             md: '40rem',
