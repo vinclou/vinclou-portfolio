@@ -1,3 +1,4 @@
+// DOCS: https://github.com/iamvishnusankar/next-sitemap
 const siteUrl = 'https://www.vincentarlou.com';
 
 module.exports = {
