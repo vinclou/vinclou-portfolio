@@ -15,6 +15,12 @@ export const POSTS_PATH = path.join(process.cwd(), 'data', 'posts');
 export const postFilePaths = fs
   .readdirSync(POSTS_PATH)
   .filter((path) => /\.mdx?$/.test(path));
+
+export const getSlug = (filePath) => {
+  const spt = filePath.split('.');
+  return spt[0];
+};
+
 /**
  * Used in main blog page
  *

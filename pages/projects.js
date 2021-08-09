@@ -1,14 +1,7 @@
 // TODO: Tweak 3D Animation to work well on phones and tablets
 // TODO: Make Sure NoSsr works as expected
 // TODO: Refactor and make individual component files
-import {
-  Box,
-  Heading,
-  List,
-  Flex,
-  Text
-  // Container as ChakraContainer
-} from '@chakra-ui/layout';
+import { Box, Heading, Flex, Text } from '@chakra-ui/layout';
 import { Container } from '@/layouts/container';
 import { ProjectList } from '@/components/project-list';
 import { ContentWrapper } from '@/layouts/contentWrapper';

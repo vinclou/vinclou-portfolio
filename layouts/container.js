@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 import { useToggle } from '@/utils/hooks/useToggle';
 import { Button } from '@chakra-ui/button';

@@ -30,11 +30,6 @@ export default function ThreeDScene({ animColor }) {
         <fog attach="fog" args={[animColor, 15, 18]} />
         <Suspense fallback={<Loader />}>
           <group position={[0, -1, 0]}>
-            {/* <Carla
-              rotation={[0, Math.PI - 0.4, 0]}
-              position={[-1.2, 0, 0.6]}
-              scale={[0.26, 0.26, 0.26]}
-            /> */}
             <VideoText {...store} position={[0, 1.3, -2]} />
             <Ground />
           </group>

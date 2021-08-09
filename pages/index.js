@@ -13,10 +13,10 @@ import {
   Text
 } from '@chakra-ui/react';
 
-import { HeroSvg } from '@/components/svg';
-import { Subscribe } from '@/components/subscribe';
 // import { ProjectCard } from '@/components/project-card';
 // import { BlogPost } from "@/components/blog-post";
+import { HeroSvg } from '@/components/svg';
+import { Subscribe } from '@/components/subscribe';
 import { ScrollArrow } from '@/components/scroll';
 import { ArticleCard } from '@/components/article-card';
 import { ProjectList } from '@/components/project-list';
@@ -44,7 +44,7 @@ const Hero = () => {
   const { scrollPos } = useScrollPosition();
 
   return (
-    <Box w={{ base: '90%', '2xl': '95%' }}>
+    <Box as="article" title="about" w={{ base: '90%', '2xl': '95%' }}>
       <Flex mb="4rem" justify="space-between">
         <Box w={{ base: '100%', xl: '50%' }}>
           <Heading as="h1" mb="1.5rem" variant="h1">

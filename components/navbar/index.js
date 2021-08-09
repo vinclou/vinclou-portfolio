@@ -1,6 +1,8 @@
+import React, { useEffect, useRef } from 'react';
 import { Box, Flex, HStack, VStack } from '@chakra-ui/layout';
 import { IoMoon, IoSunnyOutline } from 'react-icons/io5';
 import { IconButton } from '@chakra-ui/button';
+import { useMediaQuery } from '@chakra-ui/react';
 import { useToggle } from '@/utils/hooks/useToggle';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
 import { useColorMode } from '@chakra-ui/color-mode';
@@ -10,6 +12,7 @@ import { Logo } from '@/components/svg';
 export const Navbar = ({ isOpen, toggleIsOpen }) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { colorDark } = useColorModeSwitcher();
+
   return (
     <Flex
       mb={isOpen ? { base: '1rem' } : { base: '4.5rem', lg: '3rem' }}
@@ -17,7 +20,7 @@ export const Navbar = ({ isOpen, toggleIsOpen }) => {
       p="4"
       justify="space-between"
     >
-      <MenuButton toggleIsOpen={toggleIsOpen} />
+      <MenuButton isOpen={isOpen} toggleIsOpen={toggleIsOpen} />
       <Logo fill={colorDark} />
       <HStack spacing={{ base: 0, md: 8 }}>
         <Flex align="center" display={{ base: 'none', lg: 'flex' }} as="ul">
@@ -90,24 +93,38 @@ export const MobileNavMenu = () => {
   );
 };
 
-const MenuButton = ({ toggleIsOpen, ...props }) => {
+const MenuButton = ({ isOpen, toggleIsOpen, ...props }) => {
   const [clicked, toggleClicked] = useToggle();
+  const inputRef = useRef(null);
+
+  const [isLargerThan990] = useMediaQuery('(min-width: 990px)');
+
+  /* Fix the bug, where side bar is open on window resize */
+  useEffect(() => {
+    console.log(isLargerThan990);
+    // console.log(inputRef);
+    if (isOpen && isLargerThan990) {
+      inputRef.current.click();
+    }
+  }, [isLargerThan990]);
 
   const handleClick = () => {
+    console.log('Clicked');
     toggleIsOpen();
     toggleClicked();
   };
   return (
     <IconButton
+      ref={inputRef}
       borderRadius="sm"
+      variant="ghost"
       onClick={handleClick}
       display={{ base: 'block', lg: 'none' }}
       w="48px"
       h="48px"
-      variant="ghost"
+      icon={<MenuIcon clicked={clicked} />}
       _hover={{ variant: 'ghost' }}
       {...props}
-      icon={<MenuIcon clicked={clicked} />}
     />
   );
 };
