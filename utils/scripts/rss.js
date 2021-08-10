@@ -11,7 +11,7 @@ const POSTS_PATH = path.join(process.cwd(), 'data', 'posts');
 
 async function generate() {
   const feed = new RSS({
-    title: 'Lee Robinson',
+    title: 'Vincent Arlou',
     site_url: 'https://vincentarlou.com',
     feed_url: 'https://vincentarlou.com/feed.xml'
   });
