@@ -8,7 +8,7 @@ module.exports = {
       // generates rss feed for the blog
       require('./utils/scripts/rss');
     }
-
+    // TODO: Test Preact support during next deploy
     // Replace React with Preact only in client production build
     // if (!dev && !isServer) {
     //   Object.assign(config.resolve.alias, {
