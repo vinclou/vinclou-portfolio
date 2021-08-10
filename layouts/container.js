@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useToggle } from '@/utils/hooks/useToggle';
 import { Button } from '@chakra-ui/button';
 import { Box, VStack } from '@chakra-ui/react';
@@ -15,15 +16,7 @@ const Container = ({
   const [isOpen, toggleIsOpen] = useToggle();
 
   return (
-    <Box
-    // ml={30}
-    // border="4px"
-    // borderColor="red"
-    // minW="360px"
-    // css={`
-    //   min-width: 100% !important;
-    // `}
-    >
+    <Box>
       <Seo {...customMeta} />
       <Box
         w={{ base: '100vw', '2xl': '80vw', '3xl': '72vw' }}
@@ -40,12 +33,15 @@ const Container = ({
   );
 };
 
+// TODO: ADD JSON_LD
 const Seo = ({ ...customMeta }) => {
+  const { router } = useRouter();
+
   const meta = {
     title: 'Vincent Arlou - Developer, writer, and a stranger',
     description:
       'Fullstack developer with a focus on designing and building scalable, maintainable and accessible solutions on the web.',
-    // image: 'https://vinclou.com/static/images/banner.png', TODO ADD BANNER
+    image: 'https://vincentarlou.com/static/images/banner.jpg',
     type: 'website',
     ...customMeta
   };
@@ -53,8 +49,30 @@ const Seo = ({ ...customMeta }) => {
   return (
     <Head>
       <title>{meta.title}</title>
+      <meta name="robots" content="follow, index" />
       <meta content={meta.description} name="description" />
+      <meta
+        property="og:url"
+        content={`https://vincentarlou.com${router.asPath}`}
+      />
+      <link
+        rel="canonical"
+        href={`https://https://vincentarlou.com${router.asPath}`}
+      />
       <link rel="icon" href="/favicon.ico" />
+      <meta property="og:type" content={meta.type} />
+      <meta property="og:site_name" content="Vincent Arlou" />
+      <meta property="og:description" content={meta.description} />
+      <meta property="og:title" content={meta.title} />
+      <meta property="og:image" content={meta.image} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@vincentarlou" />
+      <meta name="twitter:title" content={meta.title} />
+      <meta name="twitter:description" content={meta.description} />
+      <meta name="twitter:image" content={meta.image} />
+      {meta.date && (
+        <meta property="article:published_time" content={meta.date} />
+      )}
     </Head>
   );
 };
