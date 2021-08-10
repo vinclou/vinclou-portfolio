@@ -1,39 +1,82 @@
 ---
-title: 'Adding Brave Rewards To NextJS Blog'
+title: Adding Brave Rewards To NextJS Blog or Website
 date: '2021-08-09'
-description: Which analytics should you add to you blog or app?
-keywords: javascript, react, misc, analytics
-bannerUrl:
-bannerCredit:
+description: How do you add brave rewards to your website or blog, when adding well-known folder didn't work
+keywords: javascript, react, misc, analytics, brave, ads, brave-creators
+bannerUrl: https://cryptoradar.org/wp-content/uploads/2019/08/Brave-logo.png
+bannerCredit: Photo by [Brave](https://brave.com/) on [cryptoangar.org](https://cryptoradar.org/wp-content/uploads/2019/08/Brave-logo.png)
 ---
 
 <GlobalWrapper>
 
 <SectionWrapper title="intro">
 
-## INTRO
+## Brave?
 
-So, you are thinking about adding analytics in your app but are not sure,
-what is going to be your best option. Some of the options are paid, some are free.
-
-But what you really need to ask yourself, how much of analytics I really need,
-if you are making a hobby website/blog, maybe all you want to do is track visitors,
-without and bloat javascript bundles from google or anywhere else.
-And maybe write a few custom functions to handle edge cases, you really want to track.
+#### Honestly, it's the future
 
 <br />
 
-This is intro paragraph
+I've discovered Brave about two years ago and began actively using it
+after I saw a Lex's podcast with Brendan Eich, the founder of Brave.
+If you have a little time click this link, to skip right to the solution.
+
+<br />
+And it's an awesome browser really, but their rewards system is a seamless way to
+tip the creators of the content you love. It's easy, doesn't require much configuration
+for the Brave user and some of the BAT is earned by user for seeing the ads. I am
+a madman to say such a thing, but for the first time in my life, I don't have deep
+aversion to ads, as I always do outside Brave's ecosystem.
+<br />
+You would be a fool for not adding it to your medium channels. Although, of course
+the user base is not a contender to Chrome/Safari/Firefox for now.
+<br />
+Yet, as times change, users will follow.
+
+<br />
 
 </SectionWrapper>
-
+<hr />
 <SectionWrapper title="first">
 
-## First
+## The Problem
+
+#### You have probably stumbled upon this blog post for a reason
+
+I suppose you have tried doing this:
+
+- Create and verify Uphold wallet to receive BAT tokens
+- Create an account for Brave Rewards – Creators
+- Claim your platforms
+
+And here's the problem you are adding .well-known folder, containing
+your brave-rewards-certification.txt, you deploy your HEAD commit and you don't
+see any change in the status, it is still saying that you are not verified.
+You move folder around, check if you named it correctly still, doesn't help.
+Confused you google for the solutions and there are none. I mean you put this
+folder in public dir, where else could it possibly go in a NextJS project.
+
+What happened?
+
+Honestly, I would like to know that too. It surely said that's the easiest way to get
+verified. I was going to contact Brave directly and ask where the file should be located,
+but I found out it is much easier to modify your DNS record and not worry about any
+of that to verify your web site.
+
+Simply go to your DNS records, on Vercel and Netlify it's pretty much the same process,
+here are the links to docs
+[Vercel DNS](https://vercel.com/support/articles/how-to-manage-vercel-dns-records)
+[Netlify DNS](https://docs.netlify.com/domains-https/netlify-dns/dns-records/)
+
+But I'm sure they are pretty much the same for any provider.
+
+To edit the existing DNS Records of your Domain or add new ones,
+navigate to the Domains page of your Project Settings.
+There, click Edit on the Domain of your choice and you'll find a link at the bottom of the view.
+
+The last step would be adding TXT record with [TTL](https://www.cloudflare.com/learning/cdn/glossary/time-to-live-ttl/) around 1 - 3 days.
 
 <br />
-
-This is first section
 
 </SectionWrapper>
 
@@ -65,7 +108,11 @@ This is Third section
 
 <br />
 
-This the end, my dear friend
+That is it, you are done, click verify at brave rewards creators.
+Go yo your website and check verification badge.
+
+Do not forget to add any other channels to your account, hooking up
+social accounts is a breeze! Hopefully this article helps you to resolve the issue
 
 </SectionWrapper>
 

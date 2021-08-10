@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from '@/layouts/container';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
+
 import {
   Text,
   Input,
@@ -40,17 +41,17 @@ export default function Blog({ posts }) {
   return (
     <Container title="Blog | Vincent Arlou">
       <ContentWrapper>
-        <VStack>
-          <InputGroup
-            w={{
-              base: '18rem',
-              sm: '20rem',
-              md: '30rem',
-              lg: '40rem',
-              xl: '50rem',
-              '2xl': '50rem'
-            }}
-          >
+        <VStack
+          w={{
+            base: '22rem',
+            sm: '22rem',
+            md: '30rem',
+            lg: '40rem',
+            xl: '50rem',
+            '2xl': '50rem'
+          }}
+        >
+          <InputGroup>
             <Input
               aria-label="Search by post title, summary, or keywords"
               onChange={(e) => setQuery(e.target.value)}

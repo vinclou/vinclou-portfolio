@@ -3,10 +3,24 @@ module.exports = {
   future: {
     webpack5: true
   },
-  webpack: function (config, options) {
-    // config.experiments = {};
+  webpack: function (config, { dev, isServer }) {
+    if (isServer) {
+      // generates rss feed for the blog
+      require('./utils/scripts/rss');
+    }
+
+    // Replace React with Preact only in client production build
+    // if (!dev && !isServer) {
+    //   Object.assign(config.resolve.alias, {
+    //     react: 'preact/compat',
+    //     'react-dom/test-utils': 'preact/test-utils',
+    //     'react-dom': 'preact/compat'
+    //   });
+    // }
+
     config.resolve.fallback = {
-      ...config.resolve.fallback, // if you miss it, all the other options in fallback, specified
+      // if you miss it, all the other options in fallback, specified
+      ...config.resolve.fallback,
       fs: false
       // path: false,
       // child_process: false

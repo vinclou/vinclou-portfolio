@@ -1,3 +1,4 @@
+// TODO add credits section
 import {
   Box,
   Link,
@@ -35,8 +36,8 @@ const BlogPost = ({
           border="1px solid"
           borderColor={colorGrey}
           w={{
-            base: '18rem',
-            sm: '20rem',
+            base: '22rem',
+            sm: '22rem',
             md: '30rem',
             lg: '40rem',
             xl: '50rem',

@@ -36,9 +36,13 @@ yarn-error.log*
 # vscode
 /.vscode/
 
+# brave
+/public/.well-known/
+
 # ignore robots and sitemap, they need to be buld at Vercel
 /public/robots.txt
 /public/sitemap.xml
+/public/feed.xml
 
 # my blog template files
 /data/posts/test-styles.mdx

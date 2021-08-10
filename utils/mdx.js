@@ -2,8 +2,8 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote } from 'next-mdx-remote';
-import { MdxComponents } from '@/components/mdx-components';
+// import { MDXRemote } from 'next-mdx-remote';
+// import { MdxComponents } from '@/components/mdx-components';
 import readingTime from 'reading-time';
 // import mdxPrism from 'mdx-prism'
 export const POSTS_PATH = path.join(process.cwd(), 'data', 'posts');

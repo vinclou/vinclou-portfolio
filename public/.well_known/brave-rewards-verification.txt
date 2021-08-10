@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: vincentarlou.com
-Token: a66efdbe92efebb16bc9fb85711be84567fbcb8b4a84ed60b2e91f6af781d72b
