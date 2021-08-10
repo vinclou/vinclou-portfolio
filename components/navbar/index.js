@@ -101,8 +101,6 @@ const MenuButton = ({ isOpen, toggleIsOpen, ...props }) => {
 
   /* Fix the bug, where side bar is open on window resize */
   useEffect(() => {
-    console.log(isLargerThan990);
-    // console.log(inputRef);
     if (isOpen && isLargerThan990) {
       inputRef.current.click();
     }

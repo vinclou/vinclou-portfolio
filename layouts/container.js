@@ -7,12 +7,7 @@ import { Box, VStack } from '@chakra-ui/react';
 import { MobileNavMenu, Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 
-const Container = ({
-  // customSpacing = { base: '8rem', lg: '10rem' },
-  footerColor,
-  children,
-  ...customMeta
-}) => {
+const Container = ({ footerColor, children, ...customMeta }) => {
   const [isOpen, toggleIsOpen] = useToggle();
 
   return (
@@ -33,9 +28,16 @@ const Container = ({
   );
 };
 
-// TODO: ADD JSON_LD
+/*
+  TODO: ADD JSON_LD ---
+    From the first glance, it's pretty cumbersome to add,
+    comparing to twitter/facebook meta data, it has to individually
+    tailored on each page based on the content inside of it
+    meaning you would have to create some utils to make all of
+    those scripts.
+*/
 const Seo = ({ ...customMeta }) => {
-  const { router } = useRouter();
+  const router = useRouter();
 
   const meta = {
     title: 'Vincent Arlou - Developer, writer, and a stranger',
@@ -51,14 +53,17 @@ const Seo = ({ ...customMeta }) => {
       <title>{meta.title}</title>
       <meta name="robots" content="follow, index" />
       <meta content={meta.description} name="description" />
+
       <meta
         property="og:url"
         content={`https://vincentarlou.com${router.asPath}`}
       />
+
       <link
         rel="canonical"
         href={`https://https://vincentarlou.com${router.asPath}`}
       />
+
       <link rel="icon" href="/favicon.ico" />
       <meta property="og:type" content={meta.type} />
       <meta property="og:site_name" content="Vincent Arlou" />
