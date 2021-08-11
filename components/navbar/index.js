@@ -82,8 +82,8 @@ export const MobileNavMenu = () => {
         <Item variant="large" href="/newsletter">
           Newsletter
         </Item>
-        <Item variant="large" href="/community">
-          Community
+        <Item variant="large" href="/snippets">
+          Snippets
         </Item>
         <Item variant="large" href="/uses">
           Uses

@@ -55,6 +55,7 @@ const Full = () => {
   return (
     <HStack align="start" spacing="16rem">
       <MainRoutes />
+      <SubRoutes />
       <Socials />
     </HStack>
   );
@@ -75,7 +76,7 @@ const SubRoutes = () => {
   return (
     <VStack h="100%" align="start">
       <NavLink href="/newsletter">Newsletter</NavLink>
-      <NavLink href="/community">Community</NavLink>
+      <NavLink href="/snippets">Snippets</NavLink>
       <NavLink href="/uses">Uses</NavLink>
     </VStack>
   );

@@ -1,12 +1,12 @@
 {
-  "name": "portfolio",
+  "name": "vinclou",
   "author": {
     "name": "Vincent Arlou",
     "email": "arlou@protonmail.com",
-    "url": "https://github.com/vinclou"
+    "url": "https://vincentarlou.com"
   },
   "version": "0.1.0",
-  "description": "React / NextJS, portfolio vinclou",
+  "description": "React / NextJS, Vincent Arlou(vinclou) blog/portfolio",
   "private": true,
   "scripts": {
     "dev": "next dev",
