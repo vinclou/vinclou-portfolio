@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import '@fontsource/sora';
-import '@fontsource/iosevka';
+import '@fontsource/iosevka/800.css';
 // import { ColorModeScript } from "@chakra-ui/react"
 /* Fonts */
 import customTheme from '../styles/theme';
