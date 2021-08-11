@@ -96,7 +96,7 @@ const MDXComponents = {
   // text
   p: (props) => <Text as="p" variant="body" {...props} />,
   // code related
-  code: (props) => <code class="javascript" {...props} />,
+  code: (props) => <code {...props} />,
   inlineCode: (props) => <Code fontSize="0.84em" {...props} />,
   // dividers
   br: (props) => <Box height="14px" {...props} />,
@@ -109,6 +109,29 @@ const MDXComponents = {
   ul: (props) => <Box as="ul" pt={2} pl={4} ml={2} {...props} />,
   ol: (props) => <Box as="ol" pt={2} pl={4} ml={2} {...props} />,
   li: (props) => <Box as="li" pb={1} {...props} />,
+
+  SectionWrapper: (props) => {
+    return (
+      <Box
+        as="section"
+        m="auto"
+        mb="2rem"
+        maxW={{
+          sm: '30rem',
+          md: '40rem',
+          lg: '50rem',
+          xl: '60rem',
+          '2xl': '60rem'
+        }}
+        {...props}
+      >
+        {props.children}
+      </Box>
+    );
+  },
+  GlobalWrapper: (props) => {
+    return <Box w={{ base: '80%', '2xl': '90%' }} {...props} />;
+  },
   // quotes
   blockquote: Quote
 };

@@ -1,9 +1,3 @@
-/**
- *  TODO: next-mdx-remote is not a library I want to use
- *  it's not working right out of the box, and I still can't move function
- *  from getStaticProps to its own mdx dedicated utility file,
- *  that's so annoying.
- */
 import { MDXRemote } from 'next-mdx-remote';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { Container } from '@/layouts/container';
@@ -17,22 +11,16 @@ import {
   VStack
 } from '@chakra-ui/react';
 
-// import { postFilePaths, POSTS_PATH } from '@/utils/mdx';
 import MDXComponents from '@/components/mdx-components';
 import { getFiles } from '../../lib/filesModule';
 import { getFileBySlug } from '@/utils/mdx';
 
-/**
- * This is individual blog page
- * Accepts: { source } ---> MDXRemote object
- *          { frontMatter } ---> file data and extras
- */
-export default function BlogPage({ mdxSource, frontMatter }) {
+export default function NewsletterPage({ mdxSource, frontMatter }) {
   /*
-    A Neat Way To Extend Components withing this file,
-    useful if any props data is needed,
-    and useful for passing wrappers and layout elements.
-  */
+		 A Neat Way To Extend Components withing this file,
+		 useful if any props data is needed,
+		 and useful for passing wrappers and layout elements.
+	 */
   const extendMdxComponents = {
     ...MDXComponents,
     ExtensionComponentExp: () => {
@@ -87,7 +75,7 @@ export default function BlogPage({ mdxSource, frontMatter }) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getFiles('posts');
+  const posts = await getFiles('newsletter');
 
   return {
     paths: posts.map((p) => ({
@@ -101,65 +89,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   // const post = await getFileBySlug('posts', params.slug);
-  const post = await getFileBySlug('posts', params.slug);
+  const post = await getFileBySlug('newsletter', params.slug);
   // console.log(post);
   return { props: { ...post } };
 }
-
-// export const getStaticProps = async ({ params }) => {
-//   const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
-//   const source = fs.readFileSync(postFilePath);
-
-//   const { content, data } = matter(source);
-
-//   const mdxSource = await serialize(content, {
-//     // Optionally pass remark/rehype plugins
-//     mdxOptions: {
-//       remarkPlugins: [
-//         require('remark-slug'),
-//         [
-//           require('remark-autolink-headings'),
-//           {
-//             linkProperties: {
-//               className: ['anchor']
-//             }
-//           }
-//         ],
-//         require('remark-code-titles')
-//       ],
-//       rehypePlugins: [mdxPrism]
-//     },
-//     scope: data,
-//     target: ['esnext']
-//   });
-
-//   return {
-//     props: {
-//       source: mdxSource,
-//       frontMatter: {
-//         wordCount: content.split(/\s+/gu).length,
-//         readingTime: readingTime(content),
-//         slug: params.slug || null,
-//         ...data
-//       },
-//       otherData: [
-//         { x: 1, y: 1 },
-//         { x: 3, y: 5 },
-//         { x: 32, y: 32 }
-//       ]
-//     }
-//   };
-// };
-
-// export const getStaticPaths = async () => {
-//   const paths = postFilePaths
-//     // Remove file extensions for page paths
-//     .map((path) => path.replace(/\.mdx?$/, ''))
-//     // Map the path into the static paths object required by Next.js
-//     .map((slug) => ({ params: { slug } }));
-
-//   return {
-//     paths,
-//     fallback: false
-//   };
-// };

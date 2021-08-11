@@ -7,6 +7,8 @@ import customTheme from '../styles/theme';
 import { ChakraProvider, useColorMode } from '@chakra-ui/react';
 import { Global, css } from '@emotion/react';
 import { prismLightTheme, prismDarkTheme } from '@/styles/theme/prism';
+// import { MDXProvider } from '@mdx-js/react';
+// import MDXComponents from '@/components/mdx-components';
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -27,7 +29,9 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <ChakraProvider theme={customTheme}>
       <GlobalStyle>
+        {/* <MDXProvider components={MDXComponents}> */}
         <Component {...pageProps} />
+        {/* </MDXProvider> */}
       </GlobalStyle>
     </ChakraProvider>
   );

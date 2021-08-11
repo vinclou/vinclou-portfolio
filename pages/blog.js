@@ -14,7 +14,8 @@ import {
 
 import { SearchIcon } from '@chakra-ui/icons';
 
-import { getAllFiles } from '@/utils/mdx';
+// import { getAllFiles, getAllFilesRevision } from '@/utils/mdx';
+import { getAllFiles } from '../lib/filesModule';
 
 import { Subscribe } from '@/components/subscribe';
 import { BlogPost } from '@/components/blog-post';
@@ -29,13 +30,15 @@ const getSlug = (filePath) => {
 export default function Blog({ posts }) {
   const { themed } = useColorModeSwitcher();
   const [query, setQuery] = React.useState('');
-  const filteredBlogPosts = posts
+  // const [filteredBlogPosts, setFilteredBlogPosts] = React.useState(null);
+
+  const filteredPosts = posts
     .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)))
     .filter(
       (post) =>
-        post.data.title.toLowerCase().includes(query.toLowerCase()) ||
-        post.data.description.toLowerCase().includes(query.toLowerCase()) ||
-        post.data.keywords.toLowerCase().includes(query.toLowerCase())
+        post.title.toLowerCase().includes(query.toLowerCase()) ||
+        post.description.toLowerCase().includes(query.toLowerCase()) ||
+        post.keywords.toLowerCase().includes(query.toLowerCase())
     );
 
   return (
@@ -66,7 +69,8 @@ export default function Blog({ posts }) {
             Google.
           </Link>
         </VStack>
-        {!filteredBlogPosts.length && (
+
+        {!filteredPosts.length && (
           <Text
             variant="preTitle"
             border="0.3px solid"
@@ -76,11 +80,12 @@ export default function Blog({ posts }) {
             No posts found
           </Text>
         )}
-        {filteredBlogPosts.map((post) => (
-          <article key={post.data.title}>
-            <BlogPost slug={getSlug(post.filePath)} {...post.data} />
+        {filteredPosts.map((post) => (
+          <article key={post.title}>
+            <BlogPost slug={post.slug} {...post} />
           </article>
         ))}
+
         <Subscribe />
       </ContentWrapper>
     </Container>
@@ -88,7 +93,9 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = getAllFiles();
-
-  return { props: posts };
+  // const posts = getAllFiles();
+  const posts = await getAllFiles('posts');
+  // console.log(posts);
+  return { props: { posts } };
+  // return { props: posts };
 }

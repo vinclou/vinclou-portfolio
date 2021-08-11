@@ -22,9 +22,9 @@ module.exports = {
     config.resolve.fallback = {
       // if you miss it, all the other options in fallback, specified
       ...config.resolve.fallback,
-      fs: false
+      fs: false,
+      child_process: false
       // path: false,
-      // child_process: false
     };
 
     return config;
