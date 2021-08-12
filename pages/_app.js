@@ -6,7 +6,11 @@ import '@fontsource/iosevka/800.css';
 import customTheme from '../styles/theme';
 import { ChakraProvider, useColorMode } from '@chakra-ui/react';
 import { Global, css } from '@emotion/react';
-import { prismLightTheme, prismDarkTheme } from '@/styles/theme/prism';
+import {
+  LightTheme,
+  // prismDarkTheme,
+  VsCodeTheme
+} from '@/styles/theme/prism';
 // import { MDXProvider } from '@mdx-js/react';
 // import MDXComponents from '@/components/mdx-components';
 
@@ -17,7 +21,7 @@ const GlobalStyle = ({ children }) => {
     <>
       <Global
         styles={css`
-          ${colorMode === 'light' ? prismLightTheme : prismDarkTheme};
+          ${colorMode === 'light' ? LightTheme : VsCodeTheme};
         `}
       />
       {children}

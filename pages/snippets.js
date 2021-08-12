@@ -40,9 +40,11 @@ export default function Snippets({ snippets }) {
         >
           <SectionHeading mb="2rem">Snippets</SectionHeading>
           <Text mb="4rem" color="neutral.500">
-            {' '}
-            This my collection of snippets, hopefully you will be able to din
-            some thing useful in here!
+            {`
+            This is my collection of snippets, I also plan to feature snippets
+            of other people here, hopefully a rich library of interesting
+            solutions! Let's feed Github's copilot with more of our data ;)
+            `}
           </Text>
           <SimpleGrid as="section" columns={2} spacingX="20px" spacingY="20px">
             {snippets.map((snippet) => (

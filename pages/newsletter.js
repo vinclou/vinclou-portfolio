@@ -58,6 +58,6 @@ export default function Newsletter({ news }) {
 
 export async function getStaticProps() {
   const news = await getAllFiles('newsletter');
-  console.log(news);
+
   return { props: { news } };
 }

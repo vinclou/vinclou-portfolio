@@ -75,10 +75,10 @@ export default function NewsletterPage({ mdxSource, frontMatter }) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getFiles('newsletter');
+  const news = await getFiles('newsletter');
 
   return {
-    paths: posts.map((p) => ({
+    paths: news.map((p) => ({
       params: {
         slug: p.replace(/\.mdx/, '')
       }
@@ -88,8 +88,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  // const post = await getFileBySlug('posts', params.slug);
-  const post = await getFileBySlug('newsletter', params.slug);
-  // console.log(post);
-  return { props: { ...post } };
+  const news = await getFileBySlug('newsletter', params.slug);
+
+  return { props: { ...news } };
 }

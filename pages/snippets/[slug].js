@@ -27,7 +27,7 @@ export default function SnippetsPage({ mdxSource, frontMatter }) {
       return <div>{JSON.stringify(otherData)}</div>;
     }
   };
-  console.log(frontMatter);
+
   return (
     <Container
       title={frontMatter.title.concat(' | Vincent Arlou')}
@@ -74,7 +74,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   // const post = await getFileBySlug('posts', params.slug);
-  const post = await getFileBySlug('snippets', params.slug);
-  // console.log(post);
-  return { props: { ...post } };
+  const snippet = await getFileBySlug('snippets', params.slug);
+
+  return { props: { ...snippet } };
 }

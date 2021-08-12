@@ -130,7 +130,7 @@ const MDXComponents = {
     );
   },
   GlobalWrapper: (props) => {
-    return <Box w={{ base: '80%', '2xl': '90%' }} {...props} />;
+    return <Box w={{ base: '80%', '2xl': '90%' }} overflow="auto" {...props} />;
   },
   // quotes
   blockquote: Quote
