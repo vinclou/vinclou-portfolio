@@ -11,7 +11,7 @@ import {
   Text,
   Stack
 } from '@chakra-ui/react';
-import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 import { useMediaQuery } from '@chakra-ui/media-query';
 
 //TODO: fix color styles, fix button positioning on very tiny phones

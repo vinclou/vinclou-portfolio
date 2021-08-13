@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 import { Container } from '@/layouts/container';
-import { useScrollPosition } from '@/hooks/useScrollPosition';
+import { useScrollPosition } from 'hooks/useScrollPosition';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { useMediaQuery } from '@chakra-ui/media-query';
 import {
@@ -22,7 +22,7 @@ import { ArticleCard } from '@/components/article-card';
 import { ProjectList } from '@/components/project-list';
 // data imports
 import NoSsr from '@/utils/NoSsr';
-import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 
 //TODO make all the needed components
 export default function Home() {

@@ -39,9 +39,9 @@ export default function BlogPage({ mdxSource, frontMatter }) {
       description={frontMatter.description}
       // image would be hard to work with, if you don't host it yourself
       // use commented line below if image is hosted by you
-      // image={`https://vincentarlou.com${frontMatter.bannerUrl}`}
+      image={`https://vincentarlou.com${frontMatter.bannerUrl}`}
       // else you this one if you do not host it
-      image={`${frontMatter.bannerUrl}`}
+      // image={`${frontMatter.bannerUrl}`}
       date={new Date(frontMatter.date).toISOString()}
       type="article"
     >

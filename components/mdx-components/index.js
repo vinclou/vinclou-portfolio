@@ -14,7 +14,7 @@ import {
   Divider,
   useColorMode
 } from '@chakra-ui/react';
-import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 
 // TODO: These are stock styles, replace it with my own!!!
 

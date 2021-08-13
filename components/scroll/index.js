@@ -1,5 +1,5 @@
 import { Icon, VStack } from '@chakra-ui/react';
-import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 import { BsArrowDown } from 'react-icons/bs';
 
 const ScrollArrow = ({ scrollPos }) => {

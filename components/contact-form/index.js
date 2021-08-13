@@ -1,5 +1,5 @@
 // TODO Make Server -> Client work
-import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 import {
   Text,
   Box,

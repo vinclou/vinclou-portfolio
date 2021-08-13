@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '@/layouts/container';
 import { ContentWrapper } from '@/layouts/contentWrapper';
-import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
+import { useColorModeSwitcher } from 'hooks/useColorModeSwitcher';
 
 import {
   Text,
@@ -57,7 +57,7 @@ export default function Blog({ posts }) {
               <SearchIcon color="gray.300" />
             </InputRightElement>
           </InputGroup>
-          <Link variant="subtle" href="https://google.com">
+          <Link p="1rem" variant="subtle" href="https://google.com">
             If you can't find what you're looking for with this, try using
             Google.
           </Link>

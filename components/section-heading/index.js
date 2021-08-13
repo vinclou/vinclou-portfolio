@@ -1,6 +1,6 @@
 import React from 'react';
 import { HStack, Box, Heading } from '@chakra-ui/layout';
-import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 
 const SectionHeading = ({ children, ...props }) => {
   const { colorGrey } = useColorModeSwitcher();

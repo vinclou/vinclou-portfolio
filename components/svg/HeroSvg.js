@@ -1,5 +1,5 @@
 import { createIcon, defaultProps, Icon } from '@chakra-ui/react';
-import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 import { motion } from 'framer-motion';
 
 const groupVariants = {

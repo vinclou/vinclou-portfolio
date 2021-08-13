@@ -1,5 +1,5 @@
 import { Box, Link, Heading, Flex, VStack, Text } from '@chakra-ui/react';
-import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 import NoSsr from '@/utils/NoSsr';
 import NextLink from 'next/link';
 

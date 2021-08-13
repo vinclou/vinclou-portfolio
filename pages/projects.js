@@ -7,7 +7,7 @@ import { ProjectList } from '@/components/project-list';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import ThreeDScene from '@/components/3d-scene';
 // hooks
-import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 import { useMediaQuery } from '@chakra-ui/media-query';
 
 import NoSsr from '@/utils/NoSsr';

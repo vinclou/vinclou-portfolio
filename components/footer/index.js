@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import { useToggle } from '@/utils/hooks/useToggle';
+import { useToggle } from '@/hooks/useToggle';
 import { Icon } from '@chakra-ui/icons';
 import { Link, HStack, VStack, Center } from '@chakra-ui/layout';
 import { useMediaQuery } from '@chakra-ui/media-query';
@@ -10,6 +10,7 @@ const Footer = ({ customBgColor }) => {
   const [isLarge] = useMediaQuery('(min-width: 992px)');
   return (
     <VStack
+      as="footer"
       backgroundColor={customBgColor}
       // marginTop={0}
       borderTop="1px solid"
@@ -17,7 +18,6 @@ const Footer = ({ customBgColor }) => {
       py="32px"
       w="100%"
       spacing={{ base: '16px', lg: '64px' }}
-      as="footer"
     >
       {isLarge ? <Full /> : <Condensed />}
       <Link

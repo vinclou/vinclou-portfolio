@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useToggle } from '@/utils/hooks/useToggle';
+import { useToggle } from '@/hooks/useToggle';
 import { Button } from '@chakra-ui/button';
 import { Box, VStack } from '@chakra-ui/react';
 import { MobileNavMenu, Navbar } from '@/components/navbar';

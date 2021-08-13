@@ -1,18 +1,20 @@
 // TODO add credits section
+import React from 'react';
+import NextLink from 'next/link';
 import {
   Box,
   Link,
   Heading,
   Flex,
-  VStack,
+  // VStack,
   HStack,
   Divider,
   Text,
-  Img,
-  AspectRatio
+  // Img,
+  Spacer
 } from '@chakra-ui/react';
-import NextLink from 'next/link';
-import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { Img } from '@/components/next-responsive-img';
+import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 
 // TODO: MANAGE meta data for seo -> keywords, bannerCredit, title and all
 //       Fix styles
@@ -26,8 +28,18 @@ const BlogPost = ({
   bannerCredit
 }) => {
   const { colorGrey } = useColorModeSwitcher();
+
+  const parseDate = (d) => {
+    // I am formatting --> this string "Thu Jan 01 1970".
+    const string = d.toDateString();
+    // look for the first space
+    const index = string.indexOf(' ');
+    // so now the date is Jan 01 1970
+    return string.slice(index);
+  };
+
   return (
-    <NextLink href={`blog/${slug}`} passHref>
+    <NextLink href={`/blog/${slug}`} passHref>
       <Link variant="blogPost">
         <Box
           as="section"
@@ -48,13 +60,17 @@ const BlogPost = ({
             <Heading textTransform="capitalize" variant="h1">
               {title}
             </Heading>
-            <Divider />
+            <Spacer />
             <Text alignSelf="end" variant="subtitle">
-              {date}
+              {parseDate(new Date(date))}
             </Text>
           </HStack>
 
-          <BannerImg bannerSrc={bannerUrl} />
+          <Img
+            maxW={{ base: '20rem', lg: '30rem' }}
+            maxH="15rem"
+            src={`/${bannerUrl}`}
+          />
 
           <Box as="section" p={3}>
             <Text variant="body" mb="2rem">
@@ -74,17 +90,17 @@ const BlogPost = ({
   );
 };
 
-const BannerImg = ({ bannerSrc }) => {
-  return (
-    <AspectRatio
-      maxW={{ base: '20rem', lg: '30rem' }}
-      maxH="15rem"
-      mb="1.5rem"
-      ratio={4 / 3}
-    >
-      <Img src={bannerSrc} />
-    </AspectRatio>
-  );
-};
+// const BannerImg = ({ bannerSrc }) => {
+//   return (
+//     <AspectRatio
+//       maxW={{ base: '20rem', lg: '30rem' }}
+//       maxH="15rem"
+//       mb="1.5rem"
+//       ratio={4 / 3}
+//     >
+//       <Img src={bannerSrc} />
+//     </AspectRatio>
+//   );
+// };
 
 export { BlogPost };

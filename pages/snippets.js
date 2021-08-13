@@ -17,7 +17,7 @@ import { getAllFiles } from '@/lib/filesModule';
 import { SectionHeading } from '@/components/section-heading';
 // hooks
 // import { useToggle } from '@/utils/hooks/useToggle';
-import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 
 export default function Snippets({ snippets }) {
   return (

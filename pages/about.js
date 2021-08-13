@@ -18,8 +18,8 @@ import { Container } from '@/layouts/container';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { ContactForm } from '@/components/contact-form';
 // hooks
-import { useToggle } from '@/utils/hooks/useToggle';
-import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import { useToggle } from '@/hooks/useToggle';
+import { useColorModeSwitcher } from 'hooks/useColorModeSwitcher';
 // data
 import { github, linkedin } from '@/data/socials';
 import * as tool from '@/data/tools'; // feel like * need to refactor this file for a better import
