@@ -14,23 +14,16 @@ import {
 
 import { SearchIcon } from '@chakra-ui/icons';
 
-// import { getAllFiles, getAllFilesRevision } from '@/utils/mdx';
 import { getAllFiles } from '../lib/filesModule';
 
 import { Subscribe } from '@/components/subscribe';
 import { BlogPost } from '@/components/blog-post';
 
-// move this function to utils
-const getSlug = (filePath) => {
-  const spt = filePath.split('.');
-  return spt[0];
-};
 // TODO: Build A Better Search System, make filters, search by keywords and so on
 // Manage Infinite scroll
 export default function Blog({ posts }) {
   const { themed } = useColorModeSwitcher();
   const [query, setQuery] = React.useState('');
-  // const [filteredBlogPosts, setFilteredBlogPosts] = React.useState(null);
 
   const filteredPosts = posts
     .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)))
@@ -93,9 +86,6 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps() {
-  // const posts = getAllFiles();
   const posts = await getAllFiles('posts');
-  // console.log(posts);
   return { props: { posts } };
-  // return { props: posts };
 }

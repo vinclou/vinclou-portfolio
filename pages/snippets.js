@@ -31,11 +31,10 @@ export default function Snippets({ snippets }) {
           title="check out these snippets"
           w={{
             base: '22rem',
-            sm: '22rem',
-            md: '30rem',
-            lg: '40rem',
-            xl: '50rem',
-            '2xl': '50rem'
+            md: '40rem',
+            lg: '50rem',
+            xl: '60rem',
+            '2xl': '60rem'
           }}
         >
           <SectionHeading mb="2rem">Snippets</SectionHeading>
@@ -46,7 +45,12 @@ export default function Snippets({ snippets }) {
             solutions! Let's feed Github's copilot with more of our data ;)
             `}
           </Text>
-          <SimpleGrid as="section" columns={2} spacingX="20px" spacingY="20px">
+          <SimpleGrid
+            as="section"
+            columns={{ base: 1, md: 2 }}
+            spacingX="20px"
+            spacingY="20px"
+          >
             {snippets.map((snippet) => (
               <GridItem key={snippet.slug}>
                 <CodeSnippetCard

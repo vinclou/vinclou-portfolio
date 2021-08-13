@@ -1,8 +1,8 @@
 ---
 title: 'Analytics in you blog'
 date: '08/09/21'
-description: Choosing privacy first analytics tool for your website or blog
-keywords: javascript, react, misc, analytics, counter.dev
+description: Counter.dev - choosing privacy first analytics tool for your website or blog
+keywords: javascript, react, misc, analytics, counter.dev, nextjs
 bannerUrl: https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1f43d5b0-2dc2-4600-a801-2e246e33b5b2/dc73sa7-af05b78d-39c3-43d9-87b0-23d713236b10.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzFmNDNkNWIwLTJkYzItNDYwMC1hODAxLTJlMjQ2ZTMzYjViMlwvZGM3M3NhNy1hZjA1Yjc4ZC0zOWMzLTQzZDktODdiMC0yM2Q3MTMyMzZiMTAuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.uZ86a2Ax3OR9fpTH6jaO4r_YtLry_OyLqw00m4P5fv0
 bannerCredit: Photo by [6VRC](https://www.deviantart.com/6vcr) on
   [DevianArt](https://www.deviantart.com/)
@@ -10,71 +10,121 @@ bannerCredit: Photo by [6VRC](https://www.deviantart.com/6vcr) on
 
 <GlobalWrapper>
 
-<SectionWrapper title="intro">
+<SectionWrapper title="intro analytics, counter.dev">
 
 ## INTRO
 
+<br />
+
 So, you are thinking about adding analytics in your app but are not sure,
 what is going to be your best option. Some of the options are paid, some are free.
-
-Beware the solution I am about to propose wouldn't be a good solution for
-your website if you need thorough analytics and it gets easily blocked
-by any ad blocker able to block trackers, you definitely wouldn't get
-many things from it, and mostly just get an approximate number of visitors.
-
-Yet, I still urge you to check it out, it's an open source project and
-you can always fork it and add extras that suit your needs.
-
-But what you really need to ask yourself, how much of analytics I really need,
-if you are making a hobby website/blog, maybe all you want to do is track visitors,
-without and bloat javascript bundles from google or anywhere else.
-And maybe write a few custom functions to handle edge cases, you really want to track.
+Google doesn't seem to be attractive to you.
 
 <br />
 
-This is intro paragraph
+You should really look into [counter.dev](https://counter.dev/)
+
+<br />
+
+You can also check out their [github](https://github.com/ihucos/counter.dev)
+
+<br />
+
+It's an open source project, they don't collect personal data,
+as well as host their own service, although it is totally
+possible to fork it and host it on your own.
+
+Although I don't think it worth the trouble.
 
 </SectionWrapper>
 
-<SectionWrapper title="first">
+<SectionWrapper title="counter.dev what does it offer">
 
-## First
+## Counter.dev
+
+#### What does it do?
 
 <br />
 
-This is first section
+They offer you a very simple tracking solution, which is able to do
+two things
+
+- You can see which other websites, social media, or blogs link to
+  your website.
+
+- Also, it let you count your daily visitors, their languages and device types
+
+<br />
 
 </SectionWrapper>
 
 <SectionWrapper title="second">
 
-## Second
+## Setting up in NextJS is a breeze!
 
-#### It has a subtitle
+#### Well setting it up anywhere will be a breeze
 
 <br />
 
-This is second section
+Here's what you should insert into you custom \_document.js inside Next Head.
+
+```javascript
+<script
+  dangerouslySetInnerHTML={{
+    __html: `if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"vinclou",utcoffset:"-5"}))};sessionStorage.setItem("_swa","1");`
+  }}
+></script>
+```
+
+##### You will get your own tracking script, right after you make an account.
 
 </SectionWrapper>
 
 <SectionWrapper title="Third">
 
-## Third
+## Just glimpse over their clean UI
 
 <br />
 
-This is Third section
+Put image here
 
 </SectionWrapper>
 
-<SectionWrapper title="conclusion">
+<SectionWrapper title="Conclusion - counter.dev">
 
 ## Conclusion
 
+#### Subscribe to my newsletter, to get notified about new blogs
+
 <br />
 
-This the end, my dear friend
+Beware [Counter.dev](https://counter.dev/) wouldn't be a good solution for
+you if you need thorough analytics.
+
+<br />
+
+It can be easily blocked by an ad blocker, as this is privacy
+first solution and I do not think they will ever change their
+approach to the way they do business.
+
+<br />
+
+I still urge you to check it out, it's an open source project and
+you can always fork it, add the extras which will suit your needs.
+And what you really need to ask yourself, how much of analytics I really need?
+For most of the use cases, you want a simple tool that is easily manageable.
+
+<br />
+
+Most of us are busy with our life's and jobs. There's little time to waste
+on google's bloat or paid solutions which will give you a headache due
+to a learning curve.
+
+<br />
+
+This the end, my dear friend. Do not for get to subscribe. 🔨
+
+<br />
 
 </SectionWrapper>
 

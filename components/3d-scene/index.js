@@ -6,8 +6,8 @@
 	the final product with it
 */
 import * as THREE from 'three';
-import { Heading } from '@chakra-ui/react';
-import { css } from '@emotion/react';
+// import { Heading } from '@chakra-ui/react';
+// import { css } from '@emotion/react';
 import React, { Suspense, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Reflector, Text, useTexture, Preload, Html } from '@react-three/drei'; // useGLTF, useProgress,
@@ -52,7 +52,7 @@ export default function ThreeDScene({ animColor }) {
 function VideoText({ clicked, ...props }) {
   const [video] = useState(() =>
     Object.assign(document.createElement('video'), {
-      src: '/LastCut.mp4',
+      src: 'video/LastCut.mp4',
       crossOrigin: 'Anonymous',
       loop: true,
       muted: true
@@ -60,7 +60,12 @@ function VideoText({ clicked, ...props }) {
   );
   useEffect(() => void (clicked && video.play()), [video, clicked]);
   return (
-    <Text font="/Inter-Bold.woff" fontSize={3} letterSpacing={-0.06} {...props}>
+    <Text
+      font="fonts/Inter-Bold.woff"
+      fontSize={3}
+      letterSpacing={-0.06}
+      {...props}
+    >
       {'./AV'}
       <meshBasicMaterial toneMapped={false}>
         <videoTexture
@@ -75,8 +80,8 @@ function VideoText({ clicked, ...props }) {
 
 function Ground() {
   const [floor, normal] = useTexture([
-    '/SurfaceImperfections003_1K_var1.jpg',
-    '/SurfaceImperfections003_1K_Normal.jpg'
+    'static/textures/SurfaceImperfections003_1K_var1.jpg',
+    'static/textures/SurfaceImperfections003_1K_Normal.jpg'
   ]);
   return (
     <Reflector

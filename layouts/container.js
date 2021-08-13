@@ -64,7 +64,7 @@ const Seo = ({ ...customMeta }) => {
         href={`https://https://vincentarlou.com${router.asPath}`}
       />
 
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/static/favicons/favicon.ico" />
       <meta property="og:type" content={meta.type} />
       <meta property="og:site_name" content="Vincent Arlou" />
       <meta property="og:description" content={meta.description} />
