@@ -2,13 +2,16 @@ import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useToggle } from '@/hooks/useToggle';
+// import { useMediaQuery } from '@chakra-ui/media-query';
+import { useMediaQuerySSR } from '@/hooks/useMediaQuerySSR';
 import { Button } from '@chakra-ui/button';
 import { Box, VStack } from '@chakra-ui/react';
 import { MobileNavMenu, Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 
-const Container = ({ footerColor, children, ...customMeta }) => {
+const Container = ({ hasNoMarginOnFooter, children, ...customMeta }) => {
   const [isOpen, toggleIsOpen] = useToggle();
+  const [isLarge] = useMediaQuerySSR('(min-width: 992px)');
 
   return (
     <Box>
@@ -19,9 +22,16 @@ const Container = ({ footerColor, children, ...customMeta }) => {
         m="auto"
       >
         <Navbar isOpen={isOpen} toggleIsOpen={toggleIsOpen} />
-        <VStack id="skip" as="main" spacing={{ base: '2rem', lg: '6rem' }}>
+        <VStack
+          id="skip"
+          as="main"
+          spacing={
+            hasNoMarginOnFooter ? { base: '0px' } : { base: '2rem', lg: '6rem' }
+          }
+        >
           {isOpen ? <MobileNavMenu /> : children}
-          <Footer customBgColor={footerColor} />
+          {/* <Footer customBgColor={footerColor} /> */}
+          <Footer isLarge={isLarge} />
         </VStack>
       </Box>
     </Box>

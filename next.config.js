@@ -3,6 +3,7 @@ module.exports = {
   future: {
     webpack5: true
   },
+  reactStrictMode: true,
   // images: { Place your image domains here
   //   domains: [
   //   ]
@@ -44,11 +45,13 @@ module.exports = {
 };
 
 // https://securityheaders.com
+// https://content-security-policy.com/
 // Do not forget to modify script-src, in case I add something new
+// default-src * data: 'self' 'unsafe-eval' 'unsafe-inline' blob:;
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com;
-  worker-src 'self' 'unsafe-eval';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com blob:;
+  worker-src 'self' blob:;
   child-src *.youtube.com *.google.com *.twitter.com;
   style-src 'self' 'unsafe-inline' *.googleapis.com;
   img-src * blob: data:;
@@ -71,7 +74,7 @@ const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
   {
     key: 'X-Frame-Options',
-    value: 'DENY'
+    value: 'SAMEORIGIN'
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
   {

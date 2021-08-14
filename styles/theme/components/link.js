@@ -15,7 +15,7 @@ export const Link = {
       }
     },
     subtle: (props) => ({
-      color: props.colorMode === 'light' ? 'neutral.600' : 'default.light',
+      color: props.colorMode === 'light' ? 'neutral.800' : 'default.light',
       textDecoration: 'none',
       _hover: {
         color: props.colorMode === 'light' ? 'default.dark' : 'neutral.200',

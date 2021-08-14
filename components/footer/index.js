@@ -1,3 +1,4 @@
+import React from 'react';
 import NextLink from 'next/link';
 import { useToggle } from '@/hooks/useToggle';
 import { Icon } from '@chakra-ui/icons';
@@ -6,25 +7,22 @@ import { useMediaQuery } from '@chakra-ui/media-query';
 import VisuallyHidden from '@chakra-ui/visually-hidden';
 import { github, linkedin } from '@/data/socials';
 
-const Footer = ({ customBgColor }) => {
-  const [isLarge] = useMediaQuery('(min-width: 992px)');
+const Footer = ({ isLarge }) => {
   return (
     <VStack
       as="footer"
-      backgroundColor={customBgColor}
-      // marginTop={0}
       borderTop="1px solid"
-      borderColor="neutral.300"
+      borderColor="neutral.500"
       py="32px"
       w="100%"
       spacing={{ base: '16px', lg: '64px' }}
     >
-      {isLarge ? <Full /> : <Condensed />}
+      {isLarge ? <Full /> : <Condensed isLarge={isLarge} />}
       <Link
-        href={`${github.href}/vinclou-portfolio`}
-        isExternal
-        variant="noStyle"
         align="center"
+        href={`${github.href}/vinclou-portfolio`}
+        variant="noStyle"
+        isExternal
       >
         © Designed and coded by Vincent Arlou
       </Link>
@@ -32,7 +30,7 @@ const Footer = ({ customBgColor }) => {
   );
 };
 
-const Condensed = () => {
+const Condensed = ({ isLarge }) => {
   return (
     <HStack as="ul">
       <SocialLink
@@ -40,12 +38,14 @@ const Condensed = () => {
         icon={github.icon}
         href={github.href}
         name={github.name}
+        isLarge={isLarge}
       />
       <SocialLink
         color={linkedin.color}
         icon={linkedin.icon}
         href={linkedin.href}
         name={linkedin.name}
+        isLarge={isLarge}
       />
     </HStack>
   );
@@ -105,9 +105,8 @@ const Socials = () => {
   );
 };
 
-const SocialLink = ({ children, color, icon, href, name }) => {
+const SocialLink = ({ children, color, icon, href, name, isLarge }) => {
   const [hover, toggleHover] = useToggle();
-  const [isLarge] = useMediaQuery('(min-width: 992px)');
   return (
     <Center
       onMouseEnter={toggleHover}

@@ -8,8 +8,11 @@ import {
   Text,
   SimpleGrid,
   GridItem,
-  Link
+  Link,
+  List,
+  ListItem
 } from '@chakra-ui/layout';
+import { Icon } from '@chakra-ui/icons';
 // wrappers & components
 import { Container } from '@/layouts/container';
 import { ContentWrapper } from '@/layouts/contentWrapper';
@@ -18,6 +21,8 @@ import { SectionHeading } from '@/components/section-heading';
 // hooks
 // import { useToggle } from '@/utils/hooks/useToggle';
 import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
+// import { v4 as uuidv4 } from 'uuid';
+import { react, js } from '@/data/tools';
 
 export default function Snippets({ snippets }) {
   return (
@@ -57,6 +62,7 @@ export default function Snippets({ snippets }) {
                   title={snippet.title}
                   description={snippet.description}
                   slug={snippet.slug}
+                  tools={snippet.tools ? snippet.tools : ''}
                   logo={snippet.logo ? snippet.logo : ''}
                 />
               </GridItem>
@@ -69,15 +75,16 @@ export default function Snippets({ snippets }) {
 }
 
 // TODO: include logo, and convert it to a link component
-function CodeSnippetCard({ title, description, slug, logo, props }) {
+// .     figure out how would you do dynamic imports having mdx meta data
+function CodeSnippetCard({ title, description, slug, tools, logo, props }) {
   const { colorGrey } = useColorModeSwitcher();
 
   return (
-    <NextLink href={`snippets/${slug}`} passHref>
+    <NextLink href={`/snippets/${slug}`} passHref>
       <Link variant="blogPost">
         <VStack
           alignItems="left"
-          p="0.5rem"
+          p="1.0rem"
           border="1px solid"
           borderColor={colorGrey}
           w={{ base: '20rem' }}
@@ -86,12 +93,44 @@ function CodeSnippetCard({ title, description, slug, logo, props }) {
           <Heading as="h4" variant="h4" variant="pretitle">
             {title}
           </Heading>
-          <Text variant="bodyLight" alignSelf="center">
+
+          <Text variant="bodyLight">
             {description}
+            <ToolStack toolsArr={tools} />
           </Text>
         </VStack>
       </Link>
     </NextLink>
+  );
+}
+
+// TODO: make it a standalone comp
+function ToolStack({ toolsArr }) {
+  // make an arr of data
+  const tools = [js, react];
+  // callback filter function
+  const filterByName = (tool) => {
+    return toolsArr.includes(tool.name);
+  };
+  // filtered return tools
+  let filteredTools = tools.filter(filterByName);
+  // console.log('Filtered items:', filteredTools);
+
+  return (
+    <List display="flex" flexDirection="row">
+      {filteredTools.map((tool) => (
+        <ListItem key={tool.id} p="0.5rem">
+          <Icon
+            as={tool.icon}
+            aria-label={tool.name}
+            transitionDuration="300ms"
+            boxSize="1.5rem"
+            color={tool.color}
+            // _hover={{ fill: 'default.light' }}
+          />
+        </ListItem>
+      ))}
+    </List>
   );
 }
 

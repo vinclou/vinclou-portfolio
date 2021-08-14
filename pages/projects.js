@@ -14,15 +14,16 @@ import NoSsr from '@/utils/NoSsr';
 
 const Projects = () => {
   // show animation only if it's a laptop
-  const [isLarge] = useMediaQuery('(min-width: 900px)');
+  const [isLarge] = useMediaQuery('(min-width: 700px)');
 
   const { threeAnimColor } = useColorModeSwitcher();
   return (
     <>
       <Container
         title="Projects | Vincent Arlou"
+        hasNoMarginOnFooter="true"
         // customSpacing={{ base: '0rem', lg: '0rem' }}
-        footerColor={threeAnimColor}
+        // footerColor={threeAnimColor}
       >
         {isLarge && (
           <NoSsr>
@@ -30,14 +31,14 @@ const Projects = () => {
           </NoSsr>
         )}
         <ContentWrapper backgroundColor={threeAnimColor}>
-          <Intro />
+          <ProjectsHero />
         </ContentWrapper>
       </Container>
     </>
   );
 };
 
-const Intro = () => {
+const ProjectsHero = () => {
   return (
     <Box w="100%" as="section" mb="2rem">
       <Heading pl="1rem" as="h1" variant="h1">

@@ -19,35 +19,35 @@ import {
 import { v4 as uuidv4 } from 'uuid';
 
 export const html5 = {
-  name: 'HTML5',
+  name: 'html5',
   icon: SiHtml5,
   color: '#E34F26',
   id: uuidv4()
 };
 
 export const css3 = {
-  name: 'CSS3',
+  name: 'css3',
   icon: SiCss3,
   color: '#1572B6',
   id: uuidv4()
 };
 
 export const js = {
-  name: 'JavaScript',
+  name: 'javascript',
   icon: SiJavascript,
   color: '#F7DF1E',
   id: uuidv4()
 };
 
 export const typescript = {
-  name: 'Typescript',
+  name: 'typescript',
   icon: SiTypescript,
   color: '#3178C6',
   id: uuidv4()
 };
 
 export const react = {
-  name: 'React',
+  name: 'react',
   icon: SiReact,
   color: '#61DAFB',
   id: uuidv4()
