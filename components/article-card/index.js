@@ -15,14 +15,14 @@ const ArticleCard = () => {
         w={{ base: '21em', lg: '57.5rem' }}
       >
         <Heading textTransform="capitalize" as="h4" variant="h4" mb="0.5rem">
-          Setting Up Goals
+          Try Reading Latest Blog - Analytics
         </Heading>
         <Text variant="body" mb="2rem">
-          This is some arbitrary subtitle for my blog post that you should most
-          definitely read!
+          Counter.dev - choosing privacy first analytics tools for your website
+          or blog
         </Text>
         <NoSsr>
-          <NextLink href={`blog/hello`} passHref>
+          <NextLink href={`/blog/analytics`} passHref>
             <Link variant="blogPost">
               <Flex>
                 <Text>Read more</Text>
