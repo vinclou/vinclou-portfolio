@@ -1,7 +1,7 @@
 ---
 title: Adding Brave Rewards To NextJS Blog or Website
 date: '08/08/21'
-description: How do you add brave rewards to your website or blog, when adding well-known folder didn't work
+description: How do you add brave rewards to your website or blog, when adding .well-known folder didn't work
 keywords: javascript, react, misc, analytics, brave, ads, brave-creators
 bannerUrl: static/images/brave-rewards/banner.png
 bannerCredit: Photo by [Brave](https://brave.com/) on [cryptoangar.org](https://cryptoradar.org/wp-content/uploads/2019/08/Brave-logo.png)
@@ -9,7 +9,7 @@ bannerCredit: Photo by [Brave](https://brave.com/) on [cryptoangar.org](https://
 
 <GlobalWrapper>
 
-<SectionWrapper title="intro">
+<SectionWrapper title="my thoughts on brave browser">
 
 ## Brave?
 
@@ -17,64 +17,81 @@ bannerCredit: Photo by [Brave](https://brave.com/) on [cryptoangar.org](https://
 
 <br />
 
-I've discovered Brave about two years ago and began actively using it
-after I saw a Lex's podcast with Brendan Eich, the founder of Brave.
-If you have a little time click this link, to skip right to the solution.
+[Click to skip the intro](#the-problem).
 
 <br />
-And it's an awesome browser really, but their rewards system is a seamless way to
-tip the creators of the content you love. It's easy, doesn't require much configuration
-for the Brave user and some of the BAT is earned by user for seeing the ads. I am
-a madman to say such a thing, but for the first time in my life, I don't have deep
-aversion to ads, as I always do outside Brave's ecosystem.
+
+I've discovered Brave about two years ago, but began actively using it
+after I saw a Lex's podcast with [Brendan Eich](https://brendaneich.com/)
+the founder of Brave, co-founder of Mozilla and JavaScript creator.
+
 <br />
-You would be a fool for not adding it to your medium channels. Although, of course
-the user base is not a contender to Chrome/Safari/Firefox for now.
+
+It's an awesome browser, and I love the rewards system they have implemented,
+essentially Brave offers:
+
+- A seamless way to tip the creators of the content you love.
+- Security and privacy features right out of the box.
+  (having Tor without Tor is cool, not claiming it's bulletproof)
+- An easy way to earn a few dollars on a side from seeing ads, without them being intrusive.
+- And all other features
+
+I believe, at some point, it will be on the list of the most used browsers,
+just like Chrome/Firefox/Safari.
+
 <br />
-Yet, as times change, users will follow.
+
+I even use it for development, it has Chrome dev tools, but does not drain my battery and cpu
+like Chrome does.
+
+<br />
+
+I am a madman to say such a thing, but for the first time in my life, I don't have deep
+aversion to ads, as I always do anywhere else on the web.
+
+<br />
+
+It's not all sunshine and roses, there are many things they should improve on.
+Nevertheless, I do consider Brave a worth while experience.
+I'll leave my criticism for another time.
 
 <br />
 
 </SectionWrapper>
-<hr />
-<SectionWrapper title="first">
 
-## The Problem
+<AsciiHr />
 
-#### You have probably stumbled upon this blog post for a reason
+<SectionWrapper title="the problem I've faced">
 
-I suppose you have tried doing this:
+## Problem
+
+#### You have stumbled upon this blog post for a reason
+
+And I suppose you have tried doing this:
 
 - Create and verify Uphold wallet to receive BAT tokens
 - Create an account for Brave Rewards – Creators
-- Claim your platforms
+- Claim your platforms, specifically website option
 
-And here's the problem you are adding .well-known folder, containing
-your brave-rewards-certification.txt, you deploy your HEAD commit and you don't
-see any change in the status, it is still saying that you are not verified.
-You move folder around, check if you named it correctly still, doesn't help.
-Confused you google for the solutions and there are none. I mean you put this
-folder in public dir, where else could it possibly go in a NextJS project.
+<br />
 
-What happened?
+You tried adding it through the recommend way, which involves
+adding .well-known folder with the txt file they give you. In my
+case I put it inside my public folder in NextJS app; after a day
+of waiting and a day of trying to find a solution why I couldn't
+verify my platform. I gave up and tried adding a DNS record.
 
-Honestly, I would like to know that too. It surely said that's the easiest way to get
-verified. I was going to contact Brave directly and ask where the file should be located,
-but I found out it is much easier to modify your DNS record and not worry about any
-of that to verify your web site.
+<br />
 
-Simply go to your DNS records, on Vercel and Netlify it's pretty much the same process,
-here are the links to docs
-[Vercel DNS](https://vercel.com/support/articles/how-to-manage-vercel-dns-records)
-[Netlify DNS](https://docs.netlify.com/domains-https/netlify-dns/dns-records/)
+##### What happened?
 
-But I'm sure they are pretty much the same for any provider.
+I wish I knew, it certainly said that's the easiest way to get started.
 
-To edit the existing DNS Records of your Domain or add new ones,
-navigate to the Domains page of your Project Settings.
-There, click Edit on the Domain of your choice and you'll find a link at the bottom of the view.
+<br />
 
-The last step would be adding TXT record with [TTL](https://www.cloudflare.com/learning/cdn/glossary/time-to-live-ttl/) around 1 - 3 days.
+I was going to contact Brave directly and ask if I was doing everything
+the way it supposed to work. Yet, adding DNS was a five minute venture
+and I quickly forgot about as the problem went away.
 
 <br />
 
@@ -82,37 +99,59 @@ The last step would be adding TXT record with [TTL](https://www.cloudflare.com/l
 
 <SectionWrapper title="second">
 
-## Second
+## Solution
 
-#### It has a subtitle
-
-<br />
-
-This is second section
-
-</SectionWrapper>
-
-<SectionWrapper title="Third">
-
-## Third
+#### Just add brave-rewards through DNS records, in fact that's the easiest way
 
 <br />
 
-This is Third section
+Simply go to your DNS records, on Vercel and Netlify it's pretty much the same process,
+here are the links to the docs, that explain in detail where you find the control panel
+for DNS. Yet, I'm sure the process is more or less the same for every provider.
+
+- [Vercel DNS](https://vercel.com/support/articles/how-to-manage-vercel-dns-records)
+- [Netlify DNS](https://docs.netlify.com/domains-https/netlify-dns/dns-records/)
+
+<br />
+
+To edit the existing DNS Records of your Domain or add new ones:
+
+1. Navigate to the Domains page of your Project Settings.
+2. Click edit on the domain of your choice, you'll find a link at the bottom of the view.
+3. The last step would be adding TXT record with [TTL](https://www.cloudflare.com/learning/cdn/glossary/time-to-live-ttl/)
+   value around 1 - 3 days.
+
+<br />
+
+This is pretty much it, you are done.
+Click verify at [brave rewards creators](https://publishers.basicattentiontoken.org/).
+Go to your website and check verification badge. It should say you are a verified creator now!
 
 </SectionWrapper>
+
+<AsciiHr />
 
 <SectionWrapper title="conclusion">
 
 ## Conclusion
 
+#### Just do it!
+
+Oh, and do not forget to add any other channels to your account, hooking up
+social media is a breeze and doesn't require much work!
+Hopefully this article helps you to add brave rewards to your website.
+
 <br />
 
-That is it, you are done, click verify at brave rewards creators.
-Go yo your website and check verification badge.
+<NextImg
+  alt="dashboard-1"
+  src="/static/images/brave-rewards/the-dude-abides.png"
+  objectFit="scale-down"
+  ratio={16 / 9}
+/>
 
-Do not forget to add any other channels to your account, hooking up
-social accounts is a breeze! Hopefully this article helps you to resolve the issue
+This the end, my dear friend. Now let's grow the user base of like minded people.
+[Subscribe](/newsletter) if you like what you're seeing. 🔨
 
 </SectionWrapper>
 

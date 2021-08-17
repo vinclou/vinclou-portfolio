@@ -6,7 +6,8 @@ export const Link = {
   // styles for different visual variants ("outline", "solid")
   variants: {
     default: (props) => ({
-      color: props.colorMode === 'light' ? 'primary.500' : 'secondary.300'
+      color: props.colorMode === 'light' ? 'primary.500' : 'secondary.300',
+      textDecoration: 'none'
     }),
     noStyle: {
       textDecoration: 'none',

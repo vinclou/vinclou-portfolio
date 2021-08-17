@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { Img } from '@/components/next-responsive-img';
 import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
+import { useMediaQuerySSR } from '@/hooks/useMediaQuerySSR';
 
 // TODO: MANAGE meta data for seo -> keywords, bannerCredit, title and all
 //       Fix styles
@@ -28,7 +29,7 @@ const BlogPost = ({
   bannerCredit
 }) => {
   const { colorGrey } = useColorModeSwitcher();
-
+  const [isMobile] = useMediaQuerySSR('(max-width: 400px)');
   const parseDate = (d) => {
     // I am formatting --> this string "Thu Jan 01 1970".
     const string = d.toDateString();
@@ -67,6 +68,8 @@ const BlogPost = ({
           </HStack>
 
           <Img
+            ratio={4 / 3}
+            mx={isMobile ? 'auto' : '3rem'}
             maxW={{ base: '20rem', lg: '30rem' }}
             maxH="15rem"
             src={`/${bannerUrl}`}

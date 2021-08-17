@@ -1,15 +1,16 @@
 import Image from 'next/image';
 import { AspectRatio } from '@chakra-ui/layout';
 
-export const Img = ({ src, alt, ...rest }) => {
+export const Img = ({ src, alt, objectFit, ...props }) => {
   return (
-    <AspectRatio ratio={4 / 3} mb="1.5rem" {...rest}>
+    <AspectRatio mb="1.5rem" position="relative" {...props}>
       <Image
         src={src}
         alt={alt}
-        objectFit="cover"
+        objectFit={objectFit ? objectFit : 'cover'}
+        // objectPosition=" 50% 50%"
         layout="fill"
-        placeholder="blur" // adds blur placeholder
+        placeholder="blur"
       />
     </AspectRatio>
   );
