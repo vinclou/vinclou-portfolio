@@ -1,0 +1,11 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Articles by Vincent Arlou",
+    "home_page_url": "https://vincentarlou.com",
+    "description": "The blog about people, tech and 42",
+    "author": {
+        "name": "Vincent Arlou",
+        "url": "https://vincentarlou.com"
+    },
+    "items": []
+}

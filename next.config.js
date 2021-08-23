@@ -20,6 +20,15 @@ module.exports = {
     if (isServer) {
       // generates rss feed for the blog
       require('./utils/scripts/rss');
+      // const originalEntry = config.entry;
+      // config.entry = async () => {
+      //   const entries = { ...(await originalEntry()) };
+      //   // These scripts can import components from the app and use ES modules
+      //   entries['./utils/scripts/rss.js'] = './utils/scripts/rss.js';
+      //   return entries;
+      // };
+      // require('./utils/scripts/test-rss.js');
+      // require('./utils/scripts/rss.js');
     }
     // TODO: Test Preact support during next deploy
     // Replace React with Preact only in client production build

@@ -53,7 +53,7 @@ const Seo = ({ ...customMeta }) => {
     title: 'Vincent Arlou - Developer, writer, a stranger',
     description:
       'Fullstack developer with a focus on designing and building scalable, maintainable and accessible solutions on the web.',
-    image: 'https://vincentarlou.com/static/images/banner.jpg',
+    image: 'https://vincentarlou.com/static/images/banner.png',
     type: 'website',
     ...customMeta
   };
