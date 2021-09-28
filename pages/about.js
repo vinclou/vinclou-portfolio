@@ -12,6 +12,7 @@ import {
   Link,
   Flex
 } from '@chakra-ui/layout';
+// import { Img } from '@/components/next-responsive-img';
 import { Icon } from '@chakra-ui/icon';
 // wrappers & components
 import { Container } from '@/layouts/container';

@@ -31,6 +31,7 @@ async function readFilePaths() {
 
     let tmpFields = files.reduce((allFiles, filePath) => {
       const slug = filePath.replace('.mdx', '');
+
       // ignore element if it's a gitignore file, don't add to site map
       if (isGitIgnoreFile(slug)) return allFiles;
 

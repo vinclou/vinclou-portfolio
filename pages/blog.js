@@ -9,7 +9,8 @@ import {
   InputGroup,
   InputRightElement,
   Link,
-  VStack
+  VStack,
+  Flex
 } from '@chakra-ui/react';
 
 import { SearchIcon } from '@chakra-ui/icons';
@@ -37,21 +38,12 @@ export default function Blog({ posts }) {
   return (
     <Container title="Blog | Vincent Arlou">
       <ContentWrapper>
-        <VStack
-          w={{
-            base: '22rem',
-            sm: '22rem',
-            md: '30rem',
-            lg: '40rem',
-            xl: '50rem',
-            '2xl': '50rem'
-          }}
-        >
+        <VStack w={{ base: '90%', md: '70%' }} mx="1rem">
           <InputGroup>
             <Input
               aria-label="Search by post title, summary, or keywords"
-              onChange={(e) => setQuery(e.target.value)}
               placeholder="Search by post title, summary, or keywords"
+              onChange={(e) => setQuery(e.target.value)}
             />
             <InputRightElement>
               <SearchIcon color="gray.300" />
@@ -73,12 +65,19 @@ export default function Blog({ posts }) {
             No posts found
           </Text>
         )}
-        {filteredPosts.map((post) => (
-          <article key={post.title}>
-            <BlogPost slug={post.slug} {...post} />
-          </article>
-        ))}
-
+        <Flex
+          w={{ base: 'inherit', md: '90%' }}
+          mx="auto"
+          flexWrap="wrap"
+          justifyContent="center"
+          alignItems="center"
+        >
+          {filteredPosts.map((post) => (
+            <article key={post.title}>
+              <BlogPost slug={post.slug} {...post} />
+            </article>
+          ))}
+        </Flex>
         <Subscribe />
       </ContentWrapper>
     </Container>

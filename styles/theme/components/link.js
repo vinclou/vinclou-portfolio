@@ -35,7 +35,11 @@ export const Link = {
     blogPost: (props) => ({
       fontSize: '13rem',
       color: props.colorMode === 'light' ? 'primary.500' : 'secondary.500',
-      textDecoration: 'none'
+      textDecoration: 'none',
+      _hover: {
+        color: props.colorMode === 'light' ? 'primary.300' : 'secondary.700',
+        textDecoration: 'none'
+      }
     })
   },
   // default values for `size` and `variant`

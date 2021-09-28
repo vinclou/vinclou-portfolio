@@ -5,6 +5,7 @@ import NextLink from 'next/link';
 
 const ArticleCard = () => {
   const { colorGrey } = useColorModeSwitcher();
+
   return (
     <VStack spacing="4rem" w="100%" mx="auto">
       <Box

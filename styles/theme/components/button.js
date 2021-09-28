@@ -74,6 +74,16 @@ export const Button = {
         bg: props.colorMode === 'light' ? 'primary.600' : 'secondary.400'
       }
     })
+    // greenThemed: (props) => ({
+    //   border: '1px solid',
+    //   borderColor:
+    //     props.colorMode === 'light' ? 'primary.500' : 'secondary.300',
+    //   color: props.colorMode === 'light' ? 'primary.500' : 'secondary.300',
+    //   _hover: {
+    //     bg: props.colorMode === 'light' ? 'primary.600' : 'secondary.400',
+    //     color: props.colorMode === 'light' ? 'default.light' : 'default.dark'
+    //   }
+    // }),
   },
   // The default `size` or `variant` values
   defaultProps: {

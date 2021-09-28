@@ -12,7 +12,7 @@ import {
   Stack
 } from '@chakra-ui/react';
 import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
-import { useMediaQuery } from '@chakra-ui/media-query';
+// import { useMediaQuery } from '@chakra-ui/media-query';
 
 //TODO: fix color styles, fix button positioning on very tiny phones
 const ProjectCard = ({
@@ -26,7 +26,7 @@ const ProjectCard = ({
   ...props
 }) => {
   const { colorDark, colorGrey, colorLight } = useColorModeSwitcher();
-  const [isMobile] = useMediaQuery('(max-width: 400px)');
+  // const [isMobile] = useMediaQuery('(max-width: 400px)');
   return (
     <Box
       as="li"
@@ -44,20 +44,20 @@ const ProjectCard = ({
       {...props}
     >
       <Center
-        borderTopRadius="0.6rem"
-        fill={colorLight}
-        mb="2.5rem"
         // w="100%"
+        borderTopRadius="0.6rem"
+        // fill={colorLight}
+        mb="2.5rem"
         h="8rem"
-        bg={colorDark}
+        // bg={colorDark}
+        // bgPos="center"
+        bgImage={logo}
+        bgSize="auto"
+        // bgRepeat="no-repeat"
       >
-        {logo ? (
-          logo
-        ) : (
-          <Heading color={colorLight} as="p" variant="h3">
-            {title}
-          </Heading>
-        )}
+        {/* <Heading color={colorLight} as="p" variant="h3">
+          {title}
+        </Heading> */}
       </Center>
       <VStack px="1rem" align="start" spacing="1rem">
         <Heading data-testid="project-title" as="h3" variant="h3">
