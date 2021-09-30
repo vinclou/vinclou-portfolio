@@ -6,7 +6,7 @@ import {
   Link,
   Heading,
   // Flex,
-  // VStack,
+  VStack,
   // HStack,
   // Divider,
   Text,
@@ -56,11 +56,17 @@ const BlogPost = ({
       <Link variant="blogPost">
         <Box
           as="section"
-          // alignSelf={isMobile ? 'center' : 'auto'}
-          mx={{ base: '0rem', md: '0.5rem', '2xl': '0.7rem' }}
-          p={{ base: '0.5rem', '2xl': '0.2rem' }}
           border="1px solid"
           borderColor={colorGrey}
+          p={{ base: '0.5rem', '2xl': '0.2rem' }}
+          mx={{ base: '0rem', md: '0.5rem', '2xl': '0.7rem' }}
+          mb="3rem"
+          w={{
+            base: '360px'
+          }}
+          h={{
+            base: '520px'
+          }}
           // w={{
           //   base: '22rem',
           //   sm: '22rem',
@@ -70,21 +76,20 @@ const BlogPost = ({
           //   '2xl': '50rem'
           // }}
           // fix responsive styles later
-          mb="3rem"
-          w={{
-            base: '360px'
-          }}
-          h={{
-            base: '520px'
-          }}
         >
-          <Heading textTransform="capitalize" variant="h3" p={3} h="92px">
+          <Heading
+            textAlign="center"
+            textTransform="capitalize"
+            variant="h3"
+            p={1}
+            h="92px"
+          >
             {title}
           </Heading>
 
           <Img
             ratio={4 / 3}
-            mx={isMobile ? 'auto' : '2rem'}
+            mx={isMobile ? 'auto' : '1rem'}
             maxW={{ base: '20rem', lg: '30rem' }}
             h="15rem"
             src={`/${bannerUrl}`}

@@ -38,7 +38,7 @@ export default function Blog({ posts }) {
   return (
     <Container title="Blog | Vincent Arlou">
       <ContentWrapper>
-        <VStack w={{ base: '90%', md: '70%' }} mx="1rem">
+        <VStack w={{ base: '80%', md: '40%' }} mx="1rem">
           <InputGroup>
             <Input
               aria-label="Search by post title, summary, or keywords"

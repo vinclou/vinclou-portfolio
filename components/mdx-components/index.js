@@ -83,13 +83,14 @@ const Hr = () => {
   TODO: make it a universal standalone component
  */
 const AsciiHr = ({ children, ...props }) => {
-  const { themed, colorDark } = useColorModeSwitcher();
+  const { colorDark } = useColorModeSwitcher();
   const [isSmall] = useMediaQuerySSR('(max-width: 500px)');
   const fontS = isSmall ? '13px' : '15px';
   // bg={colorGrey} />
   return (
     <Flex
-      w="100%"
+      // w="100%"
+      overflowX="hidden"
       mx="auto"
       my="1rem"
       color={colorDark}
@@ -111,7 +112,7 @@ const AsciiHr = ({ children, ...props }) => {
         }}
       >
         {/* {children} */}
-        {'----------------8<-------------[ cut here ]------------------'}
+        {'---------------8<-------------[ cut here ]-----------------'}
       </pre>
     </Flex>
   );
