@@ -44,12 +44,6 @@ yarn-error.log*
 /public/sitemap.xml
 /public/feed.xml
 
-# my blog template files
-/data/posts/test-styles.mdx
-/data/posts/sample-post.mdx
-/data/posts/minimal-template.mdx
-/data/posts/setting-up-goals.mdx
-
 **/public/workbox-*.js
 **/public/sw.js
 **/public/service-worker.js

@@ -1,0 +1,6 @@
+# ignore my template files I use for writing blogs
+
+/posts/test-styles.mdx
+/posts/sample-post.mdx
+/posts/minimal-template.mdx
+/posts/setting-up-goals.mdx
