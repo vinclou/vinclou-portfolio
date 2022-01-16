@@ -15,16 +15,3 @@ export const Img = ({ src, alt, objectFit, ...props }) => {
     </AspectRatio>
   );
 };
-
-// const BannerImg = ({ bannerSrc }) => {
-//   return (
-//     <AspectRatio
-//       maxW={{ base: '20rem', lg: '30rem' }}
-//       maxH="15rem"
-//       mb="1.5rem"
-//       ratio={4 / 3}
-//     >
-//       <Img src={bannerSrc} />
-//     </AspectRatio>
-//   );
-// };

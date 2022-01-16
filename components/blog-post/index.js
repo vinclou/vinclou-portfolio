@@ -1,18 +1,7 @@
 // TODO add credits section
 import React from 'react';
 import NextLink from 'next/link';
-import {
-  Box,
-  Link,
-  Heading,
-  // Flex,
-  VStack,
-  // HStack,
-  // Divider,
-  Text,
-  // Img,
-  Spacer
-} from '@chakra-ui/react';
+import { Box, Link, Heading, Text } from '@chakra-ui/react';
 import { Img } from '@/components/next-responsive-img';
 import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 import { useMediaQuerySSR } from '@/hooks/useMediaQuerySSR';
@@ -61,21 +50,13 @@ const BlogPost = ({
           p={{ base: '0.5rem', '2xl': '0.2rem' }}
           mx={{ base: '0rem', md: '0.5rem', '2xl': '0.7rem' }}
           mb="3rem"
+          // fix responsive styles later
           w={{
             base: '360px'
           }}
           h={{
             base: '520px'
           }}
-          // w={{
-          //   base: '22rem',
-          //   sm: '22rem',
-          //   md: '30rem',
-          //   lg: '40rem',
-          //   xl: '50rem',
-          //   '2xl': '50rem'
-          // }}
-          // fix responsive styles later
         >
           <Heading
             textAlign="center"

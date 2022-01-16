@@ -3,7 +3,6 @@ import NextLink from 'next/link';
 import { useToggle } from '@/hooks/useToggle';
 import { Icon } from '@chakra-ui/icons';
 import { Link, HStack, VStack, Center } from '@chakra-ui/layout';
-import { useMediaQuery } from '@chakra-ui/media-query';
 import VisuallyHidden from '@chakra-ui/visually-hidden';
 import { github, linkedin } from '@/data/socials';
 
