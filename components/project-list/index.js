@@ -25,6 +25,7 @@ const ProjectList = () => {
           live={project.live}
           proto={project.proto}
           repo={project.repo}
+          isPrivate={project.isPrivate}
           mb="3rem"
         />
       ))}

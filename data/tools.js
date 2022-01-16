@@ -13,6 +13,7 @@ import {
   SiStorybook,
   SiAdobe,
   SiGo,
+  SiDeno,
   SiVisualstudiocode,
   SiTypescript
 } from 'react-icons/si';
@@ -43,6 +44,13 @@ export const typescript = {
   name: 'typescript',
   icon: SiTypescript,
   color: '#3178C6',
+  id: uuidv4()
+};
+
+export const deno = {
+  name: 'deno',
+  icon: SiDeno,
+  color: '#0f6fff',
   id: uuidv4()
 };
 
