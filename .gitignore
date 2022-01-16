@@ -48,6 +48,7 @@ yarn-error.log*
 /data/posts/test-styles.mdx
 /data/posts/sample-post.mdx
 /data/posts/minimal-template.mdx
+/data/posts/setting-up-goals.mdx
 
 **/public/workbox-*.js
 **/public/sw.js
