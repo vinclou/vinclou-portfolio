@@ -1,9 +1,9 @@
 import React from 'react';
 import NextLink from 'next/link';
-// chakra
+
 import {
   Heading,
-  Box,
+  Spacer,
   VStack,
   Text,
   SimpleGrid,
@@ -13,15 +13,13 @@ import {
   ListItem
 } from '@chakra-ui/layout';
 import { Icon } from '@chakra-ui/icons';
-// wrappers & components
+
 import { Container } from '@/layouts/container';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { getAllFiles } from '@/lib/filesModule';
 import { SectionHeading } from '@/components/section-heading';
-// hooks
-// import { useToggle } from '@/utils/hooks/useToggle';
+
 import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
-// import { v4 as uuidv4 } from 'uuid';
 import { react, js } from '@/data/tools';
 
 export default function Snippets({ snippets }) {
@@ -31,7 +29,7 @@ export default function Snippets({ snippets }) {
       description="A collection of useful code snippets, to ease the development of your products"
     >
       <ContentWrapper>
-        <Box
+        <VStack
           as="article"
           title="check out these snippets"
           w={{
@@ -42,19 +40,22 @@ export default function Snippets({ snippets }) {
             '2xl': '60rem'
           }}
         >
-          <SectionHeading mb="2rem">Snippets</SectionHeading>
-          <Text mb="4rem" color="neutral.500">
-            {`
-            This is my collection of snippets, I also plan to feature snippets
-            of other people here, hopefully a rich library of interesting
-            solutions! Let's feed Github's copilot with more of our data ;)
-            `}
-          </Text>
+          <VStack mb={{ base: '1rem', md: '3rem' }}>
+            <SectionHeading mb="2rem">Snippets</SectionHeading>
+            <Text w={{ base: '90%', md: '80%' }} color="neutral.600">
+              {`
+              This is my collection of snippets, I also plan to feature snippets
+              of other people here, hopefully a rich library of interesting
+              solutions! Let's feed Github's copilot with some data 🍄
+              `}
+            </Text>
+          </VStack>
+
           <SimpleGrid
             as="section"
             columns={{ base: 1, md: 2 }}
-            spacingX="20px"
-            spacingY="20px"
+            spacingX={{ base: '20px', md: '60px' }}
+            spacingY="25px"
           >
             {snippets.map((snippet) => (
               <GridItem key={snippet.slug}>
@@ -68,7 +69,7 @@ export default function Snippets({ snippets }) {
               </GridItem>
             ))}
           </SimpleGrid>
-        </Box>
+        </VStack>
       </ContentWrapper>
     </Container>
   );

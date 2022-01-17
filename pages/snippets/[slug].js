@@ -1,26 +1,13 @@
 import { MDXRemote } from 'next-mdx-remote';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { Container } from '@/layouts/container';
-import {
-  Flex,
-  Box,
-  Heading,
-  Text,
-  Divider,
-  Spacer,
-  VStack
-} from '@chakra-ui/react';
+import { Box, Heading, Divider } from '@chakra-ui/react';
 
 import MDXComponents from '@/components/mdx-components';
 import { getFiles } from '../../lib/filesModule';
 import { getFileBySlug } from '@/utils/mdx';
 
 export default function SnippetsPage({ mdxSource, frontMatter }) {
-  /*
-		 A Neat Way To Extend Components withing this file,
-		 useful if any props data is needed,
-		 and useful for passing wrappers and layout elements.
-	*/
   const extendMdxComponents = {
     ...MDXComponents,
     ExtensionComponentExp: () => {
@@ -73,7 +60,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  // const post = await getFileBySlug('posts', params.slug);
   const snippet = await getFileBySlug('snippets', params.slug);
 
   return { props: { ...snippet } };
