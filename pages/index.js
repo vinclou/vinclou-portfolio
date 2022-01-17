@@ -54,7 +54,7 @@ const Hero = () => {
             Welcome, you'll be able to find out a bit about me and the work I
             do.
           </Text>
-          <Heading as="h3" variant="h3" mb="2rem">
+          <Heading as="h2" variant="h2" mb="2rem">
             Ok, But Who Are You?
           </Heading>
           <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
@@ -65,7 +65,7 @@ const Hero = () => {
           </Text>
           <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
             As a software developer, all I wanna do is make high quality
-            software that will make the world a better place.
+            software that helps people accomplish more in their lives.
           </Text>
           <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
             All in all, I value people and I hope you'll be able to find
@@ -75,9 +75,9 @@ const Hero = () => {
           <Text fontSize="xl" mb={{ base: '1rem', lg: '2rem' }}>
             Feel free to have a look around and learn more. Check out{' '}
             <NextLink href={'/projects'} passHref>
-              <Link color={themed}>this page</Link>
+              <Link color={themed}>projects page</Link>
             </NextLink>{' '}
-            to see a little movie I've made.
+            to see the short movie I've made.
           </Text>
           <NextLink href="/about#contact" passHref>
             <Button as="a" variant="primaryThemed" size="lg">

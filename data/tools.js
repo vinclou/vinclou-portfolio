@@ -133,7 +133,7 @@ export const GraphQL = {
 };
 
 export const VsCode = {
-  name: 'Visual Studio Code',
+  name: 'VS Code',
   icon: SiVisualstudiocode,
   color: '#286eef',
   id: uuidv4()

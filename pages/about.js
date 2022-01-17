@@ -1,18 +1,15 @@
-// TODO: IMplement Contact From, fix spelling, add animations, refactor into files
 import React from 'react';
-// chakra
 import {
   Box,
   HStack,
   Heading,
   Text,
-  // Container as ChakraContainer,
   Grid,
   GridItem,
   Link,
   Flex
 } from '@chakra-ui/layout';
-// import { Img } from '@/components/next-responsive-img';
+
 import { Icon } from '@chakra-ui/icon';
 // wrappers & components
 import { Container } from '@/layouts/container';
@@ -37,8 +34,7 @@ export default function About() {
   );
 }
 
-/* MODULES TODO: seperate them */
-// TODO: REfactor margins, make it a custom Text component ???(Props repeat way too much)
+// TODO: Refactor margins, make it a custom Text component
 const Intro = () => {
   const { themed } = useColorModeSwitcher();
   return (
@@ -49,11 +45,13 @@ const Intro = () => {
       </Heading>
       <Box maxW={{ base: '20rem', sm: '30rem', md: '40rem' }} p={0.5}>
         <Text mb="2rem">
-          Thank you for your interest, can't really boast much. I had recently
-          graduated and trying to figure out where do I go in life; and what do
-          I do professionally. In WebDev I equally enjoy doing frontend and
-          backend. Although, that's the way to be lightly overwhelmed, I still
-          try to focus more on the frontend.
+          Thank you for your interest, can't really boast much. I equally enjoy
+          doing frontend and backend. Although, that's the way to be lightly
+          overwhelmed. I would mainly describe myself as a frontend developer. I
+          have extensive experience working with javascript ecosystem. And I try
+          to learn something new everyday. Apart from some of my graphics
+          experiments I learn Go and everything about designing systems for the
+          robust web applications.
         </Text>
         <Text mb="2rem">
           I live and work in NYC, but I originally came form{' '}
@@ -72,7 +70,7 @@ const Intro = () => {
           developed a passion for writing code back in college when I was
           Engineering major taking a C++ course. And interest, when I was
           solving math problems with Pascal in 6th grade, as I've never actually
-          enjoyed doing math on my own {`;)`}
+          enjoyed doing math on my own.
         </Text>
         <Text mb="2rem">
           I don't have a formal information design background. For the most part
@@ -85,13 +83,12 @@ const Intro = () => {
           I've been focused on building React applications, diving deeper into
           React itself, libraries and tools surrounding it. At the moment I'm
           trying to get better at testing, optimizing performance and
-          typescript. I'm passionate about WASM, GO & Rust, because it makes so
-          much more sense than working with C++ or Java, I want to learn more
-          about databases where I'm lacking proficiency.
+          typescript. I'm passionate about WASM, GO & Rust. I want to learn more
+          about databases and product management.
         </Text>
         <Text mb="2rem">
-          The rest of time I devote to helping out my mother with my little
-          brother, finding a place to settle with my fiancée, and my hobbies.
+          The rest of time I devote to helping out mother with my little
+          brother, traveling with my fiancée, and music.
         </Text>
         {/* <Text mb="2rem">Experiences 2</Text>
         <Text mb="2rem">Experiences 3</Text> */}
@@ -119,7 +116,7 @@ const Skills = () => {
   const tools = Object.values(tool);
   return (
     <Box as="section" m="auto">
-      <SectionHeading mb={{ base: '4rem', xl: '8rem' }}>
+      <SectionHeading mb={{ base: '2rem', xl: '3rem' }}>
         Tools & Technologies
       </SectionHeading>
       <Flex direction="row" justifyContent="center">
@@ -129,16 +126,14 @@ const Skills = () => {
           p={0.5}
         >
           <Text mb="8rem">
-            One of my favourite things has been discovering all the amazing
-            tools developers have created. <br />
+            One of my favorite things has been discovering all the amazing tools
+            developers have created. <br />
             Here are some of the tools I use most frequently.
           </Text>
         </Box>
       </Flex>
       <Grid
         as="ul"
-        // m="auto"
-        // w={{ md: '80%' }}
         gap={6}
         templateColumns={{ base: 'repeat(3, 1fr)', md: 'repeat(4, 1fr)' }}
       >
@@ -205,16 +200,8 @@ const Contact = () => {
             Or if you would prefer to, you can also reach me on{' '}
             <Link color={themed} href={linkedin.href}>
               linkedin
-            </Link>{' '}
-            {`and `}
-            <Link color={themed} href={github.href}>
-              github
             </Link>
             .
-          </Text>
-          <Text>
-            For now reach me out through linkedin, I'm still setting up
-            newsletter and mail service for the website
           </Text>
         </Box>
         <ContactForm />
