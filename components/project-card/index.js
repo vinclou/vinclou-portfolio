@@ -33,7 +33,7 @@ const ProjectCard = ({
       borderBottom="0.1rem solid"
       borderRadius="0.7rem"
       borderColor={colorGrey}
-      w={{ base: '340px', lg: '30rem' }}
+      w={{ base: '340px', lg: '27rem' }}
       minW="340px"
       {...props}
     >
@@ -49,7 +49,9 @@ const ProjectCard = ({
         <Heading data-testid="project-title" as="h3" variant="h3">
           {title}
         </Heading>
-        <Text data-testid="project-description">{description}</Text>
+        <Text data-testid="project-description" h="2rem">
+          {description}
+        </Text>
         <List display="flex" flexDirection="row">
           {tools.map((tool) => (
             <ListItem key={tool.id} p="0.5rem">
