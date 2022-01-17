@@ -3,7 +3,6 @@ import NextLink from 'next/link';
 
 import {
   Heading,
-  Spacer,
   VStack,
   Text,
   SimpleGrid,

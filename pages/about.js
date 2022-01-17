@@ -19,7 +19,7 @@ import { ContactForm } from '@/components/contact-form';
 import { useToggle } from '@/hooks/useToggle';
 import { useColorModeSwitcher } from 'hooks/useColorModeSwitcher';
 // data
-import { github, linkedin } from '@/data/socials';
+import { linkedin } from '@/data/socials';
 import * as tool from '@/data/tools'; // feel like * need to refactor this file for a better import
 
 export default function About() {

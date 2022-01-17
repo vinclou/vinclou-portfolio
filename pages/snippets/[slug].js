@@ -1,7 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { Container } from '@/layouts/container';
-import { Box, Heading, Divider } from '@chakra-ui/react';
+import { Box, Heading, Divider, VStack } from '@chakra-ui/react';
 
 import MDXComponents from '@/components/mdx-components';
 import { getFiles } from '../../lib/filesModule';
