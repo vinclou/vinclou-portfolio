@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import VisuallyHidden from '@chakra-ui/visually-hidden';
 import { Button } from '@chakra-ui/button';
 import { Input, InputGroup, InputRightElement } from '@chakra-ui/input';
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Text } from '@chakra-ui/layout';
 import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 import { useMediaQuery } from '@chakra-ui/react';
-import { FormControl, FormLabel } from '@chakra-ui/react';
+import { FormControl, FormLabel } from '@chakra-ui/form-control';
 import { useRef, useState } from 'react';
 import { ErrorMessage, SuccessMessage } from '../styled';
 
@@ -108,7 +108,6 @@ const Subscribe = ({ valid, invalid, loading, ...props }) => {
         <SuccessMessage>Congrats! You're on the mailing list.</SuccessMessage>
       )}
       {invalid && <ErrorMessage>You've already subscribed!</ErrorMessage>}
-      }
     </Box>
   );
 };

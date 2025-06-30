@@ -1,4 +1,4 @@
-import { Box, Link } from '@chakra-ui/react';
+import { Box, Link } from '@chakra-ui/layout';
 import NextLink from 'next/link';
 import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 

@@ -4,8 +4,7 @@ import {
   InputGroup,
   InputRightElement,
   Spinner,
-  IconButton,
-  Text
+  IconButton
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import { useColorModeSwitcher } from '../../hooks/useColorModeSwitcher';
@@ -18,8 +17,6 @@ function SearchBar() {
   // const {data, error, run, isLoading, isError, isSuccess} = useAsync()
   const [query, setQuery] = React.useState();
   const [queried, setQueried] = React.useState(false);
-  const [isSubmitting, setIsSubmitting] = React.useState(false);
-  const [errors, setErrors] = React.useState({});
 
   React.useEffect(() => {
     console.log(queried);

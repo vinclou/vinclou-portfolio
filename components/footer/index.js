@@ -2,7 +2,7 @@ import React from 'react';
 import NextLink from 'next/link';
 import { useToggle } from '@/hooks/useToggle';
 import { Icon } from '@chakra-ui/icons';
-import { Link, HStack, VStack, Center } from '@chakra-ui/react';
+import { Link, HStack, VStack, Center } from '@chakra-ui/layout';
 import VisuallyHidden from '@chakra-ui/visually-hidden';
 import { github, linkedin } from '@/data/socials';
 
@@ -132,7 +132,6 @@ const SocialLink = ({ children, color, icon, href, name, isLarge }) => {
         />
         {children}
         {!isLarge && <VisuallyHidden>{name}</VisuallyHidden>}
-        }
       </Link>
     </Center>
   );

@@ -1,33 +1,47 @@
-'use client'
+import NextLink from 'next/link';
+import { Container } from '@/layouts/container';
+import { useScrollPosition } from 'hooks/useScrollPosition';
+import { ContentWrapper } from '@/layouts/contentWrapper';
+import { useMediaQuery } from '@chakra-ui/media-query';
+import {
+  Box,
+  Button,
+  Heading,
+  Flex,
+  Link,
+  VStack,
+  Text
+} from '@chakra-ui/react';
 
-import { Box, Button, Heading, Flex, Link, VStack, Text, useMediaQuery } from '@chakra-ui/react'
-import NextLink from 'next/link'
-import { HeroSvg } from '@/components/svg'
-import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher'
-import { useScrollPosition } from '@/hooks/useScrollPosition'
-import { ScrollArrow } from '@/components/scroll'
-import { Subscribe } from '@/components/subscribe'
-import { ArticleCard } from '@/components/article-card'
-import { ProjectList } from '@/components/project-list'
-import NoSsr from '@/utils/NoSsr'
+// import { ProjectCard } from '@/components/project-card';
+// import { BlogPost } from "@/components/blog-post";
+import { HeroSvg } from '@/components/svg';
+import { Subscribe } from '@/components/subscribe';
+import { ScrollArrow } from '@/components/scroll';
+import { ArticleCard } from '@/components/article-card';
+import { ProjectList } from '@/components/project-list';
+// data imports
+import NoSsr from '@/utils/NoSsr';
+import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 
+//TODO make all the needed components
 export default function Home() {
   return (
-    <Box w={{ base: '100vw', '2xl': '80vw', '3xl': '72vw' }} minH="100vh" m="auto">
-      <VStack spacing={{ base: '2rem', lg: '6rem' }}>
+    <Container title="Home Page | Vincent Arlou">
+      <ContentWrapper>
         <Hero />
         <ArticleCard />
         <FeaturedProjects />
         <Subscribe />
-      </VStack>
-    </Box>
-  )
+      </ContentWrapper>
+    </Container>
+  );
 }
 
 const Hero = () => {
-  const [isXLarge] = useMediaQuery('(min-width: 1180px)')
-  const { themed } = useColorModeSwitcher()
-  const { scrollPos } = useScrollPosition()
+  const [isXLarge] = useMediaQuery('(min-width: 1180px)');
+  const { themed } = useColorModeSwitcher();
+  const { scrollPos } = useScrollPosition();
 
   return (
     <Box as="article" title="about" w={{ base: '90%', '2xl': '95%' }}>
@@ -37,7 +51,8 @@ const Hero = () => {
             👋 I'm Vincent Arlou
           </Heading>
           <Text mb={{ base: '4rem', lg: '6rem' }} as="h2" variant="subtitle">
-            Welcome, you'll be able to find out a bit about me and the work I do.
+            Welcome, you'll be able to find out a bit about me and the work I
+            do.
           </Text>
           <Heading as="h2" variant="h2" mb="2rem">
             Ok, But Who Are You?
@@ -78,9 +93,10 @@ const Hero = () => {
       </Flex>
       {isXLarge && <ScrollArrow scrollPos={scrollPos} />}
     </Box>
-  )
-}
+  );
+};
 
+//TODO make it a standalone component/file, fix how many project's are rendered
 const FeaturedProjects = () => {
   return (
     <VStack spacing="4rem" w="100%" m="auto">
@@ -106,13 +122,13 @@ const FeaturedProjects = () => {
         </Button>
       </NextLink>
     </VStack>
-  )
-}
+  );
+};
 
-const SectionHeading = ({ children }: { children: React.ReactNode }) => {
+const SectionHeading = ({ children }) => {
   return (
     <Heading as="h2" textAlign="center" variant="h2">
       {children}
     </Heading>
-  )
-}
+  );
+};
