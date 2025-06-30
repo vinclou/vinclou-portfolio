@@ -1,4 +1,6 @@
-import React from 'react';
+'use client'
+
+import React from 'react'
 import {
   Box,
   HStack,
@@ -7,36 +9,30 @@ import {
   Grid,
   GridItem,
   Link,
-  Flex
-} from '@chakra-ui/layout';
-
-import { Icon } from '@chakra-ui/icon';
-// wrappers & components
-import { Container } from '@/layouts/container';
-import { ContentWrapper } from '@/layouts/contentWrapper';
-import { ContactForm } from '@/components/contact-form';
-// hooks
-import { useToggle } from '@/hooks/useToggle';
-import { useColorModeSwitcher } from 'hooks/useColorModeSwitcher';
-// data
-import { linkedin } from '@/data/socials';
-import * as tool from '@/data/tools'; // feel like * need to refactor this file for a better import
+  Flex,
+  Icon,
+  VStack
+} from '@chakra-ui/react'
+import { useToggle } from '@/hooks/useToggle'
+import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher'
+import { ContactForm } from '@/components/contact-form'
+import { linkedin } from '@/data/socials'
+import * as tool from '@/data/tools'
 
 export default function About() {
   return (
-    <Container title="Vincent Arlou | About">
-      <ContentWrapper>
+    <Box w={{ base: '100vw', '2xl': '80vw', '3xl': '72vw' }} minH="100vh" m="auto">
+      <VStack spacing={{ base: '3rem', lg: '6rem' }}>
         <Intro />
         <Skills />
         <Contact />
-      </ContentWrapper>
-    </Container>
-  );
+      </VStack>
+    </Box>
+  )
 }
 
-// TODO: Refactor margins, make it a custom Text component
 const Intro = () => {
-  const { themed } = useColorModeSwitcher();
+  const { themed } = useColorModeSwitcher()
   return (
     <Box as="section" m="auto">
       <SectionHeading mb="4.5rem">About</SectionHeading>
@@ -90,8 +86,6 @@ const Intro = () => {
           The rest of time I devote to helping out mother with my little
           brother, traveling with my fiancée, and music.
         </Text>
-        {/* <Text mb="2rem">Experiences 2</Text>
-        <Text mb="2rem">Experiences 3</Text> */}
         <Heading mb="0.5rem" as="h3" variant="h3">
           Interests
         </Heading>
@@ -109,11 +103,11 @@ const Intro = () => {
         </Text>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
 const Skills = () => {
-  const tools = Object.values(tool);
+  const tools = Object.values(tool)
   return (
     <Box as="section" m="auto">
       <SectionHeading mb={{ base: '2rem', xl: '3rem' }}>
@@ -147,11 +141,11 @@ const Skills = () => {
         ))}
       </Grid>
     </Box>
-  );
-};
+  )
+}
 
-const Skill = ({ name, icon, color }) => {
-  const [hover, toggleHover] = useToggle();
+const Skill = ({ name, icon, color }: { name: string; icon: any; color: string }) => {
+  const [hover, toggleHover] = useToggle()
   return (
     <GridItem
       as="li"
@@ -169,17 +163,16 @@ const Skill = ({ name, icon, color }) => {
         mb="0.5rem"
         boxSize={{ base: '2rem', lg: '3rem', '2xl': '4rem' }}
         as={icon}
-        fill={hover && color}
+        fill={hover ? color : undefined}
         transitionDuration="500ms"
       />
       {name}
     </GridItem>
-  );
-};
+  )
+}
 
-// TODO: Add more socials, although I don't really have any
 const Contact = () => {
-  const { themed } = useColorModeSwitcher();
+  const { themed } = useColorModeSwitcher()
   return (
     <Box id="contact" maxW="inherit" as="section" p={{ base: '1rem', md: 0 }}>
       <SectionHeading mb="4rem">Get in touch</SectionHeading>
@@ -207,11 +200,11 @@ const Contact = () => {
         <ContactForm />
       </Flex>
     </Box>
-  );
-};
+  )
+}
 
-const SectionHeading = ({ children, ...props }) => {
-  const { colorGrey } = useColorModeSwitcher();
+const SectionHeading = ({ children, ...props }: { children: React.ReactNode; [key: string]: any }) => {
+  const { colorGrey } = useColorModeSwitcher()
   return (
     <HStack {...props} w="100%">
       <Box flex="1" h="1px" bg={colorGrey} />
@@ -220,5 +213,5 @@ const SectionHeading = ({ children, ...props }) => {
       </Heading>
       <Box flex="1" h="1px" bg={colorGrey} />
     </HStack>
-  );
-};
+  )
+}
