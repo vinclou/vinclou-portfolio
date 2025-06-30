@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Stack } from '@chakra-ui/layout';
+import { List, Stack } from '@chakra-ui/react';
 import { ProjectCard } from '../project-card';
 import projects from '@/data/projects';
 import { useMediaQuery } from '@chakra-ui/react';

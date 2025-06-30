@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Box, Flex, HStack, VStack } from '@chakra-ui/layout';
+import { Box, Flex, HStack, VStack } from '@chakra-ui/react';
 import { IoMoon, IoSunnyOutline } from 'react-icons/io5';
 import { IconButton } from '@chakra-ui/button';
 import { useMediaQuery } from '@chakra-ui/react';

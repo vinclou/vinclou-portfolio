@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import VisuallyHidden from '@chakra-ui/visually-hidden';
 import { Button } from '@chakra-ui/button';
 import { Input, InputGroup, InputRightElement } from '@chakra-ui/input';
-import { Box, Heading, Text } from '@chakra-ui/layout';
+import { Box, Heading, Text } from '@chakra-ui/react';
 import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
 import { useMediaQuery } from '@chakra-ui/react';
-import { FormControl, FormLabel } from '@chakra-ui/form-control';
+import { FormControl, FormLabel } from '@chakra-ui/react';
 import { useRef, useState } from 'react';
 import { ErrorMessage, SuccessMessage } from '../styled';
 

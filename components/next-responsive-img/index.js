@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { AspectRatio } from '@chakra-ui/layout';
+import { AspectRatio } from '@chakra-ui/react';
 
 export const Img = ({ src, alt, objectFit, ...props }) => {
   return (
