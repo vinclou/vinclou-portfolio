@@ -21,8 +21,14 @@
     "prettier": "prettier --write \"**/*.{html,js,jsx,json,md,mdx,yml,ts,tsx}\""
   },
   "dependencies": {
+    "@chakra-ui/button": "^2.1.0",
+    "@chakra-ui/color-mode": "^2.2.0",
+    "@chakra-ui/form-control": "^2.2.0",
     "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/input": "^2.1.2",
+    "@chakra-ui/layout": "^2.3.1",
     "@chakra-ui/react": "^2.8.2",
+    "@chakra-ui/visually-hidden": "^2.2.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fontsource/iosevka": "^5.0.18",
