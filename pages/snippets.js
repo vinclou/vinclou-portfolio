@@ -19,7 +19,7 @@ import { getAllFiles } from '@/lib/filesModule';
 import { SectionHeading } from '@/components/section-heading';
 
 import { useColorModeSwitcher } from '@/hooks/useColorModeSwitcher';
-import { react, js } from '@/data/tools';
+import * as allTools from '@/data/tools';
 
 export default function Snippets({ snippets }) {
   return (
@@ -106,8 +106,9 @@ function CodeSnippetCard({ title, description, slug, tools, logo, props }) {
 
 // TODO: make it a standalone comp
 function ToolStack({ toolsArr }) {
-  // make an arr of data
-  const tools = [js, react];
+  // Get all available tools from the tools data file
+  const tools = Object.values(allTools);
+  
   // callback filter function
   const filterByName = (tool) => {
     return toolsArr.includes(tool.name);
