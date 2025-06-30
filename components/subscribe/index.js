@@ -108,6 +108,7 @@ const Subscribe = ({ valid, invalid, loading, ...props }) => {
         <SuccessMessage>Congrats! You're on the mailing list.</SuccessMessage>
       )}
       {invalid && <ErrorMessage>You've already subscribed!</ErrorMessage>}
+      }
     </Box>
   );
 };

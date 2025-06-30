@@ -132,6 +132,7 @@ const SocialLink = ({ children, color, icon, href, name, isLarge }) => {
         />
         {children}
         {!isLarge && <VisuallyHidden>{name}</VisuallyHidden>}
+        }
       </Link>
     </Center>
   );
