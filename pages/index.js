@@ -2,7 +2,6 @@ import NextLink from 'next/link';
 import { Container } from '@/layouts/container';
 import { useScrollPosition } from 'hooks/useScrollPosition';
 import { ContentWrapper } from '@/layouts/contentWrapper';
-import { useMediaQuery } from '@chakra-ui/media-query';
 import {
   Box,
   Button,
@@ -10,7 +9,8 @@ import {
   Flex,
   Link,
   VStack,
-  Text
+  Text,
+  useMediaQuery
 } from '@chakra-ui/react';
 
 // import { ProjectCard } from '@/components/project-card';
